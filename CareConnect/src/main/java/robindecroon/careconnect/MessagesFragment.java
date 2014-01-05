@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SlidingPaneLayout;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,9 +28,6 @@ public class MessagesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-    private SlidingPaneLayout pane;
-
 
     private OnFragmentInteractionListener mListener;
 
@@ -67,12 +64,15 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
-        pane = (SlidingPaneLayout) rootView.findViewById(R.id.sp);
-        pane.setPanelSlideListener(new MessagesPaneListener());
+        FragmentManager fm = getChildFragmentManager();
+        MessagesListFragment fragment = new MessagesListFragment();
+        fm.beginTransaction().replace(R.id.leftpane, fragment).commit();
+        MessageContent fragment2 = new MessageContent();
+        fm.beginTransaction().replace(R.id.rightpane, fragment2).commit();
         return rootView;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -91,6 +91,8 @@ public class MessagesFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+
+
 
     @Override
     public void onDetach() {
@@ -112,5 +114,4 @@ public class MessagesFragment extends Fragment {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
-
 }

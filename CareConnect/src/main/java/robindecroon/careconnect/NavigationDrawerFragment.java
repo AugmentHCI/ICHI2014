@@ -147,17 +147,10 @@ public class NavigationDrawerFragment extends Fragment {
                     textView.setGravity(Gravity.CENTER_VERTICAL);
                     textView.setPadding(10,0,0,0);
                     textView.setTextSize(20);
-//                    LinearLayout.LayoutParams layoutparams = new LinearLayout.LayoutParams(200,120);
-//                    textView.setLayoutParams(layoutparams);
                     return textView;
                 }
             }
         });
-//                new ArrayAdapter<String>(
-//                getActionBar().getThemedContext(),
-//                android.R.layout.simple_list_item_activated_1,
-//                android.R.id.text1,
-//                new String[]{"Profiel", "Dashboard", "Berichten","SOEP", "Voorschrift"}));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }

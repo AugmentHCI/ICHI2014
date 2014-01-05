@@ -1,7 +1,6 @@
 package robindecroon.careconnect;
 
 import android.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.content.ContentUris;
 import android.content.Intent;
 import android.net.Uri;
@@ -47,13 +46,11 @@ public class MainActivity extends FragmentActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment fragment;
         if(position != 2) {
-            fragment = new DashboardFragment();
+            fragmentManager.beginTransaction().replace(R.id.container, new DashboardFragment()).commit();
         } else {
-            fragment = new MessagesFragment();
+            fragmentManager.beginTransaction().replace(R.id.container, new MessagesFragment()).commit();
         }
-        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     public void onSectionAttached(int number) {
