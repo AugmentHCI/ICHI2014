@@ -1,0 +1,13 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="robindecroon.careconnect.DashboardFragment">
+
+    <org.askerov.dynamicgid.DynamicGridView
+        android:id="@+id/dashboard_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="@integer/number_of_columns"></org.askerov.dynamicgid.DynamicGridView>
+
+</FrameLayout>

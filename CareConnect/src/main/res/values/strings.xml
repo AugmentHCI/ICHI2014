@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CareConnect</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Camera">Camera</string>
+    <string name="Calendar">Kalender</string>
+    <string name="Search">Zoeken</string>
+
+    <string-array name="medications">
+        <item>Diclofenac</item>
+        <item>Omeprazol</item>
+        <item>Amoxicilline</item>
+        <item>Doxycycline</item>
+        <item>Metoprolol</item>
+    </string-array>
+    <string-array name="problems">
+        <item>Acute infectie bovenste luchtwegen</item>
+        <item>Verondersteld infect gastro-enteritis</item>
+        <item>Influenza</item>
+        <item>Acute bronchitis/bronchiolitis</item>
+        <item>Symptomen/klachten lage-rug</item>
+    </string-array>
+    <string-array name="allergens">
+        <item>Pollen</item>
+        <item>Schimmel</item>
+        <item>Stofmijt</item>
+        <item>Gras</item>
+        <item>Rhinitis</item>
+    </string-array>
+    <string-array name="intolerances">
+        <item>Lactose</item>
+        <item>Fructose</item>
+        <item>Histamine</item>
+        <item>Gluten</item>
+        <item>Tuinbonen</item>
+    </string-array>
+    <string-array name="last_lab_results">
+        <item>Glucose (70-110 mg/dL)</item>
+        <item>Hemoglobine A1c (4-6%)</item>
+        <item>Ureum (&lt;50 mg/dL)</item>
+        <item>Creatinine (0.4 -1.1mg/dL)</item>
+        <item>Creatinine clearance (MDRD) (55-105 mL/min)</item>
+    </string-array>
+    <string-array name="history">
+        <item>Scheurwond/snijwond</item>
+        <item>Schoudersyndroom</item>
+        <item>Zieke oesophagus</item>
+        <item>Stoornis maagfunctie</item>
+        <item>Dermatomycose</item>
+    </string-array>
+
+    <string name="title_activity_message">MessageActivity</string>
+
+</resources>
