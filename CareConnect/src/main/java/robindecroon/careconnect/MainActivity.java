@@ -15,7 +15,7 @@ import android.view.MenuItem;
 ;
 
 public class MainActivity extends FragmentActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, MessagesFragment.OnFragmentInteractionListener, MessageContent.OnFragmentInteractionListener, MessagesListFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, MessageContent.OnFragmentInteractionListener, MessagesListFragment.OnFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -47,11 +47,11 @@ public class MainActivity extends FragmentActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         if(position == 0) {
-            fragmentManager.beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container,ProfileFragment.newInstance()).commit();
         } else if (position == 2) {
-            fragmentManager.beginTransaction().replace(R.id.container, new MessagesFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
         } else {
-            fragmentManager.beginTransaction().replace(R.id.container, new DashboardFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         }
     }
 
@@ -65,6 +65,12 @@ public class MainActivity extends FragmentActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section5);
                 break;
         }
     }

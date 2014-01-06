@@ -1,5 +1,6 @@
 package robindecroon.careconnect;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -22,6 +23,16 @@ import java.util.Arrays;
 public class DashboardFragment extends Fragment {
 
     private DynamicGridView mDashboardGrid;
+
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    public static DashboardFragment newInstance() {
+        DashboardFragment fragment = new DashboardFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, 2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     public DashboardFragment() {
         // Required empty public constructor
@@ -88,5 +99,11 @@ public class DashboardFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
     }
 }
