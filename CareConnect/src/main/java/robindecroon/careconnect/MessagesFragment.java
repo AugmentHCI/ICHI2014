@@ -26,19 +26,12 @@ public class MessagesFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
         FragmentManager fm = getChildFragmentManager();
-        MessagesListFragment fragment = new MessagesListFragment();
-        fm.beginTransaction().replace(R.id.leftpane, fragment).commit();
-        MessageContent fragment2 = MessageContent.newInstance();
-        fm.beginTransaction().replace(R.id.rightpane, fragment2).commit();
+        fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance()).commit();
+        fm.beginTransaction().replace(R.id.rightpane, MessageContent.newInstance()).commit();
         return rootView;
     }
 

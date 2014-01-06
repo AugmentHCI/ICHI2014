@@ -6,4 +6,4 @@
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
     android:background="#cccc"
-    tools:context="robindecroon.careconnect.NavigationDrawerFragment" />
+    tools:context="robindecroon.careconnect.CareConnectNavigationDrawerFragment" />

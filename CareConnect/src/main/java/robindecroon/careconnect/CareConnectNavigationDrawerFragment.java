@@ -30,7 +30,7 @@ import android.widget.TextView;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class CareConnectNavigationDrawerFragment extends Fragment {
 
     /**
      * Remember the position of the selected item.
@@ -61,7 +61,7 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
-    public NavigationDrawerFragment() {
+    public CareConnectNavigationDrawerFragment() {
     }
 
     @Override
@@ -110,16 +110,15 @@ public class NavigationDrawerFragment extends Fragment {
             public Object getItem(int i) {
                 switch (i) {
                     case 0:
-                        return "Profiel";
+                        return getString(R.string.title_section1);
                     case 1:
-                        return "Dashboard";
+                        return getString(R.string.title_section2);
                     case 2:
-                        return "Berichten";
+                        return getString(R.string.title_section3);
                     case 3:
-                        return "SOEP";
+                        return getString(R.string.title_section4);
                     case 4:
-                        return "Voorschrift";
-
+                        return getString(R.string.title_section5);
                 };
                 return null;
             }
@@ -138,7 +137,6 @@ public class NavigationDrawerFragment extends Fragment {
                     image.setMaxHeight(150);
                     image.setMinimumHeight(150);
                     image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
                     return image;
                 } else {
                     TextView textView = new TextView(getActivity());
