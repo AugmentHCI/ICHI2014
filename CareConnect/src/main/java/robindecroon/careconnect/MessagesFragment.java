@@ -37,7 +37,7 @@ public class MessagesFragment extends Fragment {
         FragmentManager fm = getChildFragmentManager();
         MessagesListFragment fragment = new MessagesListFragment();
         fm.beginTransaction().replace(R.id.leftpane, fragment).commit();
-        MessageContent fragment2 = new MessageContent();
+        MessageContent fragment2 = MessageContent.newInstance();
         fm.beginTransaction().replace(R.id.rightpane, fragment2).commit();
         return rootView;
     }

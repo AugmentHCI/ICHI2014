@@ -2,9 +2,6 @@ package robindecroon.careconnect;
 
 import android.app.Activity;
 import android.database.DataSetObserver;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Gravity;
@@ -18,27 +15,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-import robindecroon.careconnect.dummy.DummyContent;
-
-/**
- * A fragment representing a list of Items.
- * <p />
- * Large screen devices (such as tablets) are supported by replacing the ListView
- * with a GridView.
- * <p />
- * Activities containing this fragment MUST implement the {@link Callbacks}
- * interface.
- */
 public class MessagesListFragment extends Fragment implements AbsListView.OnItemClickListener {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,13 +30,8 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
      */
     private ListAdapter mAdapter;
 
-    // TODO: Rename and change types of parameters
-    public static MessagesListFragment newInstance(String param1, String param2) {
+    public static MessagesListFragment newInstance() {
         MessagesListFragment fragment = new MessagesListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -74,12 +46,6 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-        // TODO: Change Adapter to display your content
         mAdapter = new ListAdapter() {
             @Override
             public boolean areAllItemsEnabled() {
@@ -153,8 +119,6 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
                 return false;
             }
         };
-//                new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-//                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
     }
 
     @Override
@@ -164,7 +128,7 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
 
         // Set the adapter
         mListView = (AbsListView) view.findViewById(android.R.id.list);
-        ((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
+        mListView.setAdapter(mAdapter);
 
         // Set OnItemClickListener so we can be notified on item clicks
         mListView.setOnItemClickListener(this);
@@ -195,7 +159,7 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+//            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
     }
 
