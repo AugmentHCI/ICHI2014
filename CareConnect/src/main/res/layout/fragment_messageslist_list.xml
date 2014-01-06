@@ -3,17 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grey_background_pattern"
+    android:padding="25dp"
     tools:context="robindecroon.careconnect.MessagesListFragment">
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <TextView
-        android:id="@android:id/empty"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" />
+        android:background="@drawable/content_back"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1px"/>
+
+
 
 </FrameLayout>

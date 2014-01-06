@@ -7,6 +7,6 @@
     For more on layout aliases, see:
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     -->
-    <item name="fragment_messageslist" type="layout">@layout/fragment_messageslist_grid</item>
+    <item name="fragment_messageslist" type="layout">@layout/fragment_messageslist_list</item>
 
 </resources>

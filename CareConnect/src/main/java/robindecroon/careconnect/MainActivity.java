@@ -15,7 +15,7 @@ import android.view.MenuItem;
 ;
 
 public class MainActivity extends FragmentActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, MessagesFragment.OnFragmentInteractionListener, MessageContent.OnFragmentInteractionListener, MessagesListFragment.OnFragmentInteractionListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, MessagesFragment.OnFragmentInteractionListener, MessageContent.OnFragmentInteractionListener, MessagesListFragment.OnFragmentInteractionListener, ProfileFragment.OnFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -46,10 +46,12 @@ public class MainActivity extends FragmentActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        if(position != 2) {
-            fragmentManager.beginTransaction().replace(R.id.container, new DashboardFragment()).commit();
-        } else {
+        if(position == 0) {
+            fragmentManager.beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
+        } else if (position == 2) {
             fragmentManager.beginTransaction().replace(R.id.container, new MessagesFragment()).commit();
+        } else {
+            fragmentManager.beginTransaction().replace(R.id.container, new DashboardFragment()).commit();
         }
     }
 

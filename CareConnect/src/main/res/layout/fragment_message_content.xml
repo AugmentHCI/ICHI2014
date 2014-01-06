@@ -4,10 +4,34 @@
     android:layout_height="match_parent"
     tools:context="robindecroon.careconnect.MessageContent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:padding="25dp"
+        android:background="@drawable/grey_background_pattern">
+
+        <TextView
+            android:id="@+id/dashboard_item_title"
+            android:textAlignment="center"
+            android:gravity="left"
+            android:textAllCaps="true"
+            android:textColor="#99000000"
+            android:paddingBottom="10dp"
+            android:text="@string/lab_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/dashboard_item_content"
+            android:padding="10dp"
+            android:text="@string/lorem_long"
+            android:lineSpacingExtra="5dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/content_back"
+            android:layout_height="fill_parent" />
+
+    </LinearLayout>
 
 </FrameLayout>
