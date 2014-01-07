@@ -9,6 +9,7 @@ buildscript {
 apply plugin: 'android'
 
 repositories {
+    maven { url "http://dl.bintray.com/populov/maven" }
     mavenCentral()
 }
 
@@ -34,5 +35,6 @@ dependencies {
     compile 'com.android.support:support-v4:+'
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:4.0.30'
+    compile 'com.viewpagerindicator:library:2.4.1@aar'
     compile project(":libraries:dynamicgrid")
 }

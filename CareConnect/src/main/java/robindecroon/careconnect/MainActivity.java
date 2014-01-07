@@ -50,6 +50,8 @@ public class MainActivity extends FragmentActivity
             fragmentManager.beginTransaction().replace(R.id.container,ProfileFragment.newInstance()).commit();
         } else if (position == 2) {
             fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
+        } else if (position == 3) {
+            fragmentManager.beginTransaction().replace(R.id.container, SOEPFragment.newInstance()).commit();
         } else {
             fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         }

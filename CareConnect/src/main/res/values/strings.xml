@@ -59,6 +59,14 @@
         <item>Dermatomycose</item>
     </string-array>
 
+
+    <string-array name="soep">
+        <item>Subjectief</item>
+        <item>Objectief</item>
+        <item>Evaluatie</item>
+        <item>Planning</item>
+    </string-array>
+
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_master_drawer">MasterDrawerActivity</string>
     <string name="hello_world">Hello world!</string>
