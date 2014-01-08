@@ -1,5 +1,6 @@
 package robindecroon.careconnect;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.viewpagerindicator.TabPageIndicator;
+
+import java.util.List;
 
 public class SOEPFragment extends Fragment {
 
@@ -32,7 +35,7 @@ public class SOEPFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.simple_tabs, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_soep, container, false);
         //Set the pager with an adapter
         final ViewPager pager = (ViewPager) rootView.findViewById(R.id.pager);
         final String[] testArray = getResources().getStringArray(R.array.soep);
@@ -58,6 +61,18 @@ public class SOEPFragment extends Fragment {
         indicator.setCurrentItem(0);
 
         return rootView;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        List<Fragment> fragments = getChildFragmentManager().getFragments();
+        if (fragments != null) {
+            for (Fragment fragment : fragments) {
+                fragment.onActivityResult(requestCode, resultCode, data);
+            }
+        }
     }
 
 }

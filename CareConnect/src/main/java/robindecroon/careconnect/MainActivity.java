@@ -27,6 +27,9 @@ public class MainActivity extends FragmentActivity
      */
     private CharSequence mTitle;
 
+    private static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

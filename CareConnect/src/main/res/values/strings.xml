@@ -67,6 +67,61 @@
         <item>Planning</item>
     </string-array>
 
+    <string-array name="most_used_subjective">
+        <item>pijn in rug</item>
+        <item>hoofdpijn</item>
+        <item>slechte smaak</item>
+        <item>nekpijn</item>
+        <item>droge hoest</item>
+        <item>opgeblazen gevoel</item>
+        <item>slecht zicht</item>
+        <item>duizelig</item>
+    </string-array>
+
+    <string-array name="recent_subjective">
+        <item>pijn in rug</item>
+        <item>hoofdpijn</item>
+        <item>slechte smaak</item>
+        <item>nekpijn</item>
+        <item>droge hoest</item>
+        <item>opgeblazen gevoel</item>
+        <item>slecht zicht</item>
+        <item>duizelig</item>
+    </string-array>
+
+    <string-array name="prehistory_subjective">
+        <item>pijn in rug</item>
+        <item>hoofdpijn</item>
+        <item>slechte smaak</item>
+        <item>nekpijn</item>
+        <item>droge hoest</item>
+        <item>opgeblazen gevoel</item>
+        <item>slecht zicht</item>
+        <item>duizelig</item>
+    </string-array>
+
+    <string-array name="colleagues_subjective">
+        <item>pijn in rug</item>
+        <item>hoofdpijn</item>
+        <item>slechte smaak</item>
+        <item>nekpijn</item>
+        <item>droge hoest</item>
+        <item>opgeblazen gevoel</item>
+        <item>slecht zicht</item>
+        <item>duizelig</item>
+    </string-array>
+
+    <string-array name="location_subjective">
+        <item>pijn in rug</item>
+        <item>hoofdpijn</item>
+        <item>slechte smaak</item>
+        <item>nekpijn</item>
+        <item>droge hoest</item>
+        <item>opgeblazen gevoel</item>
+        <item>slecht zicht</item>
+        <item>duizelig</item>
+    </string-array>
+
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_master_drawer">MasterDrawerActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -76,5 +131,13 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut, est. In fermentum mattis ligula. Nulla ipsum. Vestibulum condimentum condimentum augue. Nunc purus risus, volutpat sagittis, lobortis at, dignissim sed, sapien. Fusce porttitor iaculis ante. Curabitur eu arcu. Morbi quam purus, tempor eget, ullamcorper feugiat, commodo ullamcorper, neque. \n \n
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut, est. In fermentum mattis ligula. Nulla ipsum. Vestibulum condimentum condimentum augue. Nunc purus risus, volutpat sagittis, lobortis at, dignissim sed, sapien. Fusce porttitor iaculis ante. Curabitur eu arcu. Morbi quam purus, tempor eget, ullamcorper feugiat, commodo ullamcorper, neque. \n \n
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut, est. In fermentum mattis ligula. Nulla ipsum. Vestibulum condimentum condimentum augue. Nunc purus risus, volutpat sagittis, lobortis at, dignissim sed, sapien. Fusce porttitor iaculis ante. Curabitur eu arcu. Morbi quam purus, tempor eget, ullamcorper feugiat, commodo ullamcorper, neque.</string>
+    <string name="no_voice_recognition">Helaas hebben we geen woorden herkend.</string>
+    <string name="speech_btn_description">Toets om via spraak tekst in te geven</string>
+    <string name="inputfield_hint">Selecteer of sleep uw gewenste input naar hier...</string>
+    <string name="recent">Recent</string>
+    <string name="most_used">Meest gebruikt</string>
+    <string name="prehistory">Voorgeschiedenis patient</string>
+    <string name="colleagues">Collega\'s</string>
+    <string name="location">Locatie</string>
 
 </resources>

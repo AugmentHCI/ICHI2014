@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grey_background_pattern"
     tools:context="robindecroon.careconnect.SubjectiveFragment">
 
     <LinearLayout
@@ -9,15 +10,38 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Selecteer of sleep uw gewenste input naar hier..." />
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <EditText
+                android:id="@+id/subjective_input"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:background="@drawable/content_back"
+                android:hint="@string/inputfield_hint" />
+
+            <ImageButton
+                android:id="@+id/btnSpeak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/speech_btn_description"
+                android:src="@android:drawable/ic_btn_speak_now" />
+
+        </LinearLayout>
+
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/grey_background_pattern">
+            android:layout_height="100dp">
 
             <!--  This is the main content -->
             <RelativeLayout
@@ -28,11 +52,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Main Content"
-                    android:layout_centerInParent="true" />
+                <LinearLayout
+                    android:id="@+id/most_used_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
 
             </RelativeLayout>
 
@@ -42,12 +68,147 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="Testing"
+                android:text="@string/most_used"
                 android:layout_marginLeft="30dp"
                 android:textColor="@android:color/black" />
 
         </RelativeLayout>
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/recent_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/recent"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/prehistory_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/prehistory"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/colleagues_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/colleagues"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/location_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/location"
+                android:layout_marginLeft="30dp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
