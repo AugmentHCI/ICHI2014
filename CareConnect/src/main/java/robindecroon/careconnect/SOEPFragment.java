@@ -42,7 +42,10 @@ public class SOEPFragment extends Fragment {
         pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
-                return SubjectiveFragment.newInstance();
+                if (i == 0)
+                    return SubjectiveFragment.newInstance();
+                else
+                    return ObjectiveFragment.newInstance();
             }
 
             @Override
