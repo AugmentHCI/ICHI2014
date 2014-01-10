@@ -43,9 +43,9 @@ public class SOEPFragment extends Fragment {
             @Override
             public Fragment getItem(int i) {
                 if (i == 0)
-                    return SubjectiveFragment.newInstance();
-                else
                     return ObjectiveFragment.newInstance();
+                else
+                    return SubjectiveFragment.newInstance();
             }
 
             @Override

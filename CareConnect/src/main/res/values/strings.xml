@@ -139,5 +139,8 @@
     <string name="prehistory">Voorgeschiedenis patient</string>
     <string name="colleagues">Collega\'s</string>
     <string name="location">Locatie</string>
+    <string name="weight">Gewicht</string>
+    <string name="blood_pressure">Bloeddruk</string>
+    <string name="length">Lengte</string>
 
 </resources>

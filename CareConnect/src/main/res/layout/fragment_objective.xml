@@ -2,14 +2,219 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@drawable/grey_background_pattern"
     tools:context="robindecroon.careconnect.ObjectiveFragment">
 
-    <SeekBar
-        android:id="@+id/seekbar_font"
-        android:layout_width="@dimen/seekbarwidth"
-        android:layout_height="wrap_content"
-        android:layout_margin="10px"
-        android:max="100"
-        android:progress="50"></SeekBar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/content_back"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/weight" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <robindecroon.careconnect.ColoredSeekBar
+                        android:id="@+id/weight_seekbar"
+                        android:layout_width="@dimen/seekbarwidth"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10px"
+                        android:layout_gravity="center_vertical"
+                        android:max="100"
+                        android:progress="50"></robindecroon.careconnect.ColoredSeekBar>
+
+                    <Button
+                        android:id="@+id/weight_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="-" />
+
+                    <TextView
+                        android:id="@+id/weight_text"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"/>
+
+                    <Button
+                        android:id="@+id/weight_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="+" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/content_back"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/blood_pressure" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/blood_pressure_low_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="-" />
+
+                    <TextView
+                        android:id="@+id/blood_pressure_low_text"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+
+                    <Button
+                        android:id="@+id/blood_pressure_low_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="+" />
+
+                    <LinearLayout
+                        android:id="@+id/blood_pressure_seekbar"
+                        android:layout_width="@dimen/seekbarwidth"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10px"
+                        android:layout_gravity="center_vertical">
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/blood_pressure_high_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="-" />
+
+                    <TextView
+                        android:id="@+id/blood_pressure_high_text"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical" />
+
+
+                    <Button
+                        android:id="@+id/blood_pressure_high_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="+" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/content_back"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/length" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <SeekBar
+                        android:id="@+id/length_seekbar"
+                        android:layout_width="@dimen/seekbarwidth"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10px"
+                        android:layout_gravity="center_vertical"
+                        android:max="250"></SeekBar>
+
+                    <Button
+                        android:id="@+id/length_min"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="-" />
+
+                    <TextView
+                        android:id="@+id/length_text"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"/>
+
+
+                    <Button
+                        android:id="@+id/length_plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="25sp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:text="+" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
