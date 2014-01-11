@@ -120,6 +120,7 @@
         <item>opgeblazen gevoel</item>
         <item>slecht zicht</item>
         <item>duizelig</item>
+        <item>Dit is heel lange tekst, veel te lang</item>
     </string-array>
 
     <string name="title_activity_message">MessageActivity</string>
@@ -142,5 +143,8 @@
     <string name="weight">Gewicht</string>
     <string name="blood_pressure">Bloeddruk</string>
     <string name="length">Lengte</string>
+    <string name="heartrate">Hartslag</string>
+    <string name="temperature">Temperatuur</string>
+    <string name="blood_sugar">Glycemie</string>
 
 </resources>

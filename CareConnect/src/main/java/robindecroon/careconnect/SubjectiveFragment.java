@@ -2,6 +2,9 @@ package robindecroon.careconnect;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.v4.app.Fragment;
@@ -123,8 +126,8 @@ public class SubjectiveFragment extends Fragment {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     ClipData data = ClipData.newPlainText("text", word);
-                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                    view.startDrag(data, shadowBuilder, view, 0);
+                    Shadow shadow = new Shadow(view,word1.getText().toString());
+                    view.startDrag(data, shadow, null, 0);
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     word1.performClick();
                 }
@@ -195,5 +198,50 @@ public class SubjectiveFragment extends Fragment {
         removeWordFromSuggestions(input);
     }
 
+    public class Shadow extends View.DragShadowBuilder {
+        private String text;
+
+        public Shadow(View view, String text) {
+            super(view);
+            this.text = text;
+        }
+
+        @Override
+        public void onDrawShadow(Canvas canvas) {
+            Paint strokePaint = new Paint();
+            strokePaint.setARGB(255, 255, 255, 255);
+//            strokePaint.setTextAlign(Paint.Align.CENTER);
+            strokePaint.setTextSize(getResources().getInteger(R.integer.drag_text_size));
+//            strokePaint.setTypeface(Typeface.DEFAULT_BOLD);
+            strokePaint.setStyle(Paint.Style.STROKE);
+            strokePaint.setStrokeWidth(2);
+
+            Paint textPaint = new Paint();
+            textPaint.setARGB(255, 0, 0, 0);
+//            textPaint.setTextAlign(Paint.Align.CENTER);
+            textPaint.setTextSize(getResources().getInteger(R.integer.drag_text_size));
+//            textPaint.setTypeface(Typeface.DEFAULT_BOLD);
+
+            canvas.drawText(text, 100, 100, strokePaint);
+            canvas.drawText(text, 100, 100, textPaint);
+
+        }
+
+        /*
+         * (non-Javadoc)
+         *
+         * @see
+         * android.view.View.DragShadowBuilder#onProvideShadowMetrics(android
+         * .graphics.Point, android.graphics.Point)
+         */
+        @Override
+        public void onProvideShadowMetrics(Point shadowSize,
+                                           Point shadowTouchPoint) {
+            shadowSize.x = 800;
+            shadowSize.y = 500;
+            shadowTouchPoint.x = 150;
+            shadowTouchPoint.y = 150;
+        }
+    }
 
 }

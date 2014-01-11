@@ -33,6 +33,21 @@ public class ObjectiveFragment extends Fragment {
     private Button lengthButtonMin;
     private Button lengthButtonPlus;
 
+    private ColoredSeekBar haertrateSeekbar;
+    private TextView haertrateText;
+    private Button haertrateButtonMin;
+    private Button haertrateButtonPlus;
+
+    private ColoredSeekBar temperatureSeekbar;
+    private TextView temperatureText;
+    private Button temperatureButtonMin;
+    private Button temperatureButtonPlus;
+
+    private ColoredSeekBar blood_sugarSeekbar;
+    private TextView blood_sugarText;
+    private Button blood_sugarButtonMin;
+    private Button blood_sugarButtonPlus;
+
 
     public static ObjectiveFragment newInstance() {
         ObjectiveFragment fragment = new ObjectiveFragment();
@@ -116,7 +131,7 @@ public class ObjectiveFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int value = bloodPressureSeekbar.getSelectedMinValue();
-                if(value > bloodPressureSeekbar.getAbsoluteMinValue()) {
+                if (value > bloodPressureSeekbar.getAbsoluteMinValue()) {
                     bloodPressureLowText.setText((value - 1) + "");
                     bloodPressureSeekbar.setSelectedMinValue(value - 1);
                 }
@@ -126,7 +141,7 @@ public class ObjectiveFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int value = bloodPressureSeekbar.getSelectedMinValue();
-                if(value < bloodPressureSeekbar.getSelectedMaxValue()) {
+                if (value < bloodPressureSeekbar.getSelectedMaxValue()) {
                     bloodPressureLowText.setText((value + 1) + "");
                     bloodPressureSeekbar.setSelectedMinValue(value + 1);
                 }
@@ -137,7 +152,7 @@ public class ObjectiveFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int value = bloodPressureSeekbar.getSelectedMaxValue();
-                if(value > bloodPressureSeekbar.getSelectedMinValue()) {
+                if (value > bloodPressureSeekbar.getSelectedMinValue()) {
                     bloodPressureHighText.setText((value - 1) + "");
                     bloodPressureSeekbar.setSelectedMaxValue(value - 1);
                 }
@@ -147,14 +162,13 @@ public class ObjectiveFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int value = bloodPressureSeekbar.getSelectedMaxValue();
-                if(value < bloodPressureSeekbar.getAbsoluteMaxValue()) {
+                if (value < bloodPressureSeekbar.getAbsoluteMaxValue()) {
                     bloodPressureLowText.setText((value + 1) + "");
                     bloodPressureSeekbar.setSelectedMaxValue(value + 1);
                 }
             }
         });
-        bloodPressureSeekbar.setSelectedMinValue(80);
-        bloodPressureSeekbar.setSelectedMaxValue(120);
+        // set values in onResume to force onDraw() method to color the lines.
 
         ViewGroup layout = (ViewGroup) rootView.findViewById(R.id.blood_pressure_seekbar);
         layout.addView(bloodPressureSeekbar);
@@ -202,6 +216,145 @@ public class ObjectiveFragment extends Fragment {
         });
         lengthSeekbar.setProgress(180);
 
+        /*
+         * haertrate
+         */
+        haertrateSeekbar = (ColoredSeekBar) rootView.findViewById(R.id.haertrate_seekbar);
+        haertrateText = (TextView) rootView.findViewById(R.id.haertrate_text);
+        haertrateButtonMin = (Button) rootView.findViewById(R.id.haertrate_min);
+        haertrateButtonPlus = (Button) rootView.findViewById(R.id.haertrate_plus);
+        haertrateSeekbar.setOnSeekBarChangeListener(new ColoredSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                haertrateText.setText(i + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        haertrateButtonMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(haertrateText.getText().toString());
+                if (value > 0) {
+                    haertrateText.setText((value - 1) + "");
+                    haertrateSeekbar.setProgress(value - 1);
+                }
+            }
+        });
+        haertrateButtonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(haertrateText.getText().toString());
+                haertrateText.setText((value + 1) + "");
+                haertrateSeekbar.setProgress(value + 1);
+
+            }
+        });
+        haertrateSeekbar.setProgress(70);
+
+        /*
+         * temperature
+         */
+        temperatureSeekbar = (ColoredSeekBar) rootView.findViewById(R.id.temperature_seekbar);
+        temperatureText = (TextView) rootView.findViewById(R.id.temperature_text);
+        temperatureButtonMin = (Button) rootView.findViewById(R.id.temperature_min);
+        temperatureButtonPlus = (Button) rootView.findViewById(R.id.temperature_plus);
+        temperatureSeekbar.setOnSeekBarChangeListener(new ColoredSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                temperatureText.setText((i/10 + 20f) + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        temperatureButtonMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(temperatureText.getText().toString());
+                if (value > 0) {
+                    temperatureText.setText((value - 1) + "");
+                    temperatureSeekbar.setProgress(value - 1);
+                }
+            }
+        });
+        temperatureButtonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(temperatureText.getText().toString());
+                temperatureText.setText((value + 1) + "");
+                temperatureSeekbar.setProgress(value + 1);
+
+            }
+        });
+        temperatureSeekbar.setProgress(160);
+
+                /*
+         * blood_sugar
+         */
+        blood_sugarSeekbar = (ColoredSeekBar) rootView.findViewById(R.id.blood_sugar_seekbar);
+        blood_sugarText = (TextView) rootView.findViewById(R.id.blood_sugar_text);
+        blood_sugarButtonMin = (Button) rootView.findViewById(R.id.blood_sugar_min);
+        blood_sugarButtonPlus = (Button) rootView.findViewById(R.id.blood_sugar_plus);
+        blood_sugarSeekbar.setOnSeekBarChangeListener(new ColoredSeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                blood_sugarText.setText(i + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        blood_sugarButtonMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(blood_sugarText.getText().toString());
+                if (value > 0) {
+                    blood_sugarText.setText((value - 1) + "");
+                    blood_sugarSeekbar.setProgress(value - 1);
+                }
+            }
+        });
+        blood_sugarButtonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int value = Integer.parseInt(blood_sugarText.getText().toString());
+                blood_sugarText.setText((value + 1) + "");
+                blood_sugarSeekbar.setProgress(value + 1);
+
+            }
+        });
+        blood_sugarSeekbar.setProgress(70);
+
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        bloodPressureSeekbar.setSelectedMaxValue(120);
+        bloodPressureSeekbar.setSelectedMinValue(80);
     }
 }
