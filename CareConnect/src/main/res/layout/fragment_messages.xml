@@ -1,6 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/grey_background_pattern"
     android:layout_height="match_parent"
     tools:context="robindecroon.careconnect.MessagesFragment">
 
@@ -9,11 +10,24 @@
         android:layout_height="match_parent"
         android:id="@+id/sp">
         <!-- Left side pane. (Master) -->
-        <FrameLayout
-            android:id="@+id/leftpane"
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="500dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left" />
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/message_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"></FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/leftpane"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="left" />
+        </LinearLayout>
 
         <!-- Right side page. (Slave)  -->
         <FrameLayout

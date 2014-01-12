@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class MessagesFragment extends Fragment {
+public class MessagesFragment extends Fragment implements MessageTypeDropdownFragment.Callbacks {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
@@ -30,6 +30,7 @@ public class MessagesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
         FragmentManager fm = getChildFragmentManager();
+        fm.beginTransaction().replace(R.id.message_dropdown, new MessageTypeDropdownFragment()).commit();
         fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance()).commit();
         fm.beginTransaction().replace(R.id.rightpane, MessageContent.newInstance()).commit();
         return rootView;
@@ -41,4 +42,13 @@ public class MessagesFragment extends Fragment {
         ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
     }
 
+    @Override
+    public void onTrackSelected(String trackId) {
+
+    }
+
+    @Override
+    public void onTrackNameAvailable(String trackId, String trackName) {
+
+    }
 }

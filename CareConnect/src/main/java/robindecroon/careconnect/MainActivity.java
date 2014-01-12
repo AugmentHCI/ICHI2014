@@ -15,7 +15,7 @@ import android.view.MenuItem;
 ;
 
 public class MainActivity extends FragmentActivity
-        implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnFragmentInteractionListener {
+        implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnFragmentInteractionListener, MessageTypeDropdownFragment.Callbacks {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -125,6 +125,16 @@ public class MainActivity extends FragmentActivity
 
     @Override
     public void onFragmentInteraction(String id) {
+
+    }
+
+    @Override
+    public void onTrackSelected(String trackId) {
+
+    }
+
+    @Override
+    public void onTrackNameAvailable(String trackId, String trackName) {
 
     }
 }

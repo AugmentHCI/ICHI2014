@@ -210,17 +210,13 @@ public class SubjectiveFragment extends Fragment {
         public void onDrawShadow(Canvas canvas) {
             Paint strokePaint = new Paint();
             strokePaint.setARGB(255, 255, 255, 255);
-//            strokePaint.setTextAlign(Paint.Align.CENTER);
             strokePaint.setTextSize(getResources().getInteger(R.integer.drag_text_size));
-//            strokePaint.setTypeface(Typeface.DEFAULT_BOLD);
             strokePaint.setStyle(Paint.Style.STROKE);
             strokePaint.setStrokeWidth(2);
 
             Paint textPaint = new Paint();
             textPaint.setARGB(255, 0, 0, 0);
-//            textPaint.setTextAlign(Paint.Align.CENTER);
             textPaint.setTextSize(getResources().getInteger(R.integer.drag_text_size));
-//            textPaint.setTypeface(Typeface.DEFAULT_BOLD);
 
             canvas.drawText(text, 100, 100, strokePaint);
             canvas.drawText(text, 100, 100, textPaint);

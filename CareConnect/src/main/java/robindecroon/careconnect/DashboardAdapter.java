@@ -24,10 +24,9 @@ public class DashboardAdapter extends BaseDynamicGridAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         String dashboardType = (String) getItem(position);
-        DashboardItemView dashboardView = new DashboardItemView(getContext(),dashboardType);
+        DashboardItemView dashboardView = new DashboardItemView(getContext(), dashboardType);
         dashboardView.setLayoutParams(new LinearLayout.LayoutParams(viewWidth, viewHeight));
         return dashboardView;
     }

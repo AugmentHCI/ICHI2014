@@ -59,10 +59,9 @@ public class DashboardFragment extends Fragment {
         int height = size.y;
 
         TypedValue tv = new TypedValue();
-        int actionBarHeight=0;
-        if (getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
-        {
-            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,getResources().getDisplayMetrics());
+        int actionBarHeight = 0;
+        if (getActivity().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
         }
 
         int result = 0;
@@ -74,14 +73,14 @@ public class DashboardFragment extends Fragment {
         height -= actionBarHeight;
         height -= result;
 
-        int nbColumns = (int) getResources().getInteger(R.integer.number_of_columns) ;
+        int nbColumns = (int) getResources().getInteger(R.integer.number_of_columns);
         int nbRows = (int) getResources().getInteger(R.integer.number_of_rows);
 
         int dashboardElementWidth = width / nbColumns;
         int dashboardElementHeight = height / nbRows;
 
         mDashboardGrid = (DynamicGridView) rootView.findViewById(R.id.dashboard_grid);
-        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{"medications","problems","allergens","intolerances", "history","last_lab_results"}), nbColumns, dashboardElementWidth, dashboardElementHeight));
+        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{"medications", "problems", "allergens", "intolerances", "history", "last_lab_results"}), nbColumns, dashboardElementWidth, dashboardElementHeight));
         mDashboardGrid.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
