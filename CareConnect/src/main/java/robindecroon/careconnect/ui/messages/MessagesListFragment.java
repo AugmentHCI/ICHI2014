@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,9 +11,12 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import robindecroon.careconnect.messages.MessagesAdapter;
+import robindecroon.careconnect.R;
+
 public class MessagesListFragment extends Fragment implements AbsListView.OnItemClickListener {
 
-    private OnFragmentInteractionListener mListener;
+    private OnMessageListInteractionListener mListener;
 
     /**
      * The fragment's ListView/GridView.
@@ -64,10 +67,10 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnMessageListInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                + " must implement OnFragmentInteractionListener");
+                + " must implement OnMessageListInteractionListener");
         }
     }
 
@@ -81,9 +84,7 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
-//            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+            mListener.onMessageListItemSelected(position);
         }
     }
 
@@ -110,9 +111,8 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
     * "http://developer.android.com/training/basics/fragments/communicating.html"
     * >Communicating with Other Fragments</a> for more information.
     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(String id);
+    public interface OnMessageListInteractionListener {
+        public void onMessageListItemSelected(int id);
     }
 
 }

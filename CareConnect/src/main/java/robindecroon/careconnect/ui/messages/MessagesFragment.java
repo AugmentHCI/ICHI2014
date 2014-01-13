@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -8,10 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
+import robindecroon.careconnect.MainActivity;
+import robindecroon.careconnect.R;
+import robindecroon.careconnect.factory.DummyMessageFactory;
+import robindecroon.careconnect.messages.Message;
+
 
 public class MessagesFragment extends Fragment implements MessageTypeDropdownFragment.Callbacks {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
+
+    private List<Message> messages = DummyMessageFactory.getDummyMessages();
 
     public static MessagesFragment newInstance() {
         MessagesFragment fragment = new MessagesFragment();
@@ -32,7 +41,7 @@ public class MessagesFragment extends Fragment implements MessageTypeDropdownFra
         FragmentManager fm = getChildFragmentManager();
         fm.beginTransaction().replace(R.id.message_dropdown, new MessageTypeDropdownFragment()).commit();
         fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance()).commit();
-        fm.beginTransaction().replace(R.id.rightpane, MessageContent.newInstance()).commit();
+        fm.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(0))).commit();
         return rootView;
     }
 

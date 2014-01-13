@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.profile;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.LatLng;
+
+import robindecroon.careconnect.MainActivity;
+import robindecroon.careconnect.R;
 
 
 public class ProfileFragment extends Fragment {

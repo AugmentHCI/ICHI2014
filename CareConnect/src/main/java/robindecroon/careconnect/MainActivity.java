@@ -12,10 +12,21 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
-;
+;import java.util.List;
+
+import robindecroon.careconnect.factory.DummyMessageFactory;
+import robindecroon.careconnect.messages.Message;
+import robindecroon.careconnect.ui.CareConnectNavigationDrawerFragment;
+import robindecroon.careconnect.ui.soap.SOAPFragment;
+import robindecroon.careconnect.ui.dashboard.DashboardFragment;
+import robindecroon.careconnect.ui.messages.MessageContentFragment;
+import robindecroon.careconnect.ui.messages.MessageTypeDropdownFragment;
+import robindecroon.careconnect.ui.messages.MessagesFragment;
+import robindecroon.careconnect.ui.messages.MessagesListFragment;
+import robindecroon.careconnect.ui.profile.ProfileFragment;
 
 public class MainActivity extends FragmentActivity
-        implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnFragmentInteractionListener, MessageTypeDropdownFragment.Callbacks {
+        implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnMessageListInteractionListener, MessageTypeDropdownFragment.Callbacks {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -28,6 +39,8 @@ public class MainActivity extends FragmentActivity
     private CharSequence mTitle;
 
     private static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
+
+    private List<Message> messages = DummyMessageFactory.getDummyMessages();
 
 
     @Override
@@ -50,11 +63,11 @@ public class MainActivity extends FragmentActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         if(position == 0) {
-            fragmentManager.beginTransaction().replace(R.id.container,ProfileFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, ProfileFragment.newInstance()).commit();
         } else if (position == 2) {
             fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
         } else if (position == 3) {
-            fragmentManager.beginTransaction().replace(R.id.container, SOEPFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance()).commit();
         } else {
             fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         }
@@ -124,8 +137,9 @@ public class MainActivity extends FragmentActivity
     }
 
     @Override
-    public void onFragmentInteraction(String id) {
-
+    public void onMessageListItemSelected(int id) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(id))).commit();
     }
 
     @Override

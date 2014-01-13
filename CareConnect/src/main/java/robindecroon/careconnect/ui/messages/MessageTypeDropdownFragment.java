@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.content.res.Resources;
@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.ListPopupWindow;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import robindecroon.careconnect.R;
 
 /**
  * Created by robindecroon on 12/01/14.

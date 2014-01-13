@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.soap;
 
 import android.content.ClipData;
 import android.content.Intent;
@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import robindecroon.careconnect.R;
 
 
 public class SubjectiveFragment extends Fragment {

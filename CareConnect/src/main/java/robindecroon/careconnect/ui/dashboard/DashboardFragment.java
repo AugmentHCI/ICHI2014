@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.dashboard;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,6 +18,10 @@ import android.widget.Toast;
 import org.askerov.dynamicgid.DynamicGridView;
 
 import java.util.Arrays;
+
+import robindecroon.careconnect.DashboardAdapter;
+import robindecroon.careconnect.MainActivity;
+import robindecroon.careconnect.R;
 
 
 public class DashboardFragment extends Fragment {

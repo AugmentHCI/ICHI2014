@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.util;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -13,6 +13,8 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
+
+import robindecroon.careconnect.R;
 
 /**
 * Created by robindecroon on 08/01/14.

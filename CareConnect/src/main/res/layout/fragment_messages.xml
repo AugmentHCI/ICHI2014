@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/grey_background_pattern"
     android:layout_height="match_parent"
-    tools:context="robindecroon.careconnect.MessagesFragment">
+    tools:context="robindecroon.careconnect.ui.messages.MessagesFragment">
 
     <android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

@@ -1,24 +1,31 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.messages;
 
-import android.content.Context;
 import android.database.DataSetObserver;
-import android.view.Gravity;
+import android.graphics.drawable.Drawable;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import java.util.Random;
+import java.util.List;
+
+import robindecroon.careconnect.R;
+import robindecroon.careconnect.factory.DummyMessageFactory;
 
 /**
  * Created by robindecroon on 06/01/14.
  */
 public class MessagesAdapter implements ListAdapter {
 
-    private Context mContext;
+    private FragmentActivity mContext;
 
-    public MessagesAdapter(Context context) {
+    private List<Message> messages;
+
+    public MessagesAdapter(FragmentActivity context) {
         this.mContext = context;
+        messages = DummyMessageFactory.getDummyMessages();
     }
 
     @Override
@@ -43,12 +50,12 @@ public class MessagesAdapter implements ListAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return messages.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return messages.get(i);
     }
 
     @Override
@@ -63,19 +70,14 @@ public class MessagesAdapter implements ListAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        TextView test = new TextView(mContext);
-        test.setText("Testtekst");
-        test.setTextSize(20);
-        int icon;
-        if (new Random().nextBoolean()) {
-            icon = R.drawable.labo_res;
-        } else {
-            icon = R.drawable.refer_icon;
+        if (view == null) {
+            Message message = (Message) getItem(i);
+            view = mContext.getLayoutInflater().inflate(R.layout.list_item_message, viewGroup, false);
+            ((TextView) view.findViewById(R.id.list_text_message)).setText(message.getTitle());
+            Drawable icon = mContext.getResources().getDrawable(message.getIconType());
+            ((ImageView) view.findViewById(R.id.list_icon_message)).setImageDrawable(icon);
         }
-        test.setCompoundDrawablesWithIntrinsicBounds(icon, 0, 0, 0);
-        test.setGravity(Gravity.CENTER_VERTICAL);
-        test.setPadding(20, 20, 20, 20);
-        return test;
+        return view;
     }
 
     @Override

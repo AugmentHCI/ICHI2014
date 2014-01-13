@@ -9,6 +9,8 @@ import org.askerov.dynamicgid.BaseDynamicGridAdapter;
 
 import java.util.List;
 
+import robindecroon.careconnect.ui.dashboard.DashboardItemView;
+
 /**
  * Created by robindecroon on 03/01/14.
  */
@@ -17,7 +19,7 @@ public class DashboardAdapter extends BaseDynamicGridAdapter {
     private int viewHeight;
     private int viewWidth;
 
-    protected DashboardAdapter(Context context, List<?> items, int columnCount, int viewWidth, int viewHeight) {
+    public DashboardAdapter(Context context, List<?> items, int columnCount, int viewWidth, int viewHeight) {
         super(context, items, columnCount);
         this.viewHeight = viewHeight;
         this.viewWidth = viewWidth;

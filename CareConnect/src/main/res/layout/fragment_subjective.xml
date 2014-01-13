@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background_pattern"
-    tools:context="robindecroon.careconnect.SubjectiveFragment">
+    tools:context="robindecroon.careconnect.ui.soap.SubjectiveFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

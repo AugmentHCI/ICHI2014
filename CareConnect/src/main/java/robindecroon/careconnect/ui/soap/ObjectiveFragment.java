@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.soap;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import robindecroon.careconnect.util.ColoredSeekBar;
+import robindecroon.careconnect.R;
 import robindecroon.careconnect.libraries.RangeSeekBar;
 
 public class ObjectiveFragment extends Fragment {

@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.soap;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,9 @@ import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.List;
 
-public class SOEPFragment extends Fragment {
+import robindecroon.careconnect.R;
+
+public class SOAPFragment extends Fragment {
 
     /**
      * The fragment argument representing the section number for this
@@ -21,14 +23,14 @@ public class SOEPFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    public static SOEPFragment newInstance() {
-        SOEPFragment fragment = new SOEPFragment();
+    public static SOAPFragment newInstance() {
+        SOAPFragment fragment = new SOAPFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, 4);
         fragment.setArguments(args);
         return fragment;
     }
-    public SOEPFragment() {
+    public SOAPFragment() {
         // Required empty public constructor
     }
 

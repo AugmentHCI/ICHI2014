@@ -1,4 +1,4 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-;
+;import robindecroon.careconnect.R;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.

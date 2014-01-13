@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="40dp"
     android:background="@drawable/grey_background_pattern"
-    tools:context="robindecroon.careconnect.DashboardFragment">
+    tools:context="robindecroon.careconnect.ui.dashboard.DashboardFragment">
 
     <TextView
         android:id="@+id/dashboard_item_title"

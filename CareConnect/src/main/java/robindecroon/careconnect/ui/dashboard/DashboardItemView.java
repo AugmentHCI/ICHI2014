@@ -1,10 +1,12 @@
-package robindecroon.careconnect;
+package robindecroon.careconnect.ui.dashboard;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import robindecroon.careconnect.R;
 
 /**
  * Created by robindecroon on 03/01/14.

@@ -7,7 +7,7 @@
     android:paddingLeft="25dp"
     android:paddingRight="25dp"
     android:paddingBottom="20dp"
-    tools:context="robindecroon.careconnect.MessagesListFragment">
+    tools:context="robindecroon.careconnect.ui.messages.MessagesListFragment">
 
     <ListView
         android:id="@android:id/list"

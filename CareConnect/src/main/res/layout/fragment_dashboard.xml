@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="robindecroon.careconnect.DashboardFragment">
+    tools:context="robindecroon.careconnect.ui.dashboard.DashboardFragment">
 
     <org.askerov.dynamicgid.DynamicGridView
         android:id="@+id/dashboard_grid"
