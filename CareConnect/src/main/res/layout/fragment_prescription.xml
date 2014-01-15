@@ -57,6 +57,7 @@
                     android:id="@+id/soap_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
 
@@ -94,6 +95,7 @@
                     android:id="@+id/taken_before"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
 
@@ -130,6 +132,7 @@
                     android:id="@+id/family_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
 
@@ -166,6 +169,7 @@
                     android:id="@+id/location_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="horizontal"></LinearLayout>
 
 

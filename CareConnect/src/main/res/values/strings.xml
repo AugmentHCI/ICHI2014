@@ -214,6 +214,63 @@
         <item>A99 andere gegeneraliseerde ziekten</item>
     </string-array>
 
+
+    <string-array name="medication_soap">
+        <item>Adalimumab</item>
+        <item>Etanercept</item>
+        <item>Atorvastatine</item>
+        <item>Salmeterol met fluticason</item>
+        <item>Tiotropium</item>
+        <item>Formoterol met budesonide</item>
+        <item>Esomeprazol</item>
+        <item>Metropolol</item>
+        <item>Omeprazol</item>
+        <item>Rosuvastatine</item>
+    </string-array>
+
+    <string-array name="medication_taken_before">
+        <item>Codeine</item>
+        <item>Acetylsalicylzuur</item>
+        <item>Overige emollientia en protectiva</item>
+        <item>Triamcinolon</item>
+        <item>Nitrofurantoine</item>
+        <item>Fusidinezuur</item>
+        <item>Pantoprazol</item>
+        <item>Temazepam</item>
+        <item>Carbasalaatcalcium</item>
+    </string-array>
+
+    <string-array name="medication_family">
+        <item>Macrogol combinatiepreparaten</item>
+        <item>Naproxen</item>
+        <item>Acetylsalicylzuur</item>
+        <item>Metformine</item>
+        <item>Atorvastatine</item>
+        <item>Desloratadine</item>
+        <item>Fluticason</item>
+        <item>Levocetirizine</item>
+        <item>Hydrocortison</item>
+    </string-array>
+
+    <string-array name="medication_location">
+        <item>Diazepam</item>
+        <item>Salmeterol met andere astma/copd-middelen</item>
+        <item>Fusidinezuur</item>
+        <item>Prednisolon</item>
+        <item>Azitromycine</item>
+        <item>Furosemide</item>
+        <item>Claritromycine</item>
+        <item>Mometason</item>
+        <item>Levothyroxine</item>
+    </string-array>
+
+    <string-array name="medication_spare">
+        <item>Hydrocortison met overige middelen</item>
+        <item>Paracetamol combinatiepreparaten excl psycholeptica</item>
+        <item>Kunsttranen en andere indifferente preparaten</item>
+
+    </string-array>
+
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_master_drawer">MasterDrawerActivity</string>
     <string name="hello_world">Hello world!</string>

@@ -23,6 +23,7 @@ import robindecroon.careconnect.ui.messages.MessageTypeDropdownFragment;
 import robindecroon.careconnect.ui.messages.MessagesFragment;
 import robindecroon.careconnect.ui.messages.MessagesListFragment;
 import robindecroon.careconnect.ui.profile.ProfileFragment;
+import robindecroon.careconnect.ui.soap.PrescriptionFragment;
 import robindecroon.careconnect.ui.soap.SOAPFragment;
 
 ;
@@ -64,12 +65,14 @@ public class MainActivity extends FragmentActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (position == 0) {
             fragmentManager.beginTransaction().replace(R.id.container, ProfileFragment.newInstance()).commit();
+        } else if (position == 1) {
+            fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         } else if (position == 2) {
             fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
         } else if (position == 3) {
-            fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance(0)).commit();
-        } else {
-            fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance()).commit();
+        } else if (position == 4) {
+            fragmentManager.beginTransaction().replace(R.id.container, PrescriptionFragment.newInstance()).commit();
         }
     }
 
