@@ -1,5 +1,6 @@
 package robindecroon.careconnect.ui.soap;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import robindecroon.careconnect.MainActivity;
 import robindecroon.careconnect.R;
 
 /**
@@ -61,6 +63,12 @@ public class PrescriptionFragment extends SOAPParentFragment {
     @Override
     protected int getVoiceRecognitionCode() {
         return VOICE_RECOGNITION_CODE;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
     }
 
 }

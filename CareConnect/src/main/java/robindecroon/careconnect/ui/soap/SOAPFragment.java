@@ -1,5 +1,6 @@
 package robindecroon.careconnect.ui.soap;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import com.viewpagerindicator.TabPageIndicator;
 
 import java.util.List;
 
+import robindecroon.careconnect.MainActivity;
 import robindecroon.careconnect.R;
 
 public class SOAPFragment extends Fragment {
@@ -82,6 +84,12 @@ public class SOAPFragment extends Fragment {
                 fragment.onActivityResult(requestCode, resultCode, data);
             }
         }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
     }
 
 }
