@@ -3,4 +3,6 @@
     <integer name="number_of_columns">3</integer>
     <integer name="number_of_rows">2</integer>
     <integer name="drag_text_size">40</integer>
+    <integer name="card_flip_time_half">5</integer>
+    <integer name="card_flip_time_full">10</integer>
 </resources>

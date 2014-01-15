@@ -11,7 +11,7 @@ import robindecroon.careconnect.R;
 /**
  * Created by robindecroon on 03/01/14.
  */
-public class DashboardItemView extends LinearLayout{
+public class DashboardItemView extends LinearLayout {
 
     private Context mContext;
 
@@ -39,7 +39,7 @@ public class DashboardItemView extends LinearLayout{
         content = (TextView) view.findViewById(R.id.dashboard_item_content);
         String[] contentArray = getResources().getStringArray(getResources().getIdentifier(type, "array", mContext.getPackageName()));
         String displayString = "";
-        for(String str: contentArray) {
+        for (String str : contentArray) {
             displayString += "- " + str + "\n";
         }
         content.setText(displayString);

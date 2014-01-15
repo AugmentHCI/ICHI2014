@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/grey_background_pattern"
-    tools:context="robindecroon.careconnect.ui.soap.SubjectiveFragment">
+    android:tag="EVALUATION_TAG"
+    tools:context="robindecroon.careconnect.ui.soap.EvaluationFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:padding="15dp">
 
             <EditText
-                android:id="@+id/subjective_input"
+                android:id="@+id/prescription_input"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
@@ -27,7 +28,7 @@
                 android:hint="@string/inputfield_hint" />
 
             <ImageButton
-                android:id="@+id/btnSpeak"
+                android:id="@+id/btnSpeakPrescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -38,10 +39,10 @@
 
         </LinearLayout>
 
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <!--  This is the main content -->
             <RelativeLayout
@@ -53,7 +54,7 @@
                 android:padding="20dp">
 
                 <LinearLayout
-                    android:id="@+id/most_used_container"
+                    android:id="@+id/soap_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
@@ -67,15 +68,17 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/most_used"
+                android:text="@string/soep_based"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
         </RelativeLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <!--  This is the main content -->
             <RelativeLayout
@@ -86,11 +89,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+
                 <LinearLayout
-                    android:id="@+id/recent_container"
+                    android:id="@+id/taken_before"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
+
 
             </RelativeLayout>
 
@@ -100,15 +105,16 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/recent"
+                android:text="@string/taken_before"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
         </RelativeLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <!--  This is the main content -->
             <RelativeLayout
@@ -119,11 +125,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+
                 <LinearLayout
-                    android:id="@+id/prehistory_container"
+                    android:id="@+id/family_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
+
 
             </RelativeLayout>
 
@@ -133,15 +141,16 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/prehistory"
+                android:text="@string/family_based"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
         </RelativeLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
             <!--  This is the main content -->
             <RelativeLayout
@@ -152,11 +161,13 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+
                 <LinearLayout
-                    android:id="@+id/colleagues_container"
+                    android:id="@+id/location_based"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
+
 
             </RelativeLayout>
 
@@ -166,44 +177,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/colleagues"
+                android:text="@string/location_based"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
         </RelativeLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <!--  This is the main content -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="15dp"
-                android:background="@drawable/frame"
-                android:orientation="vertical"
-                android:padding="20dp">
-
-                <LinearLayout
-                    android:id="@+id/location_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
-
-            </RelativeLayout>
-
-            <!--  This is the title label -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/grey_background_pattern"
-                android:padding="5dp"
-                android:text="@string/location"
-                android:layout_marginLeft="30sp"
-                android:textColor="@android:color/black" />
-
-        </RelativeLayout>
 
     </LinearLayout>
 

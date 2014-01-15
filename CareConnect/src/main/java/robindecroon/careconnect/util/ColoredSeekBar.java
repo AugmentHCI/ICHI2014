@@ -17,8 +17,8 @@ import android.widget.SeekBar;
 import robindecroon.careconnect.R;
 
 /**
-* Created by robindecroon on 08/01/14.
-*/
+ * Created by robindecroon on 08/01/14.
+ */
 public class ColoredSeekBar extends SeekBar {
 
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -51,10 +51,10 @@ public class ColoredSeekBar extends SeekBar {
 
         float width = getResources().getDimension(R.dimen.seekbarwidth);
         Resources resources = getResources();
-        LinearGradient test = new LinearGradient(0.f, 0.f,width, 0.0f,
-                new int[] {resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
+        LinearGradient test = new LinearGradient(0.f, 0.f, width, 0.0f,
+                new int[]{resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
                 null, Shader.TileMode.CLAMP);
-        ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[] { 10, 10, 10, 10, 10, 10, 10, 10}, null, null));
+        ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[]{10, 10, 10, 10, 10, 10, 10, 10}, null, null));
         shape.getPaint().setShader(test);
 
         paint.setShader(test);

@@ -2,7 +2,7 @@ package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -26,9 +26,9 @@ public class MessageTypeDropdownFragment extends Fragment implements
         AdapterView.OnItemClickListener,
         PopupWindow.OnDismissListener {
 
-    public static final int VIEW_TYPE_SESSIONS = 0;
-    public static final int VIEW_TYPE_OFFICE_HOURS = 1;
-    public static final int VIEW_TYPE_SANDBOX = 2;
+    public static final int VIEW_TYPE_ALL = 0;
+    public static final int VIEW_TYPE_LAB_RESULTS = 1;
+    public static final int VIEW_TYPE_REFERRAL = 2;
 
     private static final String STATE_VIEW_TYPE = "viewType";
     private static final String STATE_SELECTED_TRACK_ID = "selectedTrackId";
@@ -48,18 +48,12 @@ public class MessageTypeDropdownFragment extends Fragment implements
     private View testView;
 
     public interface Callbacks {
-        public void onTrackSelected(String trackId);
-
-        public void onTrackNameAvailable(String trackId, String trackName);
+        public void onTrackSelected(int trackId);
     }
 
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onTrackSelected(String trackId) {
-        }
-
-        @Override
-        public void onTrackNameAvailable(String trackId, String trackName) {
+        public void onTrackSelected(int trackId) {
         }
     };
 
@@ -108,6 +102,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 mListPopupWindow.setOnDismissListener(MessageTypeDropdownFragment.this);
             }
         });
+        loadTrack(true);
         return mRootView;
     }
 
@@ -117,7 +112,6 @@ public class MessageTypeDropdownFragment extends Fragment implements
         if (!(activity instanceof Callbacks)) {
             throw new ClassCastException("Activity must implement fragment's callbacks.");
         }
-
         mCallbacks = (Callbacks) activity;
     }
 
@@ -135,45 +129,40 @@ public class MessageTypeDropdownFragment extends Fragment implements
      */
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mViewType = (Integer) mAdapter.getItem(position);
-        loadTrack("", true);
+        loadTrack(true);
 
         if (mListPopupWindow != null) {
             mListPopupWindow.dismiss();
         }
     }
 
-    private void loadTrack(String type, boolean triggerCallback) {
-        int trackColor = 0;
-        final Resources res = getResources();
-
-
+    private void loadTrack(boolean triggerCallback) {
         switch (mViewType) {
-            case VIEW_TYPE_SESSIONS:
-                mTitle.setText("Alle berichten");
-                mAbstract.setText("Alle mogelijke berichten");
-                trackColor = Color.BLUE;
+            case VIEW_TYPE_ALL:
+                mTitle.setText(getResources().getString(R.string.all_messages));
+                mAbstract.setText(getResources().getString(R.string.all_messages_subtitle));
+                testView.setBackgroundColor(getResources().getColor(R.color.holo_green_dark));
+                mIcon.setImageDrawable(getResources().getDrawable(R.drawable.message_icon));
                 break;
-            case VIEW_TYPE_OFFICE_HOURS:
-                mTitle.setText("All sessions at Google I/O 2013.");
-                mAbstract.setText("All office hours at Google I/O 2013.");
-                trackColor = Color.GREEN;
+            case VIEW_TYPE_LAB_RESULTS:
+                mTitle.setText(getResources().getString(R.string.lab_results));
+                mAbstract.setText(getResources().getString(R.string.lab_results_subtitle));
+                mIcon.setImageDrawable(getResources().getDrawable(R.drawable.lab_result_icon));
+                testView.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_light));
                 break;
-            case VIEW_TYPE_SANDBOX:
-                mTitle.setText("All companies");
-                mAbstract.setText("All developer sandbox companies at Google I/O 2013.");
-                trackColor = Color.RED;
+            case VIEW_TYPE_REFERRAL:
+                mTitle.setText(getResources().getString(R.string.referral));
+                mAbstract.setText(getResources().getString(R.string.referral_subtitle));
+                testView.setBackgroundColor(getResources().getColor(android.R.color.holo_orange_dark));
+                mIcon.setImageDrawable(getResources().getDrawable(R.drawable.referral_icon));
                 break;
         }
-
-        testView.setBackgroundColor(trackColor);
-        mIcon.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher));
-        mCallbacks.onTrackNameAvailable(mTrackId, mTitle.getText().toString());
 
         if (triggerCallback) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    mCallbacks.onTrackSelected(mTrackId);
+                    mCallbacks.onTrackSelected(mViewType);
                 }
             });
         }
@@ -186,25 +175,41 @@ public class MessageTypeDropdownFragment extends Fragment implements
     public static class TracksAdapter extends BaseAdapter {
 
         private Activity mActivity;
+        private Resources res;
 
         public TracksAdapter(FragmentActivity activity) {
             mActivity = activity;
+            this.res = mActivity.getResources();
         }
 
         @Override
         public int getCount() {
-            return 10;
+            return 3;
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-
             if (convertView == null) {
                 convertView = mActivity.getLayoutInflater().inflate(R.layout.list_item_track, parent, false);
+                String text = "";
+                Drawable icon = null;
+                switch (position) {
+                    case 0:
+                        text = res.getString(R.string.all_messages);
+                        icon = res.getDrawable(R.drawable.message_icon);
+                        break;
+                    case 1:
+                        text = res.getString(R.string.lab_results);
+                        icon = res.getDrawable(R.drawable.lab_result_icon);
+                        break;
+                    case 2:
+                        text = res.getString(R.string.referral);
+                        icon = res.getDrawable(R.drawable.referral_icon);
+                        break;
+                }
+                ((TextView) convertView.findViewById(R.id.text1)).setText(text);
+                ((ImageView) convertView.findViewById(R.id.icon1)).setImageDrawable(icon);
             }
-
-            ((TextView) convertView.findViewById(android.R.id.text1)).setText("All tracks");
-
             return convertView;
         }
 

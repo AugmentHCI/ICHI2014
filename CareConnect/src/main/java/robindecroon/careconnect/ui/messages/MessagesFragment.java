@@ -16,11 +16,11 @@ import robindecroon.careconnect.factory.DummyMessageFactory;
 import robindecroon.careconnect.messages.Message;
 
 
-public class MessagesFragment extends Fragment implements MessageTypeDropdownFragment.Callbacks {
+public class MessagesFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    private List<Message> messages = DummyMessageFactory.getDummyMessages();
+    private List<Message> messages = DummyMessageFactory.getDummyMixedMessages();
 
     public static MessagesFragment newInstance() {
         MessagesFragment fragment = new MessagesFragment();
@@ -40,7 +40,7 @@ public class MessagesFragment extends Fragment implements MessageTypeDropdownFra
         View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
         FragmentManager fm = getChildFragmentManager();
         fm.beginTransaction().replace(R.id.message_dropdown, new MessageTypeDropdownFragment()).commit();
-        fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance()).commit();
+        fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance(0)).commit();
         fm.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(0))).commit();
         return rootView;
     }
@@ -49,15 +49,5 @@ public class MessagesFragment extends Fragment implements MessageTypeDropdownFra
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
-    }
-
-    @Override
-    public void onTrackSelected(String trackId) {
-
-    }
-
-    @Override
-    public void onTrackNameAvailable(String trackId, String trackName) {
-
     }
 }

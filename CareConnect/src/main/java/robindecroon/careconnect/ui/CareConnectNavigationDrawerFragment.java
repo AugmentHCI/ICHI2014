@@ -23,7 +23,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-;import robindecroon.careconnect.R;
+import robindecroon.careconnect.R;
+
+;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -57,7 +59,7 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 2;
+    private int mCurrentSelectedPosition = 3;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
@@ -83,7 +85,7 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated (Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // Indicate that this fragment would like to influence the set of actions in the action bar.
         setHasOptionsMenu(true);
@@ -119,7 +121,8 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
                         return getString(R.string.title_section4);
                     case 4:
                         return getString(R.string.title_section5);
-                };
+                }
+                ;
                 return null;
             }
 
@@ -130,7 +133,7 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
 
             @Override
             public View getView(int i, View view, ViewGroup viewGroup) {
-                if(i==0) {
+                if (i == 0) {
                     ImageView image = new ImageView(getActivity());
                     image.setImageResource(R.drawable.profile_pic);
                     image.setAdjustViewBounds(true);
@@ -143,7 +146,7 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
                     textView.setText((CharSequence) getItem(i));
                     textView.setMinimumHeight(50);
                     textView.setGravity(Gravity.CENTER_VERTICAL);
-                    textView.setPadding(10,0,0,0);
+                    textView.setPadding(10, 0, 0, 0);
                     textView.setTextSize(20);
                     return textView;
                 }

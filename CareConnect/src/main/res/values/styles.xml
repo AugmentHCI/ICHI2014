@@ -71,35 +71,4 @@
     <style name="ListItemSubtitle.Inverse">
         <item name="android:textColor">@color/body_text_2_inverse</item>
     </style>
-
-    <!-- List views and list items -->
-    <style name="ListItemContainerBase">
-        <item name="android:background">@drawable/activatable_item_background</item>
-        <item name="android:minHeight">?android:listPreferredItemHeight</item>
-    </style>
-
-
-    <!-- SimpleListItems are items whose containers provides the appropriate padding, and
-     usually the container and content are a single view. -->
-    <style name="SimpleListItem" parent="ListItemContainerBase">
-        <item name="android:paddingLeft">?listPreferredItemPaddingLeft</item>
-        <item name="android:paddingRight">?listPreferredItemPaddingRight</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-    </style>
-
-    <style name="SimpleListItem.Small" parent="SimpleListItem">
-        <item name="android:minHeight">?listPreferredItemHeightSmall</item>
-    </style>
-
-    <style name="SimpleListItem.Inset" parent="ListItemContainerBase">
-        <item name="android:paddingLeft">16dp</item>
-        <item name="android:paddingRight">16dp</item>
-        <item name="android:paddingTop">8dp</item>
-        <item name="android:paddingBottom">8dp</item>
-    </style>
-
-    <style name="SimpleListItem.Inset.Small" parent="SimpleListItem.Inset">
-        <item name="android:minHeight">?listPreferredItemHeightSmall</item>
-    </style>
 </resources>

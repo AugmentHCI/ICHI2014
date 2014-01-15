@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_background_pattern"
+    tools:context="robindecroon.careconnect.ui.soap.EvaluationFragment">
+
+    <LinearLayout
+        android:id="@+id/icpc_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <GridView
+            android:id="@+id/icpc_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:gravity="center"></GridView>
+    </LinearLayout>
+
+</FrameLayout>

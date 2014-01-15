@@ -45,11 +45,11 @@
         <item>Tuinbonen</item>
     </string-array>
     <string-array name="last_lab_results">
-        <item>Glucose (70-110 mg/dL)</item>
-        <item>Hemoglobine A1c (4-6%)</item>
+        <item>Glucose (70&#8211;110 mg/dL)</item>
+        <item>Hemoglobine A1c (4&#8211;6%)</item>
         <item>Ureum (&lt;50 mg/dL)</item>
         <item>Creatinine (0.4 -1.1mg/dL)</item>
-        <item>Creatinine clearance (MDRD) (55-105 mL/min)</item>
+        <item>Creatinine clearance (MDRD) (55&#8211;105 mL/min)</item>
     </string-array>
     <string-array name="history">
         <item>Scheurwond/snijwond</item>
@@ -123,6 +123,97 @@
         <item>Dit is heel lange tekst, veel te lang</item>
     </string-array>
 
+    <string-array name="evaluation_suggestions">
+        <item>R74 Acute infectie bovenste luchtwegen</item>
+        <item>D73 Verondersteld infect gastro_enteritis</item>
+        <item>R80 Influenza</item>
+        <item>R78 Acute bronchitis</item>
+        <item>U71 Cystitis</item>
+        <item>L03 Symptomen/klachten lage rug</item>
+    </string-array>
+
+    <string-array name="evalution_suggestions_spare">
+        <item>L83 Neksyndroom</item>
+        <item>R75 Acute/chronische sinusitis</item>
+        <item>L87 Bursitis/tendinitis/synoviitis nao</item>
+        <item>S16 Buil/kneuzing</item>
+        <item>R77 Acute laryngitis/tracheitis</item>
+    </string-array>
+
+    <string-array name="icpc_chapters">
+        <item>A: Algemeen en niet gespecifieerd</item>
+        <item>B: Bloed, bloedvormende organen</item>
+        <item>D: Spijsverteringsorganen</item>
+        <item>F: Oog</item>
+        <item>H: Oor</item>
+        <item>K: Cardiovasculair stelsel</item>
+        <item>L: Beweginsapparaat</item>
+        <item>N: Zenuwstelsel</item>
+        <item>P: Psychische problemen</item>
+        <item>R: Luchtwegen</item>
+        <item>S: Huid</item>
+        <item>T: Endocriene klieren</item>
+        <item>U: Urinewegen</item>
+        <item>W: Zwangerschap, bevaling</item>
+        <item>X: Geslachtsorganen vrouw, inclusief borsten</item>
+        <item>Y: Geslachtsorganen man, inclusief borsten</item>
+        <item>Z: Sociale problemen</item>
+    </string-array>
+
+    <string-array name="icpc_a">
+        <item>A00 fam.anamnese algemeen, niet gespec.</item>
+        <item>A01 pijn gegen./niet gespec.</item>
+        <item>A02 koude rillingen</item>
+        <item>A03 koorts</item>
+        <item>A04 moeheid/ziektegevoel</item>
+        <item>A05 algehele achteruitgang</item>
+        <item>A06 flauwvallen/syncope</item>
+        <item>A07 coma</item>
+        <item>A08 zwelling (ex. oedeem K07)</item>
+        <item>A09 transpiratieproblemen</item>
+        <item>A10 bloeding (lokalisatie nao)</item>
+        <item>A12 allergie/allergische reactie neg</item>
+        <item>A13 bezorgdheid bijwerking geneesmiddel</item>
+        <item>A14 koliek bij zuigeling</item>
+        <item>A15 overmatig huilende zuigeling</item>
+        <item>A16 prikkelbare/drukke zuigeling</item>
+        <item>A17 and. alg. sympt/klacht. zuigeling neg</item>
+        <item>A20 euthanasie verzoek/gesprek over</item>
+        <item>A25 angst voor de dood</item>
+        <item>A26 angst voor kanker nao neg</item>
+        <item>A27 angst voor andere ziekte nao neg</item>
+        <item>A28 handicap/beperking nao</item>
+        <item>A29 andere algemene symptomen/klachten</item>
+        <item>A70 tuberculose gegen. (ex. R70)</item>
+        <item>A71 mazelen</item>
+        <item>A72 waterpokken</item>
+        <item>A73 malaria</item>
+        <item>A74 rode hond</item>
+        <item>A75 mononucleosis infectiosa</item>
+        <item>A76 andere virusziekten met exantheem</item>
+        <item>A77 andere virusziekten nao</item>
+        <item>A78 andere infectieziekten nao</item>
+        <item>A79 maligne neopl. (onbekende prim. lok)</item>
+        <item>A80 ongeval trauma nao</item>
+        <item>A81 multipele/inwendige traumata</item>
+        <item>A82 late gevolgen van trauma</item>
+        <item>A84 geneesmiddel intoxicatie</item>
+        <item>A85 geneesmiddel bijwerking</item>
+        <item>A86 intoxicaties andere chem. stof</item>
+        <item>A87 complicaties medische behandeling</item>
+        <item>A88 schadel.gevolgen fys. factoren (ex. H85)</item>
+        <item>A89 gevolgen prothese neg/pacemaker</item>
+        <item>A90 congen. syndromen/mult. afwijkingen</item>
+        <item>A91 afwijkende uitslag onderzoek neg</item>
+        <item>A92 toxoplasmose (incl. congenitale)</item>
+        <item>A93 prematuur/immatuur levendgeb. kind</item>
+        <item>A94 alle andere perinatale morbiditeit</item>
+        <item>A95 perinatale mortaliteit</item>
+        <item>A96 dood/overlijden (ex. perinataal)</item>
+        <item>A97 geen ziekte</item>
+        <item>A99 andere gegeneraliseerde ziekten</item>
+    </string-array>
+
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_master_drawer">MasterDrawerActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -134,7 +225,7 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut, est. In fermentum mattis ligula. Nulla ipsum. Vestibulum condimentum condimentum augue. Nunc purus risus, volutpat sagittis, lobortis at, dignissim sed, sapien. Fusce porttitor iaculis ante. Curabitur eu arcu. Morbi quam purus, tempor eget, ullamcorper feugiat, commodo ullamcorper, neque.</string>
     <string name="no_voice_recognition">Helaas hebben we geen woorden herkend.</string>
     <string name="speech_btn_description">Toets om via spraak tekst in te geven</string>
-    <string name="inputfield_hint">Selecteer of sleep uw gewenste input naar hier...</string>
+    <string name="inputfield_hint">Selecteer of sleep uw gewenste input naar hier&#8230;</string>
     <string name="recent">Recent</string>
     <string name="most_used">Meest gebruikt</string>
     <string name="prehistory">Voorgeschiedenis patient</string>
@@ -146,5 +237,31 @@
     <string name="heartrate">Hartslag</string>
     <string name="temperature">Temperatuur</string>
     <string name="blood_sugar">Glycemie</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="contact_information">Contact informatie</string>
+    <string name="phone_number">Vaste lijn</string>
+    <string name="mobile_number">Mobiel nummer</string>
+    <string name="email">email</string>
+    <string name="additional_information">Extra informatie</string>
+    <string name="civil_status">Burgelijke stand</string>
+    <string name="cohabitating">Samenwonend</string>
+    <string name="language">Taal</string>
+    <string name="nationality">Nationaliteit</string>
+    <string name="occupation">Beroep</string>
+    <string name="research_assistent">Wetenschappelijk medewerker</string>
+    <string name="belgian">Belg</string>
+    <string name="dutch">Nederlands</string>
+    <string name="all_messages">Alle berichten</string>
+    <string name="all_messages_subtitle">Combinatie van labo resultaten en verwijsbrieven</string>
+    <string name="lab_results">Laboresultaten</string>
+    <string name="lab_results_subtitle">Alle laboresultaten</string>
+    <string name="referral">Verwijsbrieven</string>
+    <string name="referral_subtitle">Alle verwijsbrieven</string>
+    <string name="suggestions">Suggesties</string>
+    <string name="soep_based">Op basis van SOEP</string>
+    <string name="taken_before">Al eerder ingenomen</string>
+    <string name="family_based">Op basis van familie</string>
+    <string name="location_based">Op basis van locatie</string>
 
 </resources>

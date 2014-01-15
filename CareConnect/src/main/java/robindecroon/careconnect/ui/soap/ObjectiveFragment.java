@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import robindecroon.careconnect.util.ColoredSeekBar;
 import robindecroon.careconnect.R;
 import robindecroon.careconnect.libraries.RangeSeekBar;
+import robindecroon.careconnect.util.ColoredSeekBar;
 
 public class ObjectiveFragment extends Fragment {
 
@@ -272,7 +272,7 @@ public class ObjectiveFragment extends Fragment {
         temperatureSeekbar.setOnSeekBarChangeListener(new ColoredSeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                temperatureText.setText((i/10 + 20f) + "");
+                temperatureText.setText((i / 10 + 20f) + "");
             }
 
             @Override
@@ -288,20 +288,21 @@ public class ObjectiveFragment extends Fragment {
         temperatureButtonMin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int value = Integer.parseInt(temperatureText.getText().toString());
+                double value = Double.parseDouble(temperatureText.getText().toString());
+                value = (value - 20f);
                 if (value > 0) {
-                    temperatureText.setText((value - 1) + "");
-                    temperatureSeekbar.setProgress(value - 1);
+                    temperatureText.setText(((int) value - 1) + "");
+                    temperatureSeekbar.setProgress((int) value - 1);
                 }
             }
         });
         temperatureButtonPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int value = Integer.parseInt(temperatureText.getText().toString());
-                temperatureText.setText((value + 1) + "");
-                temperatureSeekbar.setProgress(value + 1);
-
+                double value = Double.parseDouble(temperatureText.getText().toString());
+                value = (value - 20f);
+                temperatureText.setText(((int) value + 1) + "");
+                temperatureSeekbar.setProgress((int) value + 1);
             }
         });
         temperatureSeekbar.setProgress(160);
@@ -321,12 +322,10 @@ public class ObjectiveFragment extends Fragment {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
         blood_sugarButtonMin.setOnClickListener(new View.OnClickListener() {
@@ -345,7 +344,6 @@ public class ObjectiveFragment extends Fragment {
                 int value = Integer.parseInt(blood_sugarText.getText().toString());
                 blood_sugarText.setText((value + 1) + "");
                 blood_sugarSeekbar.setProgress(value + 1);
-
             }
         });
         blood_sugarSeekbar.setProgress(70);

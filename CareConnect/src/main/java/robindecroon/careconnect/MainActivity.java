@@ -12,18 +12,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 
-;import java.util.List;
+import java.util.List;
 
 import robindecroon.careconnect.factory.DummyMessageFactory;
 import robindecroon.careconnect.messages.Message;
 import robindecroon.careconnect.ui.CareConnectNavigationDrawerFragment;
-import robindecroon.careconnect.ui.soap.SOAPFragment;
 import robindecroon.careconnect.ui.dashboard.DashboardFragment;
 import robindecroon.careconnect.ui.messages.MessageContentFragment;
 import robindecroon.careconnect.ui.messages.MessageTypeDropdownFragment;
 import robindecroon.careconnect.ui.messages.MessagesFragment;
 import robindecroon.careconnect.ui.messages.MessagesListFragment;
 import robindecroon.careconnect.ui.profile.ProfileFragment;
+import robindecroon.careconnect.ui.soap.SOAPFragment;
+
+;
 
 public class MainActivity extends FragmentActivity
         implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnMessageListInteractionListener, MessageTypeDropdownFragment.Callbacks {
@@ -38,9 +40,7 @@ public class MainActivity extends FragmentActivity
      */
     private CharSequence mTitle;
 
-    private static final int VOICE_RECOGNITION_REQUEST_CODE = 1234;
-
-    private List<Message> messages = DummyMessageFactory.getDummyMessages();
+    private List<Message> messages = DummyMessageFactory.getDummyMixedMessages();
 
 
     @Override
@@ -62,12 +62,12 @@ public class MainActivity extends FragmentActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        if(position == 0) {
+        if (position == 0) {
             fragmentManager.beginTransaction().replace(R.id.container, ProfileFragment.newInstance()).commit();
         } else if (position == 2) {
             fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
         } else if (position == 3) {
-            fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance(0)).commit();
         } else {
             fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         }
@@ -122,10 +122,10 @@ public class MainActivity extends FragmentActivity
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
-        } else if(id == R.id.action_camera) {
+        } else if (id == R.id.action_camera) {
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
             startActivityForResult(intent, 0);
-        } else if(id == R.id.action_calendar) {
+        } else if (id == R.id.action_calendar) {
             // A date-time specified in milliseconds since the epoch.
             Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
             builder.appendPath("time");
@@ -137,18 +137,18 @@ public class MainActivity extends FragmentActivity
     }
 
     @Override
-    public void onMessageListItemSelected(int id) {
+    public void onMessageListItemSelected(long id) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(id))).commit();
+        for(Message message: messages) {
+            if(message.getId() == id)
+                fragmentManager.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(message)).commit();
+        }
     }
 
     @Override
-    public void onTrackSelected(String trackId) {
-
+    public void onTrackSelected(int trackId) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance(trackId)).commit();
     }
 
-    @Override
-    public void onTrackNameAvailable(String trackId, String trackName) {
-
-    }
 }

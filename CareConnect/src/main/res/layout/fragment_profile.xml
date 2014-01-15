@@ -93,7 +93,6 @@
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/content_back"
-                    android:textSize="20dp"
                     android:text="Celestijnenlaan 200A, 3001 Heverlee" />
 
             </LinearLayout>
@@ -120,7 +119,7 @@
                     android:textAllCaps="true"
                     android:textColor="#99000000"
                     android:paddingBottom="10dp"
-                    android:text="Contact informatie" />
+                    android:text="@string/contact_information" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -137,8 +136,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Vaste lijn" />
+                            android:text="@string/phone_number" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -146,7 +144,6 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:textSize="20sp"
                             android:text="+32 89 71 62 59" />
 
                     </LinearLayout>
@@ -161,14 +158,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Mobiel nummer" />
+                            android:text="@string/mobile_number" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
-                            android:textSize="20sp"
                             android:gravity="right"
                             android:autoLink="phone"
                             android:text="+32 477 60 95 41" />
@@ -184,8 +179,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="email" />
+                            android:text="@string/email" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -193,7 +187,6 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="email"
-                            android:textSize="20sp"
                             android:text="robindecroon@gmail.com" />
 
                     </LinearLayout>
@@ -217,7 +210,7 @@
                     android:textAllCaps="true"
                     android:textColor="#99000000"
                     android:paddingBottom="10dp"
-                    android:text="Extra informatie" />
+                    android:text="@string/additional_information" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -235,16 +228,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Burgelijke stand" />
+                            android:text="@string/civil_status" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:textSize="20sp"
-                            android:text="Samenwonend" />
+                            android:text="@string/cohabitating" />
 
                     </LinearLayout>
 
@@ -257,16 +248,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Taal" />
+                            android:text="@string/language" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
-                            android:textSize="20sp"
                             android:gravity="right"
-                            android:text="Nederlands" />
+                            android:text="@string/dutch" />
 
                     </LinearLayout>
 
@@ -279,16 +268,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Nationaliteit" />
+                            android:text="@string/nationality" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:textSize="20sp"
-                            android:text="Belg" />
+                            android:text="@string/belgian" />
 
                     </LinearLayout>
 
@@ -301,16 +288,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="Beroep" />
+                            android:text="@string/occupation" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:textSize="20sp"
-                            android:text="Wetenschappelijk medewerker" />
+                            android:text="@string/research_assistent" />
 
                     </LinearLayout>
 

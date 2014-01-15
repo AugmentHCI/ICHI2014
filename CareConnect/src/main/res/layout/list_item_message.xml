@@ -6,7 +6,8 @@
     android:orientation="horizontal"
     android:baselineAligned="false">
 
-    <ImageView android:id="@+id/list_icon_message"
+    <ImageView
+        android:id="@+id/list_icon_message"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:padding="8dp"
@@ -14,7 +15,8 @@
         android:src="@drawable/ic_launcher"
         android:contentDescription="@null" />
 
-    <TextView android:id="@+id/list_text_message"
+    <TextView
+        android:id="@+id/list_text_message"
         android:textStyle="normal"
         android:layout_width="0dp"
         android:layout_weight="1"

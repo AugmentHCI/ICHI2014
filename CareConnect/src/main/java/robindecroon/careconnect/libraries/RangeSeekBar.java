@@ -28,12 +28,10 @@ import robindecroon.careconnect.R;
  * <br />
  * Improved {@link MotionEvent} handling for smoother use, anti-aliased painting for improved aesthetics.
  *
+ * @param <T> The Number type of the range values. One of Long, Double, Integer, Float, Short, Byte or BigDecimal.
  * @author Stephan Tittel (stephan.tittel@kom.tu-darmstadt.de)
  * @author Peter Sinnott (psinnott@gmail.com)
  * @author Thomas Barrasso (tbarrasso@sevenplusandroid.org)
- *
- * @param <T>
- *            The Number type of the range values. One of Long, Double, Integer, Float, Short, Byte or BigDecimal.
  */
 public class RangeSeekBar<T extends Number> extends ImageView {
     private final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -81,13 +79,10 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Creates a new RangeSeekBar.
      *
-     * @param absoluteMinValue
-     *            The minimum value of the selectable range.
-     * @param absoluteMaxValue
-     *            The maximum value of the selectable range.
+     * @param absoluteMinValue The minimum value of the selectable range.
+     * @param absoluteMaxValue The maximum value of the selectable range.
      * @param context
-     * @throws IllegalArgumentException
-     *             Will be thrown if min/max value type is not one of Long, Double, Integer, Float, Short, Byte or BigDecimal.
+     * @throws IllegalArgumentException Will be thrown if min/max value type is not one of Long, Double, Integer, Float, Short, Byte or BigDecimal.
      */
     public RangeSeekBar(T absoluteMinValue, T absoluteMaxValue, Context context) throws IllegalArgumentException {
         super(context);
@@ -157,18 +152,16 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Sets the currently selected minimum value. The widget will be invalidated and redrawn.
      *
-     * @param value
-     *            The Number value to set the minimum value to. Will be clamped to given absolute minimum/maximum range.
+     * @param value The Number value to set the minimum value to. Will be clamped to given absolute minimum/maximum range.
      */
     public void setSelectedMinValue(T value) {
         // in case absoluteMinValue == absoluteMaxValue, avoid division by zero when normalizing.
         if (0 == (absoluteMaxValuePrim - absoluteMinValuePrim)) {
             setNormalizedMinValue(0d);
-        }
-        else {
+        } else {
             setNormalizedMinValue(valueToNormalized(value));
         }
-        if(listener != null)
+        if (listener != null)
             listener.onRangeSeekBarValuesChanged(this, getSelectedMinValue(), getSelectedMaxValue());
     }
 
@@ -184,26 +177,23 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Sets the currently selected maximum value. The widget will be invalidated and redrawn.
      *
-     * @param value
-     *            The Number value to set the maximum value to. Will be clamped to given absolute minimum/maximum range.
+     * @param value The Number value to set the maximum value to. Will be clamped to given absolute minimum/maximum range.
      */
     public void setSelectedMaxValue(T value) {
         // in case absoluteMinValue == absoluteMaxValue, avoid division by zero when normalizing.
         if (0 == (absoluteMaxValuePrim - absoluteMinValuePrim)) {
             setNormalizedMaxValue(1d);
-        }
-        else {
+        } else {
             setNormalizedMaxValue(valueToNormalized(value));
         }
-        if(listener != null)
+        if (listener != null)
             listener.onRangeSeekBarValuesChanged(this, getSelectedMinValue(), getSelectedMaxValue());
     }
 
     /**
      * Registers given listener callback to notify about changed selected values.
      *
-     * @param listener
-     *            The listener to notify about changed selected values.
+     * @param listener The listener to notify about changed selected values.
      */
     public void setOnRangeSeekBarChangeListener(OnRangeSeekBarChangeListener<T> listener) {
         this.listener = listener;
@@ -247,8 +237,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
 
                     if (mIsDragging) {
                         trackTouchEvent(event);
-                    }
-                    else {
+                    } else {
                         // Scroll to follow the motion event
                         pointerIndex = event.findPointerIndex(mActivePointerId);
                         final float x = event.getX(pointerIndex);
@@ -272,8 +261,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
                     trackTouchEvent(event);
                     onStopTrackingTouch();
                     setPressed(false);
-                }
-                else {
+                } else {
                     // Touch up when we never crossed the touch slop threshold
                     // should be interpreted as a tap-seek to that location.
                     onStartTrackingTouch();
@@ -330,8 +318,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
 
         if (Thumb.MIN.equals(pressedThumb)) {
             setNormalizedMinValue(screenToNormalized(x));
-        }
-        else if (Thumb.MAX.equals(pressedThumb)) {
+        } else if (Thumb.MAX.equals(pressedThumb)) {
             setNormalizedMaxValue(screenToNormalized(x));
         }
     }
@@ -398,10 +385,10 @@ public class RangeSeekBar<T extends Number> extends ImageView {
 
         float width = getResources().getDimension(R.dimen.seekbarwidth);
         Resources resources = getResources();
-        LinearGradient test = new LinearGradient(0.f, 0.f,width, 0.0f,
-                new int[] {resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
+        LinearGradient test = new LinearGradient(0.f, 0.f, width, 0.0f,
+                new int[]{resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
                 null, Shader.TileMode.CLAMP);
-        ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[] { 10, 10, 10, 10, 10, 10, 10, 10}, null, null));
+        ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[]{10, 10, 10, 10, 10, 10, 10, 10}, null, null));
         shape.getPaint().setShader(test);
 
         paint.setShader(test);
@@ -440,12 +427,9 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Draws the "normal" resp. "pressed" thumb image on specified x-coordinate.
      *
-     * @param screenCoord
-     *            The x-coordinate in screen space where to draw the image.
-     * @param pressed
-     *            Is the thumb currently in "pressed" state?
-     * @param canvas
-     *            The canvas to draw upon.
+     * @param screenCoord The x-coordinate in screen space where to draw the image.
+     * @param pressed     Is the thumb currently in "pressed" state?
+     * @param canvas      The canvas to draw upon.
      */
     private void drawThumb(float screenCoord, boolean pressed, Canvas canvas) {
         canvas.drawBitmap(pressed ? thumbPressedImage : thumbImage, screenCoord - thumbHalfWidth, (float) ((0.5f * getHeight()) - thumbHalfHeight), paint);
@@ -454,8 +438,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Decides which (if any) thumb is touched by the given x-coordinate.
      *
-     * @param touchX
-     *            The x-coordinate of a touch event in screen space.
+     * @param touchX The x-coordinate of a touch event in screen space.
      * @return The pressed thumb or null if none has been touched.
      */
     private Thumb evalPressedThumb(float touchX) {
@@ -465,11 +448,9 @@ public class RangeSeekBar<T extends Number> extends ImageView {
         if (minThumbPressed && maxThumbPressed) {
             // if both thumbs are pressed (they lie on top of each other), choose the one with more room to drag. this avoids "stalling" the thumbs in a corner, not being able to drag them apart anymore.
             result = (touchX / getWidth() > 0.5f) ? Thumb.MIN : Thumb.MAX;
-        }
-        else if (minThumbPressed) {
+        } else if (minThumbPressed) {
             result = Thumb.MIN;
-        }
-        else if (maxThumbPressed) {
+        } else if (maxThumbPressed) {
             result = Thumb.MAX;
         }
         return result;
@@ -478,10 +459,8 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Decides if given x-coordinate in screen space needs to be interpreted as "within" the normalized thumb x-coordinate.
      *
-     * @param touchX
-     *            The x-coordinate in screen space to check.
-     * @param normalizedThumbValue
-     *            The normalized x-coordinate of the thumb to check.
+     * @param touchX               The x-coordinate in screen space to check.
+     * @param normalizedThumbValue The normalized x-coordinate of the thumb to check.
      * @return true if x-coordinate is in thumb range, false otherwise.
      */
     private boolean isInThumbRange(float touchX, double normalizedThumbValue) {
@@ -491,8 +470,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Sets normalized min value to value so that 0 <= value <= normalized max value <= 1. The View will get invalidated when calling this method.
      *
-     * @param value
-     *            The new normalized min value to set.
+     * @param value The new normalized min value to set.
      */
     public void setNormalizedMinValue(double value) {
         normalizedMinValue = Math.max(0d, Math.min(1d, Math.min(value, normalizedMaxValue)));
@@ -502,8 +480,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Sets normalized max value to value so that 0 <= normalized min value <= value <= 1. The View will get invalidated when calling this method.
      *
-     * @param value
-     *            The new normalized max value to set.
+     * @param value The new normalized max value to set.
      */
     public void setNormalizedMaxValue(double value) {
         normalizedMaxValue = Math.max(0d, Math.min(1d, Math.max(value, normalizedMinValue)));
@@ -524,8 +501,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Converts the given Number value to a normalized double.
      *
-     * @param value
-     *            The Number value to normalize.
+     * @param value The Number value to normalize.
      * @return The normalized double.
      */
     private double valueToNormalized(T value) {
@@ -539,8 +515,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Converts a normalized value into screen space.
      *
-     * @param normalizedCoord
-     *            The normalized value to convert.
+     * @param normalizedCoord The normalized value to convert.
      * @return The converted value in screen space.
      */
     private float normalizedToScreen(double normalizedCoord) {
@@ -550,8 +525,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Converts screen space x-coordinates into normalized values.
      *
-     * @param screenCoord
-     *            The x-coordinate in screen space to convert.
+     * @param screenCoord The x-coordinate in screen space to convert.
      * @return The normalized value.
      */
     private double screenToNormalized(float screenCoord) {
@@ -559,8 +533,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
         if (width <= 2 * padding) {
             // prevent division by zero, simply return 0.
             return 0d;
-        }
-        else {
+        } else {
             double result = (screenCoord - padding) / (width - 2 * padding);
             return Math.min(1d, Math.max(0d, result));
         }
@@ -569,10 +542,8 @@ public class RangeSeekBar<T extends Number> extends ImageView {
     /**
      * Callback listener interface to notify about changed range values.
      *
+     * @param <T> The Number type the RangeSeekBar has been declared with.
      * @author Stephan Tittel (stephan.tittel@kom.tu-darmstadt.de)
-     *
-     * @param <T>
-     *            The Number type the RangeSeekBar has been declared with.
      */
     public interface OnRangeSeekBarChangeListener<T> {
         public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, T minValue, T maxValue);
@@ -583,13 +554,14 @@ public class RangeSeekBar<T extends Number> extends ImageView {
      */
     private static enum Thumb {
         MIN, MAX
-    };
+    }
+
+    ;
 
     /**
      * Utility enumaration used to convert between Numbers and doubles.
      *
      * @author Stephan Tittel (stephan.tittel@kom.tu-darmstadt.de)
-     *
      */
     private static enum NumberType {
         LONG, DOUBLE, INTEGER, FLOAT, SHORT, BYTE, BIG_DECIMAL;

@@ -11,10 +11,21 @@ public class Message {
 
     private int iconType;
 
-    public Message(String title, String content, int iconType) {
+    private MessageType type;
+
+    private static long ID_COUNTER;
+
+    private final long id = ID_COUNTER++;
+
+    public Message(String title, String content, int iconType, MessageType type) {
         this.title = title;
         this.content = content;
         this.iconType = iconType;
+        this.type = type;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -40,4 +51,13 @@ public class Message {
     public void setIconType(int iconType) {
         this.iconType = iconType;
     }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type) {
+        this.type = type;
+    }
+
 }

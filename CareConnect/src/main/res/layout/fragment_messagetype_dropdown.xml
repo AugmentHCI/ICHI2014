@@ -16,31 +16,39 @@
         android:orientation="vertical"
         android:background="@drawable/thickbar_left_background">
 
-        <TextView
-            android:id="@+id/track_title"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffffff"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:textStyle="normal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
-            android:textIsSelectable="false"
-            style="@style/TextHeader" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/thickbar_left_background">
 
-        <TextView
-            android:id="@+id/track_abstract"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#99ffffff"
-            style="@style/TextHeaderSub"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:textIsSelectable="false"
-            android:maxLines="2" />
+            <TextView
+                android:id="@+id/track_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffffff"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textStyle="normal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:textIsSelectable="false"
+                style="@style/TextHeader" />
+
+            <TextView
+                android:id="@+id/track_abstract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#99ffffff"
+                style="@style/TextHeaderSub"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:textIsSelectable="false"
+                android:maxLines="2" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <View

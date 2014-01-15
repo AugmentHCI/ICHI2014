@@ -23,15 +23,26 @@ public class SOAPFragment extends Fragment {
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    public static SOAPFragment newInstance() {
+    private int mCurrentSelection;
+
+    public static SOAPFragment newInstance(int selection) {
         SOAPFragment fragment = new SOAPFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, 4);
+        args.putInt(ARG_SECTION_NUMBER, selection);
         fragment.setArguments(args);
         return fragment;
     }
+
     public SOAPFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() != null) {
+            mCurrentSelection = getArguments().getInt(ARG_SECTION_NUMBER);
+        }
     }
 
     @Override
@@ -44,10 +55,14 @@ public class SOAPFragment extends Fragment {
         pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
+                mCurrentSelection = i;
+
                 if (i == 0)
                     return SubjectiveFragment.newInstance();
-                else
+                else if(i == 1)
                     return ObjectiveFragment.newInstance();
+                else
+                    return EvaluationFragment.newInstance();
             }
 
             @Override
@@ -63,7 +78,8 @@ public class SOAPFragment extends Fragment {
 
         TabPageIndicator indicator = (TabPageIndicator) rootView.findViewById(R.id.indicator);
         indicator.setViewPager(pager);
-        indicator.setCurrentItem(0);
+
+        indicator.setCurrentItem(mCurrentSelection);
 
         return rootView;
     }

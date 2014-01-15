@@ -49,7 +49,7 @@ public class MessageContentFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getArguments() != null) {
+        if (getArguments() != null) {
             title = getArguments().getString(ARG_TITLE);
             content = getArguments().getString(ARG_CONTENT);
             icon = getArguments().getInt(ARG_ICON);
