@@ -25,7 +25,7 @@ public class PrescriptionFragment extends SOAPParentFragment {
     public static Fragment newInstance() {
         PrescriptionFragment fragment = new PrescriptionFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_SECTION_NUMBER, 4);
+        args.putInt(ARG_SECTION_NUMBER, 5);
         fragment.setArguments(args);
         return fragment;
     }
