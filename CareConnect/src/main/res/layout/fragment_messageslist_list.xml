@@ -14,8 +14,10 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
         android:background="@drawable/content_back"
         android:divider="@android:color/darker_gray"
+        android:listSelector="@android:color/darker_gray"
         android:dividerHeight="1px" />
 
 

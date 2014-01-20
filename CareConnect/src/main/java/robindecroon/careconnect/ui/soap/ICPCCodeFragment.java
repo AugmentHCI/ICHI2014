@@ -18,7 +18,7 @@ import robindecroon.careconnect.R;
 /**
  * Created by robindecroon on 15/01/14.
  */
-public class ICPCCodeFragment extends Fragment{
+public class ICPCCodeFragment extends Fragment {
 
     private View rootView;
 
@@ -53,7 +53,7 @@ public class ICPCCodeFragment extends Fragment{
             mContext = c;
             chapters = getResources().getStringArray(R.array.icpc_a);
             enabledButtons = new boolean[chapters.length];
-            for(int i = 0 ; i < enabledButtons.length; i++)
+            for (int i = 0; i < enabledButtons.length; i++)
                 enabledButtons[i] = true;
         }
 
@@ -81,7 +81,7 @@ public class ICPCCodeFragment extends Fragment{
                 public void onClick(View view) {
                     FragmentManager fragmentManager = getChildFragmentManager();
                     EvaluationFragment parentFragment = (EvaluationFragment) getParentFragment();
-                    if(parentFragment != null) {
+                    if (parentFragment != null) {
                         parentFragment.addText(text);
                         enabledButtons[pos] = false;
                         button.setEnabled(false);

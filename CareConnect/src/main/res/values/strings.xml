@@ -306,7 +306,7 @@
     <string name="language">Taal</string>
     <string name="nationality">Nationaliteit</string>
     <string name="occupation">Beroep</string>
-    <string name="research_assistent">Wetenschappelijk medewerker</string>
+    <string name="research_assistent">Professionele overvaller</string>
     <string name="belgian">Belg</string>
     <string name="dutch">Nederlands</string>
     <string name="all_messages">Alle berichten</string>
@@ -320,5 +320,10 @@
     <string name="taken_before">Al eerder ingenomen</string>
     <string name="family_based">Op basis van familie</string>
     <string name="location_based">Op basis van locatie</string>
+    <string name="full_name">Piet Piraat</string>
+    <string name="birthdate_ex">5 maart 1990</string>
+    <string name="insz">90.02.05-143.85</string>
+    <string name="male">man</string>
+    <string name="example_adres">Celestijnenlaan 200A, 3001 Heverlee</string>
 
 </resources>

@@ -1,0 +1,47 @@
+Voorbeeld korte verwijsbrief
+
+
+Huisarts [Huisartsnaam volledig]      Patiënt [Patiëntennaam volledig]
+Praktijk [Huisartspraktijknaam]       Geb. datum [Patiënten geboortedatum]
+Straat/ nr. [Huisarts adresgegevens]  Geslacht [Patiënt geslacht]
+Telefoon [Huisarts telefoonnummer, evt. 06 nr.] Straat/ nr [Patiënt adresgegevens]
+Fax [Huisarts faxnummer]              Telefoon [Patiënt telefoonnummer, evt. 06 nr.]
+e-mail [Huisarts-emailadres]          Verz. nr [Patiënt verzekeringsnummer]
+verzekeraar [Patiënt zorgverzekeraar]
+Specialist [Verwijzing specialisme/ specialist]
+
+Datum
+
+Geachte collega,
+Hierbij verwijs ik bovengenoemde patiënt(e) in verband met
+
+Klacht, vraagstellig
+
+[verwijzing verwijsreden tekst]
+· de belangrijkste klacht(en) of hulpvraag van de patiënt in de context van deze
+verwijzing
+· plus de overweging van de huisarts ten aanzien van de aard, oorzaak, gevolg en
+functie van de klacht
+· plus de gevraagde actie van de specialist met betrekking tot onderzoek en/of
+behandeling
+Anamnese
+
+[Patiënt anamnese]
+· relevante bevindingen uit de anamnese
+· indien heteroanamnese aldus vermelden
+· alleen de grote lijn- tijdstip van het ontstaan en duur klachten
+· zowel positieve als negatieve bevindingen
+· eerder behandeling en effect, beloop van de klacht hier vermelden
+· verder anamnese afhankelijk van het doel van de verwijzing (bijv. bij verwachte
+operatie)
+· voorgeschiedenis gerelateerd aan klacht of hulpvraag
+Lichamelijk onderzoek
+
+[Patiënt lichamelijk onderzoek]
+· relevante bevindingen uit het lichamelijk onderzoek
+· zowel positieve als negatieve bevindingen
+Behandeling Indien van toepassing reeds ingezette behandeling inclusief
+actueel medicatiegebruik totaal
+Bijlagen Probleemlijst/ episodelijst
+Allergie/ intolerantie
+Aanvullend onderzoek

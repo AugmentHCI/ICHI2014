@@ -39,23 +39,22 @@ public class PrescriptionFragment extends SOAPParentFragment {
 
         initializeInputView();
 
-        LinearLayout mostUsed = (LinearLayout) rootView.findViewById(R.id.soap_based);
+        LinearLayout soapBased = (LinearLayout) rootView.findViewById(R.id.soap_based);
         for (String suggestion : getResources().getStringArray(R.array.medication_soap)) {
-            addWord(mostUsed, suggestion);
+            addWord(soapBased, suggestion);
         }
-        LinearLayout recent = (LinearLayout) rootView.findViewById(R.id.taken_before);
+        LinearLayout takenBefore = (LinearLayout) rootView.findViewById(R.id.taken_before);
         for (String suggestion : getResources().getStringArray(R.array.medication_taken_before)) {
-            addWord(recent, suggestion);
+            addWord(takenBefore, suggestion);
         }
-        LinearLayout prehis = (LinearLayout) rootView.findViewById(R.id.family_based);
+        LinearLayout familyBased = (LinearLayout) rootView.findViewById(R.id.family_based);
         for (String suggestion : getResources().getStringArray(R.array.medication_family)) {
-            addWord(prehis, suggestion);
+            addWord(familyBased, suggestion);
         }
-        LinearLayout colleagues = (LinearLayout) rootView.findViewById(R.id.location_based);
+        LinearLayout locationBased = (LinearLayout) rootView.findViewById(R.id.location_based);
         for (String suggestion : getResources().getStringArray(R.array.medication_location)) {
-            addWord(colleagues, suggestion);
+            addWord(locationBased, suggestion);
         }
-
 
         return rootView;
     }

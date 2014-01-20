@@ -1,5 +1,8 @@
 package robindecroon.careconnect.factory;
 
+import org.apache.commons.io.IOUtils;
+
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +24,25 @@ public class DummyMessageFactory {
         ArrayList<Message> list = new ArrayList<Message>();
         int countLab = 0;
         int countRef = 0;
+        String labContent = getStringFromFile("labresult1");
+        String referralContent = getStringFromFile("verwijsbrief1");
         for (int i = 0; i < 20; i++) {
-            list.add(new Message("Lab " + countLab++,"Inhoud", R.drawable.lab_result_icon, MessageType.LAB));
-            list.add(new Message("Verwijsbrief " + countRef++, "Patient kan best blablabla zien", R.drawable.referral_icon, MessageType.REFERRAL));
+            list.add(new Message("Connect IT Laboratorium " + countLab, labContent, R.drawable.lab_result_icon, MessageType.LAB));
+            list.add(new Message("Verwijsbrief " + countRef++, referralContent, R.drawable.referral_icon, MessageType.REFERRAL));
         }
         return list;
+    }
+
+    private static String getStringFromFile(String file) {
+        file = "res/raw/" + file + ".txt";
+        String labContent = "niet gelukt";
+        InputStream in = DummyMessageFactory.class.getClassLoader().getResourceAsStream(file);
+        try {
+            labContent = IOUtils.toString(in);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return labContent;
     }
 
 //    private static List<Message> generateLabMessages() {

@@ -24,6 +24,10 @@ public class SOAPFragment extends Fragment {
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private static final String ARG_SELECTION = "selection_number";
+
+
+    private int mSelection;
 
     public static SOAPFragment newInstance() {
         SOAPFragment fragment = new SOAPFragment();
@@ -38,6 +42,13 @@ public class SOAPFragment extends Fragment {
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(ARG_SELECTION, mSelection);
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_soep, container, false);
@@ -47,9 +58,10 @@ public class SOAPFragment extends Fragment {
         pager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
+                mSelection = i;
                 if (i == 0)
                     return SubjectiveFragment.newInstance();
-                else if(i == 1)
+                else if (i == 1)
                     return ObjectiveFragment.newInstance();
                 else
                     return EvaluationFragment.newInstance();
@@ -66,10 +78,14 @@ public class SOAPFragment extends Fragment {
             }
         });
 
+
         TabPageIndicator indicator = (TabPageIndicator) rootView.findViewById(R.id.indicator);
         indicator.setViewPager(pager);
 
-        indicator.setCurrentItem(0);
+        if (savedInstanceState != null) {
+            mSelection = savedInstanceState.getInt(ARG_SELECTION);
+            indicator.setCurrentItem(mSelection);
+        }
 
         return rootView;
     }

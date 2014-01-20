@@ -70,13 +70,11 @@ public class MessagesAdapter extends ArrayAdapter implements Filterable, ListAda
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-//        if (view == null) {
-            Message message = (Message) getItem(i);
-            view = ((FragmentActivity) mContext).getLayoutInflater().inflate(R.layout.list_item_message, viewGroup, false);
-            ((TextView) view.findViewById(R.id.list_text_message)).setText(message.getTitle());
-            Drawable icon = mContext.getResources().getDrawable(message.getIconType());
-            ((ImageView) view.findViewById(R.id.list_icon_message)).setImageDrawable(icon);
-//        }
+        Message message = (Message) getItem(i);
+        view = ((FragmentActivity) mContext).getLayoutInflater().inflate(R.layout.list_item_message, viewGroup, false);
+        ((TextView) view.findViewById(R.id.list_text_message)).setText(message.getTitle());
+        Drawable icon = mContext.getResources().getDrawable(message.getIconType());
+        ((ImageView) view.findViewById(R.id.list_icon_message)).setImageDrawable(icon);
         return view;
     }
 

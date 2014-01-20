@@ -20,7 +20,11 @@ public class MessagesFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
+    public static int staticSelection;
+
+
     private List<Message> messages = DummyMessageFactory.getDummyMixedMessages();
+
 
     public static MessagesFragment newInstance() {
         MessagesFragment fragment = new MessagesFragment();
@@ -37,11 +41,13 @@ public class MessagesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_messages, container, false);
+
         FragmentManager fm = getChildFragmentManager();
         fm.beginTransaction().replace(R.id.message_dropdown, new MessageTypeDropdownFragment()).commit();
         fm.beginTransaction().replace(R.id.leftpane, MessagesListFragment.newInstance(0)).commit();
-        fm.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(0))).commit();
+        fm.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(messages.get(staticSelection))).commit();
         return rootView;
     }
 
@@ -50,4 +56,9 @@ public class MessagesFragment extends Fragment {
         super.onAttach(activity);
         ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
     }
+
+    public void messageOpened(int messageNumber) {
+        staticSelection = messageNumber;
+    }
+
 }

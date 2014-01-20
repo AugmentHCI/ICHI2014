@@ -47,25 +47,25 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="40sp"
-                            android:text="Robin De Croon" />
+                            android:text="@string/full_name" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="25sp"
-                            android:text="2 maart 1990" />
+                            android:text="@string/birthdate_ex" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="25sp"
-                            android:text="90.02.03-159.43" />
+                            android:text="@string/insz" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="25sp"
-                            android:text="man" />
+                            android:text="@string/male" />
 
                     </LinearLayout>
 
@@ -93,7 +93,7 @@
                     android:layout_weight="1"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/content_back"
-                    android:text="Celestijnenlaan 200A, 3001 Heverlee" />
+                    android:text="@string/example_adres" />
 
             </LinearLayout>
         </LinearLayout>
@@ -144,7 +144,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:text="+32 89 71 62 59" />
+                            android:text="+32 89 12 13 14" />
 
                     </LinearLayout>
 
@@ -166,7 +166,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:text="+32 477 60 95 41" />
+                            android:text="+32 477 54 65 98" />
 
                     </LinearLayout>
 
@@ -187,7 +187,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="email"
-                            android:text="robindecroon@gmail.com" />
+                            android:text="piet.piraat@msn.com" />
 
                     </LinearLayout>
 

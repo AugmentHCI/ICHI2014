@@ -68,7 +68,7 @@ public class MainActivity extends FragmentActivity
         } else if (position == 1) {
             fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         } else if (position == 2) {
-            fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, MessagesFragment.newInstance(), "MESSAGETAG").commit();
         } else if (position == 3) {
             fragmentManager.beginTransaction().replace(R.id.container, SOAPFragment.newInstance()).commit();
         } else if (position == 4) {
@@ -142,9 +142,14 @@ public class MainActivity extends FragmentActivity
     @Override
     public void onMessageListItemSelected(long id) {
         FragmentManager fragmentManager = getSupportFragmentManager();
-        for(Message message: messages) {
-            if(message.getId() == id)
+        for (int i = 0; i < messages.size(); i++) {
+            Message message = messages.get(i);
+            if (message.getId() == id) {
                 fragmentManager.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(message)).commit();
+                ((MessagesFragment) fragmentManager.findFragmentById(R.id.container)).messageOpened(i);
+                return;
+
+            }
         }
     }
 
