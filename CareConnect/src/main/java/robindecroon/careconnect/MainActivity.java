@@ -17,6 +17,7 @@ import java.util.List;
 import robindecroon.careconnect.factory.DummyMessageFactory;
 import robindecroon.careconnect.messages.Message;
 import robindecroon.careconnect.ui.CareConnectNavigationDrawerFragment;
+import robindecroon.careconnect.ui.SettingsActivity;
 import robindecroon.careconnect.ui.dashboard.DashboardFragment;
 import robindecroon.careconnect.ui.messages.MessageContentFragment;
 import robindecroon.careconnect.ui.messages.MessageTypeDropdownFragment;
@@ -124,6 +125,8 @@ public class MainActivity extends FragmentActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(settingsIntent);
             return true;
         } else if (id == R.id.action_camera) {
             Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");

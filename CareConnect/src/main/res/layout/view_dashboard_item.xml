@@ -17,12 +17,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/dashboard_item_content"
-        android:padding="10dp"
-        android:lineSpacingExtra="5dp"
-        android:layout_width="match_parent"
-        android:background="@drawable/content_back"
-        android:layout_height="fill_parent" />
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<ImageView-->
+            <!--android:id="@+id/dashboard_item_arrow_down"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingRight="10dp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:src="@drawable/arrow_down"/>-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:background="@drawable/content_back"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/dashboard_item_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:orientation="vertical"></LinearLayout>
+        </ScrollView>
+
+
+    <!--</RelativeLayout>-->
 
 </LinearLayout>

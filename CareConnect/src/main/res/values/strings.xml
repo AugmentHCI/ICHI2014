@@ -325,5 +325,7 @@
     <string name="insz">90.02.05-143.85</string>
     <string name="male">man</string>
     <string name="example_adres">Celestijnenlaan 200A, 3001 Heverlee</string>
+    <string name="show_dates">Toon datums op het dashboard</string>
+    <string name="show_dates_summary">Geef een datum weer voor de elementen op het dashboard</string>
 
 </resources>
