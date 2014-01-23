@@ -15,6 +15,7 @@
         android:textColor="#99000000"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
+        android:textSize="@dimen/header_text_size"
         android:layout_height="wrap_content" />
 
     <!--<RelativeLayout-->
@@ -39,7 +40,6 @@
                 android:id="@+id/dashboard_item_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
                 android:orientation="vertical"></LinearLayout>
         </ScrollView>
 

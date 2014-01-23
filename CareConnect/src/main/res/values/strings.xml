@@ -16,42 +16,42 @@
     <string name="Calendar">Kalender</string>
     <string name="Search">Zoeken</string>
 
-    <string-array name="medications">
+    <string-array name="medicatie">
         <item>Diclofenac</item>
         <item>Omeprazol</item>
         <item>Amoxicilline</item>
         <item>Doxycycline</item>
         <item>Metoprolol</item>
     </string-array>
-    <string-array name="problems">
+    <string-array name="problemen">
         <item>Acute infectie bovenste luchtwegen</item>
         <item>Verondersteld infect gastro-enteritis</item>
         <item>Influenza</item>
         <item>Acute bronchitis/bronchiolitis</item>
         <item>Symptomen/klachten lage-rug</item>
     </string-array>
-    <string-array name="allergens">
+    <string-array name="allergenen">
         <item>Pollen</item>
         <item>Schimmel</item>
         <item>Stofmijt</item>
         <item>Gras</item>
         <item>Rhinitis</item>
     </string-array>
-    <string-array name="intolerances">
+    <string-array name="intoleranties">
         <item>Lactose</item>
         <item>Fructose</item>
         <item>Histamine</item>
         <item>Gluten</item>
         <item>Tuinbonen</item>
     </string-array>
-    <string-array name="last_lab_results">
+    <string-array name="laatste_labo_resultaten">
         <item>Glucose (70&#8211;110 mg/dL)</item>
         <item>Hemoglobine A1c (4&#8211;6%)</item>
         <item>Ureum (&lt;50 mg/dL)</item>
         <item>Creatinine (0.4 -1.1mg/dL)</item>
         <item>Creatinine clearance (MDRD) (55&#8211;105 mL/min)</item>
     </string-array>
-    <string-array name="history">
+    <string-array name="antecedenten">
         <item>Scheurwond/snijwond</item>
         <item>Schoudersyndroom</item>
         <item>Zieke oesophagus</item>
@@ -306,7 +306,7 @@
     <string name="language">Taal</string>
     <string name="nationality">Nationaliteit</string>
     <string name="occupation">Beroep</string>
-    <string name="research_assistent">Professionele overvaller</string>
+    <string name="research_assistent">Kapitein</string>
     <string name="belgian">Belg</string>
     <string name="dutch">Nederlands</string>
     <string name="all_messages">Alle berichten</string>
@@ -324,8 +324,19 @@
     <string name="birthdate_ex">5 maart 1990</string>
     <string name="insz">90.02.05-143.85</string>
     <string name="male">man</string>
-    <string name="example_adres">Celestijnenlaan 200A, 3001 Heverlee</string>
+    <string name="example_adres">Broekstraat 56, 3001 Heverlee</string>
     <string name="show_dates">Toon datums op het dashboard</string>
     <string name="show_dates_summary">Geef een datum weer voor de elementen op het dashboard</string>
+    <string name="patient_information">Patient informatie</string>
+    <string name="mutuality_information">Sociale zekerheid</string>
+    <string name="summary">Algemeen</string>
+    <string name="health_insurance">Ziekenfonds</string>
+    <string name="cm">CM</string>
+    <string name="membership_number">Aansluitingsnummer</string>
+    <string name="payer_type">Type betaler</string>
+    <string name="mutuality_third_payer">Mutualiteit derde betaler</string>
+    <string name="co_payment">Remgeld vragen</string>
+    <string name="yes">ja</string>
+    <string name="phone_mutuality">Telefoonnummer</string>
 
 </resources>

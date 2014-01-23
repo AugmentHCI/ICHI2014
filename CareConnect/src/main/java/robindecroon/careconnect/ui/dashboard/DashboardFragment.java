@@ -28,6 +28,14 @@ public class DashboardFragment extends Fragment {
 
     private DynamicGridView mDashboardGrid;
 
+    public final static String MEDICATION = "medicatie";
+    public final static String PROBLEMS = "problemen";
+    public final static String ALLERGENS = "allergenen";
+    public final static String INTOLERANCES = "intoleranties";
+    public final static String HISTORY = "antecedenten";
+    public final static String LAST_LAB_RESULTS = "laatste_labo_resultaten";
+
+
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     public static DashboardFragment newInstance() {
@@ -84,7 +92,7 @@ public class DashboardFragment extends Fragment {
         int dashboardElementHeight = height / nbRows;
 
         mDashboardGrid = (DynamicGridView) rootView.findViewById(R.id.dashboard_grid);
-        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{"medications", "problems", "allergens", "intolerances", "history", "last_lab_results"}), nbColumns, dashboardElementWidth, dashboardElementHeight));
+        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{MEDICATION, PROBLEMS, ALLERGENS, INTOLERANCES, HISTORY, LAST_LAB_RESULTS}), nbColumns, dashboardElementWidth, dashboardElementHeight));
         mDashboardGrid.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {

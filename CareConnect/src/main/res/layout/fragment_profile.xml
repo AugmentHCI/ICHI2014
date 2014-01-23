@@ -20,7 +20,17 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:padding="20dp"
+                android:orientation="vertical"
                 android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/header_text_size"
+                    android:textAllCaps="true"
+                    android:textColor="#99000000"
+                    android:paddingBottom="10dp"
+                    android:text="@string/summary" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -52,21 +62,20 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="25sp"
+                            android:textSize="@dimen/header_text_size"
                             android:text="@string/birthdate_ex" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="25sp"
+                            android:textSize="@dimen/header_text_size"
                             android:text="@string/insz" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="25sp"
+                            android:textSize="@dimen/header_text_size"
                             android:text="@string/male" />
-
                     </LinearLayout>
 
                 </LinearLayout>
@@ -81,20 +90,29 @@
                 android:orientation="vertical"
                 android:layout_height="match_parent">
 
-                <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/map"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="9" />
-
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/content_back"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/header_text_size"
+                    android:textAllCaps="true"
+                    android:textColor="#99000000"
+                    android:paddingBottom="10dp"
                     android:text="@string/example_adres" />
 
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:background="@android:color/darker_gray"
+                    android:padding="1px">
+
+                    <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="1px" />
+                </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
 
@@ -103,7 +121,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -115,11 +132,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="30sp"
+                    android:textSize="@dimen/header_text_size"
                     android:textAllCaps="true"
                     android:textColor="#99000000"
                     android:paddingBottom="10dp"
-                    android:text="@string/contact_information" />
+                    android:text="@string/patient_information" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,7 +147,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -145,14 +162,12 @@
                             android:gravity="right"
                             android:autoLink="phone"
                             android:text="+32 89 12 13 14" />
-
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
-
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -167,13 +182,12 @@
                             android:gravity="right"
                             android:autoLink="phone"
                             android:text="+32 477 54 65 98" />
-
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -191,37 +205,10 @@
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:padding="20dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="30sp"
-                    android:textAllCaps="true"
-                    android:textColor="#99000000"
-                    android:paddingBottom="10dp"
-                    android:text="@string/additional_information" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@drawable/content_back">
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
 
                         android:orientation="horizontal">
 
@@ -242,7 +229,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -262,7 +249,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -282,7 +269,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10dp"
+                        android:padding="@dimen/profile_padding"
                         android:orientation="horizontal">
 
                         <TextView
@@ -296,6 +283,134 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:text="@string/research_assistent" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/header_text_size"
+                    android:textAllCaps="true"
+                    android:textColor="#99000000"
+                    android:paddingBottom="10dp"
+                    android:text="@string/mutuality_information" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/content_back">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/profile_padding"
+
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/health_insurance" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:text="@string/cm" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/profile_padding"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/phone_mutuality" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:autoLink="phone"
+                            android:text="+32 16 20 01 06" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/profile_padding"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/membership_number" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:text="0543634000" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/profile_padding"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/payer_type" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:text="@string/mutuality_third_payer" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/profile_padding"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/co_payment" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right"
+                            android:text="@string/yes" />
 
                     </LinearLayout>
 

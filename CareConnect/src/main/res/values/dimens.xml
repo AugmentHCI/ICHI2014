@@ -9,4 +9,7 @@
     <dimen name="seekbarwidth">700dp</dimen>
     <dimen name="track_dropdown_width">288dp</dimen>
 
+    <dimen name="header_text_size">16sp</dimen>
+    <dimen name="profile_padding">5dp</dimen>
+    <dimen name="divider_padding">5dp</dimen>
 </resources>

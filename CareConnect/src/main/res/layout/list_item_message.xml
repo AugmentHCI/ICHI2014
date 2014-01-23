@@ -12,7 +12,6 @@
         android:layout_height="48dp"
         android:padding="8dp"
         android:layout_gravity="end|center_vertical"
-        android:src="@drawable/ic_launcher"
         android:contentDescription="@null" />
 
     <TextView
