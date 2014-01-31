@@ -2,7 +2,6 @@ package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,17 +26,18 @@ public class MessageTypeDropdownFragment extends Fragment implements
         AdapterView.OnItemClickListener,
         PopupWindow.OnDismissListener {
 
-    public static final int VIEW_TYPE_ALL = 0;
-    public static final int VIEW_TYPE_LAB_RESULTS = 1;
-    public static final int VIEW_TYPE_REFERRAL = 2;
-    public static final int VIEW_TYPE_IMAGES = 3;
+    public static final int VIEW_TYPE_ALL = 1;
+    public static final int VIEW_TYPE_LAB_RESULTS = 2;
+    public static final int VIEW_TYPE_REFERRAL = 3;
+    public static final int VIEW_TYPE_IMAGES = 4;
+    public static final int VIEW_TYPE_SEND = 6;
 
 
     private static final String STATE_VIEW_TYPE = "viewType";
     private static final String STATE_SELECTED_TRACK_ID = "selectedTrackId";
 
     private TracksAdapter mAdapter;
-    private int mViewType;
+    private int mViewType = 1;
 
     private Handler mHandler = new Handler();
 
@@ -97,8 +97,8 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 mListPopupWindow = new ListPopupWindow(getActivity());
                 mListPopupWindow.setAdapter(mAdapter);
                 mListPopupWindow.setModal(true);
-                mListPopupWindow.setContentWidth(
-                        getResources().getDimensionPixelSize(R.dimen.track_dropdown_width));
+                mListPopupWindow.setContentWidth(getResources().getDimensionPixelSize(R.dimen.track_dropdown_width));
+                mListPopupWindow.setHeight(48 * 7 - 10);
                 mListPopupWindow.setAnchorView(mRootView);
                 mListPopupWindow.setOnItemClickListener(MessageTypeDropdownFragment.this);
                 mListPopupWindow.show();
@@ -144,7 +144,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
             case VIEW_TYPE_ALL:
                 mTitle.setText(getResources().getString(R.string.all_messages));
                 mAbstract.setText(getResources().getString(R.string.all_messages_subtitle));
-                testView.setBackgroundColor(Color.GREEN);
+                testView.setBackgroundColor(getResources().getColor(R.color.careconnect_green));
                 mIcon.setImageDrawable(getResources().getDrawable(R.drawable.message_icon));
                 break;
             case VIEW_TYPE_LAB_RESULTS:
@@ -164,6 +164,12 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 mAbstract.setText(getResources().getString(R.string.xray_subtitle));
                 testView.setBackgroundColor(getResources().getColor(android.R.color.black));
                 mIcon.setImageDrawable(getResources().getDrawable(R.drawable.xray));
+                break;
+            case VIEW_TYPE_SEND:
+                mTitle.setText(getResources().getString(R.string.send_mail));
+                mAbstract.setText(getResources().getString(R.string.send_mail_subtitle));
+                testView.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+                mIcon.setImageDrawable(getResources().getDrawable(R.drawable.sendmail));
                 break;
         }
 
@@ -193,7 +199,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
 
         @Override
         public int getCount() {
-            return 4;
+            return 7;
         }
 
         @Override
@@ -202,22 +208,39 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 convertView = mActivity.getLayoutInflater().inflate(R.layout.list_item_track, parent, false);
                 String text = "";
                 Drawable icon = null;
+                        TextView view = (TextView) mActivity.getLayoutInflater().inflate(
+                                R.layout.list_item_track_header, parent, false);
                 switch (position) {
                     case 0:
-                        text = res.getString(R.string.all_messages);
-                        icon = res.getDrawable(R.drawable.message_icon);
-                        break;
+                        view.setBackgroundResource(R.drawable.track_header_bottom_border);
+                        view.setPadding(10, 0, 10, 0);
+                        view.setText("Ontvangen documenten");
+                        return view;
                     case 1:
+                        text = "(" + res.getString(R.string.all_messages) + ")";
+//                        icon = res.getDrawable(R.drawable.message_icon);
+                        break;
+                    case 2:
                         text = res.getString(R.string.lab_results);
                         icon = res.getDrawable(R.drawable.lab_result_icon);
                         break;
-                    case 2:
+                    case 3:
                         text = res.getString(R.string.referral);
                         icon = res.getDrawable(R.drawable.referral_icon);
                         break;
-                    case 3:
+                    case 4:
                         text = res.getString(R.string.images);
                         icon = res.getDrawable(R.drawable.xray);
+                        break;
+                    case 5:
+                        view.setBackgroundResource(R.drawable.track_header_bottom_border);
+                        view.setPadding(10, 0, 10, 0);
+                        view.setText("Verzonden documenten");
+                        return view;
+                    case 6:
+                        text = res.getString(R.string.send_mail);
+                        icon = res.getDrawable(R.drawable.sendmail);
+                        break;
                 }
                 ((TextView) convertView.findViewById(R.id.text1)).setText(text);
                 ((ImageView) convertView.findViewById(R.id.icon1)).setImageDrawable(icon);

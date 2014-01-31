@@ -99,13 +99,19 @@ public class MessagesAdapter extends ArrayAdapter implements Filterable, ListAda
 
                 FilterResults results = new FilterResults();
 
+                List<Message> filteredRowItems = new ArrayList<Message>();
                 if (constraint == null || constraint.length() == 0) {
-                    // No filter implemented we return all the list
-                    results.values = allMessages;
-                    results.count = allMessages.size();
+
+
+                    for (int i = 0; i < getCount(); i++) {
+                        if (!((Message) getItem(i)).getType().equals(MessageType.SEND)) {
+                            filteredRowItems.add((Message) getItem(i));
+                        }
+                    }
+                    results.values = filteredRowItems;
+                    results.count = filteredRowItems.size();
 
                 } else { // We perform filtering operation
-                    List<Message> filteredRowItems = new ArrayList<Message>();
 
                     for (int i = 0; i < getCount(); i++) {
                         if (((Message) getItem(i)).getType().toString().equals(constraint.toString())) {

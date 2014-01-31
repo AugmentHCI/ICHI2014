@@ -103,17 +103,19 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
 
     private void updateFilter(int type) {
         switch (type) {
-            case 0:
+            case 1:
                 mAdapter.getFilter().filter(null);
                 break;
-            case 1:
+            case 2:
                 mAdapter.getFilter().filter(MessageType.LAB.toString());
                 break;
-            case 2:
+            case 3:
                 mAdapter.getFilter().filter(MessageType.REFERRAL.toString());
                 break;
-            case 3:
+            case 4:
                 mAdapter.getFilter().filter(MessageType.IMAGE.toString());
+            case 6:
+                mAdapter.getFilter().filter(MessageType.SEND.toString());
         }
     }
 

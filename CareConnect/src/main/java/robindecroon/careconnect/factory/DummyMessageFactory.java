@@ -28,7 +28,9 @@ public class DummyMessageFactory {
         for (int i = 0; i < 20; i++) {
             list.add(new Message("Connect IT Laboratorium " + i, labContent, R.drawable.lab_result_icon, MessageType.LAB));
             list.add(new Message("Verwijsbrief " + i, referralContent, R.drawable.referral_icon, MessageType.REFERRAL));
-            list.add(new Message("CT-Scan " + i, "Beschrijving van de bovenstaande afbeelding", R.drawable.xray, MessageType.IMAGE));
+            list.add(new Message("Verzonden bericht " + i, "Dit is verzonden tekst", R.drawable.sendmail, MessageType.SEND));
+            if(i%2 == 0)
+                list.add(new Message("CT-Scan " + i, "Beschrijving van de bovenstaande afbeelding", R.drawable.xray, MessageType.IMAGE));
         }
         return list;
     }
@@ -67,6 +69,18 @@ public class DummyMessageFactory {
             Collections.shuffle(dummyMessages);
         }
         return dummyMessages;
+    }
+
+    private static List<Message> sendMessages = null;
+
+    public static List<Message> getSendMessages() {
+        if(sendMessages == null) {
+            sendMessages = new ArrayList<Message>();
+            for(int i = 0; i < 10 ; i++) {
+                sendMessages.add(new Message("Verzonden bericht " + i, "Dit is verzonden tekst", R.drawable.sendmail, MessageType.SEND));
+            }
+        }
+        return sendMessages;
     }
 
 //    public static List<Message> getDummyLabMessages() {

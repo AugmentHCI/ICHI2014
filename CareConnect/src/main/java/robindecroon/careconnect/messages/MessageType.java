@@ -5,5 +5,5 @@ package robindecroon.careconnect.messages;
  */
 public enum MessageType {
 
-    LAB, REFERRAL, IMAGE;
+    LAB, REFERRAL, IMAGE, SEND;
 }

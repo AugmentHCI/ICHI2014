@@ -4,7 +4,7 @@
     <string name="app_name">CareConnect</string>
     <string name="title_section1">Patient informatie</string>
     <string name="title_section2">Dashboard</string>
-    <string name="title_section3">Berichten</string>
+    <string name="title_section3">Documenten</string>
     <string name="title_section4">SOEP</string>
     <string name="title_section5">Voorschrift</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -309,8 +309,8 @@
     <string name="research_assistent">Kapitein</string>
     <string name="belgian">Belg</string>
     <string name="dutch">Nederlands</string>
-    <string name="all_messages">Alle berichten</string>
-    <string name="all_messages_subtitle">Combinatie van labo resultaten en verwijsbrieven</string>
+    <string name="all_messages">Alle documenten</string>
+    <string name="all_messages_subtitle">Labo resultaten, verwijsbrieven en röntgenfoto\'s</string>
     <string name="lab_results">Laboresultaten</string>
     <string name="lab_results_subtitle">Alle laboresultaten</string>
     <string name="referral">Verwijsbrieven</string>
@@ -340,5 +340,7 @@
     <string name="phone_mutuality">Telefoonnummer</string>
     <string name="images">Afbeeldingen</string>
     <string name="xray_subtitle">radiologieafbeeldingen en eigen afbeeldingen</string>
+    <string name="send_mail">Verzonden documenten</string>
+    <string name="send_mail_subtitle">Alle verzonden documenten</string>
 
 </resources>
