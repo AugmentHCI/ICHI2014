@@ -1,5 +1,7 @@
 package robindecroon.careconnect.messages;
 
+import robindecroon.careconnect.R;
+
 /**
  * Created by robindecroon on 13/01/14.
  */
@@ -8,6 +10,24 @@ public class Message {
     private String title;
 
     private String content;
+
+    public int getDrawableId() {
+        return drawableId;
+    }
+
+    public void setDrawableId(int drawableId) {
+        this.drawableId = drawableId;
+    }
+
+    public static long getID_COUNTER() {
+        return ID_COUNTER;
+    }
+
+    public static void setID_COUNTER(long ID_COUNTER) {
+        Message.ID_COUNTER = ID_COUNTER;
+    }
+
+    private int drawableId;
 
     private int iconType;
 
@@ -22,6 +42,8 @@ public class Message {
         this.content = content;
         this.iconType = iconType;
         this.type = type;
+        if(type == MessageType.IMAGE)
+            drawableId = R.drawable.ctscan;
     }
 
     public long getId() {

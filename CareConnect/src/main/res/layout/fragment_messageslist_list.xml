@@ -17,7 +17,7 @@
         android:choiceMode="singleChoice"
         android:background="@drawable/content_back"
         android:divider="@android:color/darker_gray"
-        android:listSelector="@android:color/darker_gray"
+        android:listSelector="@color/holo_gray_light"
         android:dividerHeight="1px" />
 
 

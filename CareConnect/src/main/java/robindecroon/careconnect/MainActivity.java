@@ -151,7 +151,6 @@ public class MainActivity extends FragmentActivity
                 fragmentManager.beginTransaction().replace(R.id.rightpane, MessageContentFragment.newInstance(message)).commit();
                 ((MessagesFragment) fragmentManager.findFragmentById(R.id.container)).messageOpened(i);
                 return;
-
             }
         }
     }

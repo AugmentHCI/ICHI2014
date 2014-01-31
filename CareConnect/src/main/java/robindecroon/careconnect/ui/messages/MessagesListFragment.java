@@ -112,6 +112,8 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
             case 2:
                 mAdapter.getFilter().filter(MessageType.REFERRAL.toString());
                 break;
+            case 3:
+                mAdapter.getFilter().filter(MessageType.IMAGE.toString());
         }
     }
 

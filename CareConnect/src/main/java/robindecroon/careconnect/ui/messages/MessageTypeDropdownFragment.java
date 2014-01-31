@@ -2,6 +2,7 @@ package robindecroon.careconnect.ui.messages;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,8 @@ public class MessageTypeDropdownFragment extends Fragment implements
     public static final int VIEW_TYPE_ALL = 0;
     public static final int VIEW_TYPE_LAB_RESULTS = 1;
     public static final int VIEW_TYPE_REFERRAL = 2;
+    public static final int VIEW_TYPE_IMAGES = 3;
+
 
     private static final String STATE_VIEW_TYPE = "viewType";
     private static final String STATE_SELECTED_TRACK_ID = "selectedTrackId";
@@ -141,7 +144,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
             case VIEW_TYPE_ALL:
                 mTitle.setText(getResources().getString(R.string.all_messages));
                 mAbstract.setText(getResources().getString(R.string.all_messages_subtitle));
-                testView.setBackgroundColor(getResources().getColor(R.color.holo_green_dark));
+                testView.setBackgroundColor(Color.GREEN);
                 mIcon.setImageDrawable(getResources().getDrawable(R.drawable.message_icon));
                 break;
             case VIEW_TYPE_LAB_RESULTS:
@@ -155,6 +158,12 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 mAbstract.setText(getResources().getString(R.string.referral_subtitle));
                 testView.setBackgroundColor(getResources().getColor(android.R.color.holo_orange_dark));
                 mIcon.setImageDrawable(getResources().getDrawable(R.drawable.referral_icon));
+                break;
+            case VIEW_TYPE_IMAGES:
+                mTitle.setText(getResources().getString(R.string.images));
+                mAbstract.setText(getResources().getString(R.string.xray_subtitle));
+                testView.setBackgroundColor(getResources().getColor(android.R.color.black));
+                mIcon.setImageDrawable(getResources().getDrawable(R.drawable.xray));
                 break;
         }
 
@@ -184,7 +193,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Override
@@ -206,6 +215,9 @@ public class MessageTypeDropdownFragment extends Fragment implements
                         text = res.getString(R.string.referral);
                         icon = res.getDrawable(R.drawable.referral_icon);
                         break;
+                    case 3:
+                        text = res.getString(R.string.images);
+                        icon = res.getDrawable(R.drawable.xray);
                 }
                 ((TextView) convertView.findViewById(R.id.text1)).setText(text);
                 ((ImageView) convertView.findViewById(R.id.icon1)).setImageDrawable(icon);

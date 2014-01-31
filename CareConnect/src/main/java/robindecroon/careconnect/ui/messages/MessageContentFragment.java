@@ -18,10 +18,12 @@ public class MessageContentFragment extends Fragment {
     private final static String ARG_TITLE = "messageContentTitle";
     private final static String ARG_CONTENT = "messageContentContent";
     private final static String ARG_ICON = "messageContentIcon";
+    private final static String ARG_DRAWABLE = "messageDrawableID";
 
     private String title;
     private String content;
     private int icon;
+    private int drawableID;
 
     private View rootView;
     private TextView titleView;
@@ -29,15 +31,16 @@ public class MessageContentFragment extends Fragment {
     private ImageView iconView;
 
     public static MessageContentFragment newInstance(Message message) {
-        return newInstance(message.getTitle(), message.getContent(), message.getIconType());
+        return newInstance(message.getTitle(), message.getContent(), message.getIconType(), message.getDrawableId());
     }
 
-    public static MessageContentFragment newInstance(String title, String content, int icon) {
+    public static MessageContentFragment newInstance(String title, String content, int icon, int drawableID) {
         MessageContentFragment fragment = new MessageContentFragment();
         Bundle args = new Bundle();
         args.putString(ARG_TITLE, title);
         args.putString(ARG_CONTENT, content);
         args.putInt(ARG_ICON, icon);
+        args.putInt(ARG_DRAWABLE, drawableID);
         fragment.setArguments(args);
         return fragment;
     }
@@ -53,6 +56,7 @@ public class MessageContentFragment extends Fragment {
             title = getArguments().getString(ARG_TITLE);
             content = getArguments().getString(ARG_CONTENT);
             icon = getArguments().getInt(ARG_ICON);
+            drawableID = getArguments().getInt(ARG_DRAWABLE);
         }
     }
 
@@ -68,9 +72,12 @@ public class MessageContentFragment extends Fragment {
         Drawable drawableIcon = getResources().getDrawable(icon);
         iconView.setImageDrawable(drawableIcon);
 
+
         contentView = (TextView) rootView.findViewById(R.id.message_item_content);
         contentView.setText(this.content);
-
+        if(drawableID != 0) {
+            contentView.setCompoundDrawablesWithIntrinsicBounds(0,drawableID,0,0);
+        }
         return rootView;
     }
 

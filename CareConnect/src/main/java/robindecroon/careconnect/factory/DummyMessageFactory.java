@@ -4,6 +4,7 @@ import org.apache.commons.io.IOUtils;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import robindecroon.careconnect.R;
@@ -22,13 +23,12 @@ public class DummyMessageFactory {
 
     private static List<Message> generateMixedMessages() {
         ArrayList<Message> list = new ArrayList<Message>();
-        int countLab = 0;
-        int countRef = 0;
         String labContent = getStringFromFile("labresult1");
         String referralContent = getStringFromFile("verwijsbrief1");
         for (int i = 0; i < 20; i++) {
-            list.add(new Message("Connect IT Laboratorium " + countLab, labContent, R.drawable.lab_result_icon, MessageType.LAB));
-            list.add(new Message("Verwijsbrief " + countRef++, referralContent, R.drawable.referral_icon, MessageType.REFERRAL));
+            list.add(new Message("Connect IT Laboratorium " + i, labContent, R.drawable.lab_result_icon, MessageType.LAB));
+            list.add(new Message("Verwijsbrief " + i, referralContent, R.drawable.referral_icon, MessageType.REFERRAL));
+            list.add(new Message("CT-Scan " + i, "Beschrijving van de bovenstaande afbeelding", R.drawable.xray, MessageType.IMAGE));
         }
         return list;
     }
@@ -62,8 +62,10 @@ public class DummyMessageFactory {
 //    }
 
     public static List<Message> getDummyMixedMessages() {
-        if (dummyMessages == null)
+        if (dummyMessages == null) {
             dummyMessages = generateMixedMessages();
+            Collections.shuffle(dummyMessages);
+        }
         return dummyMessages;
     }
 

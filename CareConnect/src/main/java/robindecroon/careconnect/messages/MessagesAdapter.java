@@ -75,6 +75,7 @@ public class MessagesAdapter extends ArrayAdapter implements Filterable, ListAda
         ((TextView) view.findViewById(R.id.list_text_message)).setText(message.getTitle());
         Drawable icon = mContext.getResources().getDrawable(message.getIconType());
         ((ImageView) view.findViewById(R.id.list_icon_message)).setImageDrawable(icon);
+        ((TextView) view.findViewById(R.id.list_text_date_message)).setText("21-01-2014");
         return view;
     }
 

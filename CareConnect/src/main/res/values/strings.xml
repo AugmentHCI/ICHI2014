@@ -338,5 +338,7 @@
     <string name="co_payment">Remgeld vragen</string>
     <string name="yes">ja</string>
     <string name="phone_mutuality">Telefoonnummer</string>
+    <string name="images">Afbeeldingen</string>
+    <string name="xray_subtitle">radiologieafbeeldingen en eigen afbeeldingen</string>
 
 </resources>
