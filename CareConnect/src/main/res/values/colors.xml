@@ -40,6 +40,7 @@
     <color name="dark_divider">#32000000</color>
 
     <color name="careconnect_green">#ff2e903f</color>
+    <color name="careconnect_red">#ff8e2d2d</color>
 
     <!-- Google+ -->
     <color name="plus_stream_spacer_color">#eee</color>

@@ -168,7 +168,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
             case VIEW_TYPE_SEND:
                 mTitle.setText(getResources().getString(R.string.send_mail));
                 mAbstract.setText(getResources().getString(R.string.send_mail_subtitle));
-                testView.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+                testView.setBackgroundColor(getResources().getColor(R.color.careconnect_red));
                 mIcon.setImageDrawable(getResources().getDrawable(R.drawable.sendmail));
                 break;
         }
@@ -208,17 +208,16 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 convertView = mActivity.getLayoutInflater().inflate(R.layout.list_item_track, parent, false);
                 String text = "";
                 Drawable icon = null;
-                        TextView view = (TextView) mActivity.getLayoutInflater().inflate(
-                                R.layout.list_item_track_header, parent, false);
+                TextView view = (TextView) mActivity.getLayoutInflater().inflate(
+                        R.layout.list_item_track_header, parent, false);
                 switch (position) {
                     case 0:
                         view.setBackgroundResource(R.drawable.track_header_bottom_border);
                         view.setPadding(10, 0, 10, 0);
-                        view.setText("Ontvangen documenten");
+                        view.setText(res.getString(R.string.received_messages));
                         return view;
                     case 1:
                         text = "(" + res.getString(R.string.all_messages) + ")";
-//                        icon = res.getDrawable(R.drawable.message_icon);
                         break;
                     case 2:
                         text = res.getString(R.string.lab_results);
@@ -235,7 +234,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
                     case 5:
                         view.setBackgroundResource(R.drawable.track_header_bottom_border);
                         view.setPadding(10, 0, 10, 0);
-                        view.setText("Verzonden documenten");
+                        view.setText(res.getString(R.string.send_messages));
                         return view;
                     case 6:
                         text = res.getString(R.string.send_mail);

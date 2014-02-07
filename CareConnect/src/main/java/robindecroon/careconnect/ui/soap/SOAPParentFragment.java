@@ -97,12 +97,13 @@ public abstract class SOAPParentFragment extends Fragment {
 
     protected void addWord(final LinearLayout mostUsed, final String word) {
         final TextView word1 = new TextView(getActivity());
+        word1.setBackground(getResources().getDrawable(R.drawable.shadow_white));
         word1.setText(word);
+        word1.setTextSize(16);
         LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        params1.setMargins(4, 0, 4, 0);
+        params1.setMargins(2, 0, 2, 0);
         word1.setLayoutParams(params1);
-        word1.setPadding(5, 5, 5, 5);
-        word1.setBackgroundColor(getResources().getColor(android.R.color.white));
+        word1.setPadding(10, 5, 10, 5);
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +125,9 @@ public abstract class SOAPParentFragment extends Fragment {
             }
 
         });
+        word1.bringToFront();
         mostUsed.addView(word1);
+        mostUsed.invalidate();
     }
 
 
@@ -194,8 +197,8 @@ public abstract class SOAPParentFragment extends Fragment {
                                            Point shadowTouchPoint) {
             shadowSize.x = 800;
             shadowSize.y = 500;
-            shadowTouchPoint.x = 150;
-            shadowTouchPoint.y = 150;
+            shadowTouchPoint.x = 50;
+            shadowTouchPoint.y = 80;
         }
     }
 }

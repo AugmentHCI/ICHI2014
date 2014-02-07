@@ -34,6 +34,10 @@ public class SubjectiveFragment extends SOAPParentFragment {
 
         initializeInputView();
 
+        LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.favorites_container);
+        for (String suggestion : getResources().getStringArray(R.array.favorites_subjective)) {
+            addWord(favorites, suggestion);
+        }
         LinearLayout mostUsed = (LinearLayout) rootView.findViewById(R.id.most_used_container);
         for (String suggestion : getResources().getStringArray(R.array.most_used_subjective)) {
             addWord(mostUsed, suggestion);
@@ -49,10 +53,6 @@ public class SubjectiveFragment extends SOAPParentFragment {
         LinearLayout colleagues = (LinearLayout) rootView.findViewById(R.id.colleagues_container);
         for (String suggestion : getResources().getStringArray(R.array.colleagues_subjective)) {
             addWord(colleagues, suggestion);
-        }
-        LinearLayout location = (LinearLayout) rootView.findViewById(R.id.location_container);
-        for (String suggestion : getResources().getStringArray(R.array.location_subjective)) {
-            addWord(location, suggestion);
         }
 
         return rootView;

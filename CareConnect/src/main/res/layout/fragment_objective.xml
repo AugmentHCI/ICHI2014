@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,7 +160,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,7 +217,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -278,7 +278,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -338,7 +338,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/content_back"
-                android:layout_height="100dp">
+                android:layout_height="@dimen/objective_height">
 
                 <TextView
                     android:layout_width="wrap_content"

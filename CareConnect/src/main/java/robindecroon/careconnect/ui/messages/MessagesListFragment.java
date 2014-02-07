@@ -114,8 +114,10 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
                 break;
             case 4:
                 mAdapter.getFilter().filter(MessageType.IMAGE.toString());
+                break;
             case 6:
                 mAdapter.getFilter().filter(MessageType.SEND.toString());
+                break;
         }
     }
 

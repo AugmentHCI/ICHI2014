@@ -76,28 +76,35 @@
         <item>opgeblazen gevoel</item>
         <item>slecht zicht</item>
         <item>duizelig</item>
+        <item>hevige regels</item>
+        <item>bloed bij plassen</item>
     </string-array>
 
     <string-array name="recent_subjective">
-        <item>pijn in rug</item>
-        <item>hoofdpijn</item>
-        <item>slechte smaak</item>
-        <item>nekpijn</item>
-        <item>droge hoest</item>
-        <item>opgeblazen gevoel</item>
-        <item>slecht zicht</item>
-        <item>duizelig</item>
+        <item>beroerte</item>
+        <item>nek- en rugklachten</item>
+        <item>ontstoken urinewegen</item>
+        <item>contacteczeem</item>
+        <item>staar</item>
+        <item>oorsuizen</item>
+        <item>migraine</item>
+        <item>epilepsi</item>
+        <item>schizofrenie</item>
+        <item>slapeloosheid</item>
     </string-array>
 
     <string-array name="prehistory_subjective">
-        <item>pijn in rug</item>
-        <item>hoofdpijn</item>
-        <item>slechte smaak</item>
-        <item>nekpijn</item>
-        <item>droge hoest</item>
-        <item>opgeblazen gevoel</item>
-        <item>slecht zicht</item>
-        <item>duizelig</item>
+        <item>astma</item>
+        <item>angststoornissen</item>
+        <item>overspanning</item>
+        <item>herpes</item>
+        <item>diabetis</item>
+        <item>hoge bloeddruk</item>
+        <item>griep</item>
+        <item>zware hoest</item>
+        <item>ontstoken schouder</item>
+        <item>snijwonde</item>
+        <item>genitale wratten</item>
     </string-array>
 
     <string-array name="colleagues_subjective">
@@ -109,18 +116,20 @@
         <item>opgeblazen gevoel</item>
         <item>slecht zicht</item>
         <item>duizelig</item>
+        <item>rode ogen</item>
+        <item>overgewicht</item>
     </string-array>
 
-    <string-array name="location_subjective">
-        <item>pijn in rug</item>
-        <item>hoofdpijn</item>
-        <item>slechte smaak</item>
-        <item>nekpijn</item>
-        <item>droge hoest</item>
-        <item>opgeblazen gevoel</item>
-        <item>slecht zicht</item>
-        <item>duizelig</item>
-        <item>Dit is heel lange tekst, veel te lang</item>
+    <string-array name="favorites_subjective">
+        <item>alles ok</item>
+        <item>rode keel</item>
+        <item>misselijk</item>
+        <item>depressie</item>
+        <item>steken in maag</item>
+        <item>moeilijkheden met ademen</item>
+        <item>zwarte plekjes in zicht</item>
+        <item>te lage bloeddruk</item>
+        <item>schimmelplekjes</item>
     </string-array>
 
     <string-array name="evaluation_suggestions">
@@ -342,5 +351,8 @@
     <string name="xray_subtitle">radiologieafbeeldingen en eigen afbeeldingen</string>
     <string name="send_mail">Verzonden documenten</string>
     <string name="send_mail_subtitle">Alle verzonden documenten</string>
+    <string name="received_messages">Ontvangen documenten</string>
+    <string name="send_messages">Verzonden documenten</string>
+    <string name="favorites">Favorieten</string>
 
 </resources>

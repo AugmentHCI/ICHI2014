@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -29,6 +30,8 @@ public class ColoredSeekBar extends SeekBar {
     private final float lineHeight = 0.3f * thumbHalfHeight;
     private final float padding = thumbHalfWidth;
 
+    private boolean firstTouch = true;
+
     public ColoredSeekBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -46,20 +49,33 @@ public class ColoredSeekBar extends SeekBar {
     protected synchronized void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        // draw seek bar background line
-        final RectF rect = new RectF(padding, 0.5f * (getHeight() - lineHeight), getWidth() - padding, 0.5f * (getHeight() + lineHeight));
+        if (!firstTouch) {
 
-        float width = getResources().getDimension(R.dimen.seekbarwidth);
-        Resources resources = getResources();
-        LinearGradient test = new LinearGradient(0.f, 0.f, width, 0.0f,
-                new int[]{resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
-                null, Shader.TileMode.CLAMP);
-        ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[]{10, 10, 10, 10, 10, 10, 10, 10}, null, null));
-        shape.getPaint().setShader(test);
+            // draw seek bar background line
+            final RectF rect = new RectF(padding, 0.5f * (getHeight() - lineHeight), getWidth() - padding, 0.5f * (getHeight() + lineHeight));
 
-        paint.setShader(test);
+            float width = getResources().getDimension(R.dimen.seekbarwidth);
+            Resources resources = getResources();
+            LinearGradient gradientColors = new LinearGradient(0.f, 0.f, width, 0.0f,
+                    new int[]{resources.getColor(android.R.color.holo_blue_light), resources.getColor(android.R.color.holo_green_light), resources.getColor(android.R.color.holo_red_light)},
+                    null, Shader.TileMode.CLAMP);
+            ShapeDrawable shape = new ShapeDrawable(new RoundRectShape(new float[]{10, 10, 10, 10, 10, 10, 10, 10}, null, null));
+            shape.getPaint().setShader(gradientColors);
 
-        canvas.drawRect(rect, paint);
+            paint.setShader(gradientColors);
+
+            canvas.drawRect(rect, paint);
+
+        } else {
+            firstTouch = false;
+
+            // draw seek bar background line
+            final RectF rect = new RectF(padding, 0.6f * (getHeight() - lineHeight), getWidth() - padding, 0.5f * (getHeight() + lineHeight));
+
+            paint.setColor(Color.GRAY);
+
+            canvas.drawRect(rect, paint);
+        }
     }
 
 }
