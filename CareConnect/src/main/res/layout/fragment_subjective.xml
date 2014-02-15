@@ -204,6 +204,39 @@
 
         </RelativeLayout>
 
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/soap_height">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="@dimen/soap_padding">
+
+                <LinearLayout
+                    android:id="@+id/location_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/location"
+                android:layout_marginLeft="30sp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
     </LinearLayout>
 
 </FrameLayout>

@@ -277,7 +277,36 @@
         <item>Hydrocortison met overige middelen</item>
         <item>Paracetamol combinatiepreparaten excl psycholeptica</item>
         <item>Kunsttranen en andere indifferente preparaten</item>
+    </string-array>
 
+    <string-array name="objective_favorites">
+        <item>keel is ontstoken</item>
+        <item>onderbuik doet pijn bij druk</item>
+        <item>verkoudheid</item>
+        <item>bloed in urine</item>
+        <item>ontstoken wonde</item>
+        <item>overgevoelig voor licht</item>
+        <item>vergeetachtigheid</item>
+    </string-array>
+
+    <string-array name="objective_subjective_based">
+        <item>gesprongen aders in ogen</item>
+        <item>gezwollen klieren</item>
+        <item>pijn en zwellingen in de gewrichten</item>
+        <item>jeuk in gezicht</item>
+        <item>oorsuizen</item>
+        <item>problemen met slapen</item>
+        <item>hartklopping</item>
+    </string-array>
+
+    <string-array name="objective_most_used">
+        <item>haaruitval</item>
+        <item>huiduitslag</item>
+        <item>ernstige vermoeidheid</item>
+        <item>kortademigheid</item>
+        <item>evenwichtsstoornissen</item>
+        <item>spiertrekkingen in het gezicht</item>
+        <item>pijn in de borst</item>
     </string-array>
 
     <string name="title_activity_message">MessageActivity</string>
@@ -291,7 +320,7 @@
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus libero leo, pellentesque ornare, adipiscing vitae, rhoncus commodo, nulla. Fusce quis ipsum. Nulla neque massa, feugiat sed, commodo in, adipiscing ut, est. In fermentum mattis ligula. Nulla ipsum. Vestibulum condimentum condimentum augue. Nunc purus risus, volutpat sagittis, lobortis at, dignissim sed, sapien. Fusce porttitor iaculis ante. Curabitur eu arcu. Morbi quam purus, tempor eget, ullamcorper feugiat, commodo ullamcorper, neque.</string>
     <string name="no_voice_recognition">Helaas hebben we geen woorden herkend.</string>
     <string name="speech_btn_description">Toets om via spraak tekst in te geven</string>
-    <string name="inputfield_hint">Selecteer of sleep uw gewenste input naar hier&#8230;</string>
+    <string name="inputfield_hint">Type, of sleep uw gewenste input naar dit venstertje&#8230;</string>
     <string name="recent">Recent</string>
     <string name="most_used">Meest gebruikt</string>
     <string name="prehistory">Voorgeschiedenis patient</string>
@@ -354,5 +383,7 @@
     <string name="received_messages">Ontvangen documenten</string>
     <string name="send_messages">Verzonden documenten</string>
     <string name="favorites">Favorieten</string>
+    <string name="parameters">Parameters</string>
+    <string name="subjective_based">Op basis van subjectief</string>
 
 </resources>

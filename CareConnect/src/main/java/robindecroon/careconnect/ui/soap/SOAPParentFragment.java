@@ -103,7 +103,7 @@ public abstract class SOAPParentFragment extends Fragment {
         LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params1.setMargins(2, 0, 2, 0);
         word1.setLayoutParams(params1);
-        word1.setPadding(10, 5, 10, 5);
+        word1.setPadding(12, 5, 10, 5);
         word1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

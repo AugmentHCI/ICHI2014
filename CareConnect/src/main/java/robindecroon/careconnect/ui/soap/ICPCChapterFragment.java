@@ -1,7 +1,6 @@
 package robindecroon.careconnect.ui.soap;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -29,7 +28,7 @@ public class ICPCChapterFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_icpc_chapter, container, false);
 
         GridView gridview = (GridView) rootView.findViewById(R.id.icpc_gridview);
-        gridview.setAdapter(new ICPCAdapter(getActivity()));
+        gridview.setAdapter(new ICPCAdapter());
 
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -42,11 +41,9 @@ public class ICPCChapterFragment extends Fragment {
     }
 
     public class ICPCAdapter extends BaseAdapter {
-        private Context mContext;
         private String[] chapters;
 
-        public ICPCAdapter(Context c) {
-            mContext = c;
+        public ICPCAdapter() {
             chapters = getResources().getStringArray(R.array.icpc_chapters);
         }
 
@@ -63,7 +60,7 @@ public class ICPCChapterFragment extends Fragment {
         }
 
         // create a new ImageView for each item referenced by the Adapter
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             Button button = new Button(getActivity());
             final String text = (String) getItem(position);
             button.setText(text);
@@ -75,9 +72,8 @@ public class ICPCChapterFragment extends Fragment {
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
 
-                    ICPCCodeFragment newCustomFragment = ICPCCodeFragment.newInstance();
+                    ICPCCodeFragment newCustomFragment = ICPCCodeFragment.newInstance((String) getItem(position));
                     transaction.replace(R.id.icpc_chapter_fragment, newCustomFragment);
-                    transaction.addToBackStack(null);
                     transaction.commit();
                 }
             });

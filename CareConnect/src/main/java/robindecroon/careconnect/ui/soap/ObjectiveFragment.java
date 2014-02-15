@@ -1,11 +1,11 @@
 package robindecroon.careconnect.ui.soap;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -13,7 +13,9 @@ import robindecroon.careconnect.R;
 import robindecroon.careconnect.libraries.RangeSeekBar;
 import robindecroon.careconnect.util.ColoredSeekBar;
 
-public class ObjectiveFragment extends Fragment {
+public class ObjectiveFragment extends SOAPParentFragment {
+
+    private static final int VOICE_RECOGNITION_REQUEST_CODE = 1240;
 
     private View rootView;
 
@@ -64,6 +66,20 @@ public class ObjectiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_objective, container, false);
+
+
+        LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.objective_subjective_based_container);
+        for (String suggestion : getResources().getStringArray(R.array.objective_subjective_based)) {
+            addWord(favorites, suggestion);
+        }
+        LinearLayout mostUsed = (LinearLayout) rootView.findViewById(R.id.objective_most_used_container);
+        for (String suggestion : getResources().getStringArray(R.array.objective_most_used)) {
+            addWord(mostUsed, suggestion);
+        }
+        LinearLayout recent = (LinearLayout) rootView.findViewById(R.id.objective_favorites_container);
+        for (String suggestion : getResources().getStringArray(R.array.objective_favorites)) {
+            addWord(recent, suggestion);
+        }
 
 
         /*
@@ -356,5 +372,10 @@ public class ObjectiveFragment extends Fragment {
         super.onResume();
         bloodPressureSeekbar.setSelectedMaxValue(120);
         bloodPressureSeekbar.setSelectedMinValue(80);
+    }
+
+    @Override
+    protected int getVoiceRecognitionCode() {
+        return VOICE_RECOGNITION_REQUEST_CODE;
     }
 }

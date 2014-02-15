@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grey_background_pattern"
+    android:background="@android:color/white"
     tools:context="robindecroon.careconnect.ui.soap.EvaluationFragment">
 
     <LinearLayout
         android:id="@+id/icpc_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="10dp"
         android:orientation="horizontal"
         android:gravity="center">
 

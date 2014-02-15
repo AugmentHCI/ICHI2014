@@ -54,6 +54,10 @@ public class SubjectiveFragment extends SOAPParentFragment {
         for (String suggestion : getResources().getStringArray(R.array.colleagues_subjective)) {
             addWord(colleagues, suggestion);
         }
+        LinearLayout location = (LinearLayout) rootView.findViewById(R.id.location_container);
+        for (String suggestion : getResources().getStringArray(R.array.favorites_subjective)) {
+            addWord(location, suggestion);
+        }
 
         return rootView;
     }
