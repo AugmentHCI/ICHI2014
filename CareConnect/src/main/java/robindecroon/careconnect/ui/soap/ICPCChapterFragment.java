@@ -69,10 +69,14 @@ public class ICPCChapterFragment extends Fragment {
                 public void onClick(View view) {
                     FragmentManager fragmentManager = getFragmentManager();
 
+                    EvaluationFragment evaluationFragment = ((EvaluationFragment) getParentFragment());
+                    String oldLabel = evaluationFragment.getLabelText();
+
+                    evaluationFragment.setLabelText(oldLabel + ": " + text);
                     FragmentTransaction transaction = fragmentManager.beginTransaction();
                     transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
 
-                    ICPCCodeFragment newCustomFragment = ICPCCodeFragment.newInstance((String) getItem(position));
+                    ICPCCodeFragment newCustomFragment = ICPCCodeFragment.newInstance(text);
                     transaction.replace(R.id.icpc_chapter_fragment, newCustomFragment);
                     transaction.commit();
                 }

@@ -1,6 +1,8 @@
 package robindecroon.careconnect.ui.soap;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import robindecroon.careconnect.MainActivity;
 import robindecroon.careconnect.R;
@@ -36,9 +39,32 @@ public class PrescriptionFragment extends SOAPParentFragment {
         rootView = inflater.inflate(R.layout.fragment_prescription, container, false);
         inputField = (EditText) rootView.findViewById(R.id.prescription_input);
         speakButton = (ImageButton) rootView.findViewById(R.id.btnSpeakPrescription);
+        ImageButton barcodeButton = (ImageButton) rootView.findViewById(R.id.btnBarcode);
+        barcodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PackageManager manager = getActivity().getPackageManager();
+                Intent i;
+                try {
+                    i = manager.getLaunchIntentForPackage("de.gavitec.android");
+                    if (i == null)
+                        throw new PackageManager.NameNotFoundException();
+                    i.addCategory(Intent.CATEGORY_LAUNCHER);
+                    startActivity(i);
+                } catch (PackageManager.NameNotFoundException e) {
+
+                }
+            }
+        });
+
+        ((TextView) rootView.findViewById(R.id.taken_before_label)).setText(getResources().getString(R.string.taken_before) + " " + getResources().getString(R.string.by) + " " + getResources().getString(R.string.full_name));
 
         initializeInputView();
 
+        LinearLayout chronicBased = (LinearLayout) rootView.findViewById(R.id.chronic_medication);
+        for (String suggestion : getResources().getStringArray(R.array.chronic_medication_array)) {
+            addWord(chronicBased, suggestion);
+        }
         LinearLayout soapBased = (LinearLayout) rootView.findViewById(R.id.soap_based);
         for (String suggestion : getResources().getStringArray(R.array.medication_soap)) {
             addWord(soapBased, suggestion);

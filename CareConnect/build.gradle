@@ -32,10 +32,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
+    compile 'com.android.support:support-v4:19.0.0'
     compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:4.0.30'
     compile 'com.viewpagerindicator:library:2.4.1@aar'
+    compile 'org.droidparts:droidparts:2.0.1'
     compile 'commons-io:commons-io:2.4'
     compile project(":libraries:dynamicgrid")
 }

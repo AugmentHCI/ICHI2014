@@ -2,7 +2,6 @@ package robindecroon.careconnect.ui.soap;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,7 +77,7 @@ public class ICPCCodeFragment extends Fragment {
      */
     public Map<String,List<String>> readICPCCSVFile() throws IOException {
         InputStream input = getActivity().getAssets().open("icpc.csv");
-        BufferedReader in = new BufferedReader(new InputStreamReader(input));
+        BufferedReader in = new BufferedReader(new InputStreamReader(input, "ISO-8859-1"));
 
         String[] chapters = getResources().getStringArray(R.array.icpc_chapters);
 
@@ -97,11 +97,13 @@ public class ICPCCodeFragment extends Fragment {
                     String description = values[2];
                     lists.get(chapter).add(code + " "  + description);
                 } catch (Exception e) {
-                    Log.e("ICPCParser", "Error in country CSV file!");
                 }
             }
         } catch (Exception e) {
-            Log.e("ICPCParser", "Error in country CSV file!");
+        }
+
+        for(List<String> list : lists.values()) {
+            Collections.sort(list);
         }
         return lists;
     }

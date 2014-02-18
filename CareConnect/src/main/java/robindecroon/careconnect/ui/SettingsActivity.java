@@ -214,6 +214,10 @@ public class SettingsActivity extends PreferenceActivity {
             bindPreferenceSummaryToValue(findPreference("example_text"));
             bindPreferenceSummaryToValue(findPreference("example_list"));
         }
+
+        protected boolean isValidFragment (String fragmentName) {
+            return true;
+        }
     }
 
     /**
@@ -232,6 +236,10 @@ public class SettingsActivity extends PreferenceActivity {
             // updated to reflect the new value, per the Android Design
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
+        }
+
+        protected boolean isValidFragment (String fragmentName) {
+            return true;
         }
     }
 
@@ -252,6 +260,10 @@ public class SettingsActivity extends PreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("sync_frequency"));
         }
+
+        protected boolean isValidFragment (String fragmentName) {
+            return true;
+        }
     }
 
     /**
@@ -266,5 +278,31 @@ public class SettingsActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.pref_dashboard);
 
         }
+
+        protected boolean isValidFragment (String fragmentName) {
+            return true;
+        }
+    }
+
+    /**
+     * This fragment shows data and sync preferences only. It is used when the
+     * activity is showing a two-pane settings UI.
+     */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static class SOAPPreferenceFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.pref_soap);
+
+        }
+
+
+        protected boolean isValidFragment (String fragmentName) {
+            return true;
+        }
+
+
+
     }
 }

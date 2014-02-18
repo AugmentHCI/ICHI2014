@@ -18,4 +18,7 @@
         android:fragment="robindecroon.careconnect.ui.SettingsActivity$DashboardPreferenceFragment"
         android:title="@string/title_section2" />
 
+    <header
+        android:fragment="robindecroon.careconnect.ui.SettingsActivity$SOAPPreferenceFragment"
+        android:title="@string/pref_header_soap" />
 </preference-headers>

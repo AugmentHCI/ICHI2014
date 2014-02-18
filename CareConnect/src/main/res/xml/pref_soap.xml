@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:key="icd10"
+        android:title="@string/use_icd10"
+        android:summary="@string/icd10_vs_icpc"
+        android:defaultValue="false" />
+
+</PreferenceScreen>

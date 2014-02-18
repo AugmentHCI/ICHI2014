@@ -20,7 +20,7 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/objective_padding">
 
-                <EditText
+                <org.droidparts.widget.ClearableEditText
                     android:id="@+id/objective_input"
                     android:layout_width="0dp"
                     android:layout_weight="1"

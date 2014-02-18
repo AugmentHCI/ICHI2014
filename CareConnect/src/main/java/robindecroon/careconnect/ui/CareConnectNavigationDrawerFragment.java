@@ -59,7 +59,7 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
     private ListView mDrawerListView;
     private View mFragmentContainerView;
 
-    private int mCurrentSelectedPosition = 3;
+    private int mCurrentSelectedPosition = 4;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 

@@ -137,12 +137,12 @@
         <item>D73 Verondersteld infect gastro_enteritis</item>
         <item>R80 Influenza</item>
         <item>R78 Acute bronchitis</item>
-        <item>U71 Cystitis</item>
         <item>L03 Symptomen/klachten lage rug</item>
     </string-array>
 
     <string-array name="evalution_suggestions_spare">
         <item>L83 Neksyndroom</item>
+        <item>U71 Cystitis</item>
         <item>R75 Acute/chronische sinusitis</item>
         <item>L87 Bursitis/tendinitis/synoviitis nao</item>
         <item>S16 Buil/kneuzing</item>
@@ -150,23 +150,23 @@
     </string-array>
 
     <string-array name="icpc_chapters">
-        <item>A: Algemeen en niet gespecifieerd</item>
-        <item>B: Bloed, bloedvormende organen</item>
-        <item>D: Spijsverteringsorganen</item>
-        <item>F: Oog</item>
-        <item>H: Oor</item>
-        <item>K: Cardiovasculair stelsel</item>
-        <item>L: Beweginsapparaat</item>
-        <item>N: Zenuwstelsel</item>
-        <item>P: Psychische problemen</item>
-        <item>R: Luchtwegen</item>
-        <item>S: Huid</item>
-        <item>T: Endocriene klieren</item>
-        <item>U: Urinewegen</item>
-        <item>W: Zwangerschap, bevaling</item>
-        <item>X: Geslachtsorganen vrouw, inclusief borsten</item>
-        <item>Y: Geslachtsorganen man, inclusief borsten</item>
-        <item>Z: Sociale problemen</item>
+        <item>A. Algemeen en niet gespecifieerd</item>
+        <item>B. Bloed, bloedvormende organen</item>
+        <item>D. Spijsverteringsorganen</item>
+        <item>F. Oog</item>
+        <item>H. Oor</item>
+        <item>K. Cardiovasculair stelsel</item>
+        <item>L. Beweginsapparaat</item>
+        <item>N. Zenuwstelsel</item>
+        <item>P. Psychische problemen</item>
+        <item>R. Luchtwegen</item>
+        <item>S. Huid</item>
+        <item>T. Endocriene klieren</item>
+        <item>U. Urinewegen</item>
+        <item>W. Zwangerschap, bevaling</item>
+        <item>X. Geslachtsorganen vrouw, inclusief borsten</item>
+        <item>Y. Geslachtsorganen man, inclusief borsten</item>
+        <item>Z. Sociale problemen</item>
     </string-array>
 
     <string-array name="icpc_a">
@@ -234,7 +234,6 @@
         <item>Esomeprazol</item>
         <item>Metropolol</item>
         <item>Omeprazol</item>
-        <item>Rosuvastatine</item>
     </string-array>
 
     <string-array name="medication_taken_before">
@@ -307,6 +306,25 @@
         <item>evenwichtsstoornissen</item>
         <item>spiertrekkingen in het gezicht</item>
         <item>pijn in de borst</item>
+    </string-array>
+
+    <string-array name="chronic_array">
+        <item>K77 Hartfalen</item>
+        <item>L88 Reumato\ïde artritis</item>
+        <item>L95 Osteoporose</item>
+        <item>T90 Diabetes mellitus</item>
+        <item>B90 Aids en hiv-infectie</item>
+        <item>P15 Aandoeningen gerelateerd aan alcohol</item>
+    </string-array>
+
+    <string-array name="chronic_medication_array">
+        <item>colchicine</item>
+        <item>uricosurica</item>
+        <item>benzbromaron</item>
+        <item>allopurinol</item>
+        <item>soma tropine</item>
+        <item>flufenazine</item>
+        <item>glimepiride</item>
     </string-array>
 
     <string name="title_activity_message">MessageActivity</string>
@@ -385,5 +403,13 @@
     <string name="favorites">Favorieten</string>
     <string name="parameters">Parameters</string>
     <string name="subjective_based">Op basis van subjectief</string>
+    <string name="chronic_diseases">Chronische aandoeningen</string>
+    <string name="icpc_chapters">ICPC Hoofdstukken</string>
+    <string name="of">van</string>
+    <string name="use_icd10">Gebruik ICD10 codes</string>
+    <string name="icd10_vs_icpc">Gebruik ICD10 codes in plaats van ICPC codes</string>
+    <string name="chronic_medication">Chronische medicatie</string>
+    <string name="barcode_description">Scan de barcode van doosje medicatie in.</string>
+    <string name="by">door</string>
 
 </resources>

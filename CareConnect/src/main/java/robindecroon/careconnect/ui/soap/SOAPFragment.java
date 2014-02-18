@@ -64,7 +64,7 @@ public class SOAPFragment extends Fragment {
                 else if (i == 1)
                     return ObjectiveFragment.newInstance();
                 else
-                    return EvaluationFragment.newInstance();
+                    return EvaluationFragment.newInstance(getResources().getString(R.string.icpc_chapters));
             }
 
             @Override
