@@ -169,35 +169,47 @@
         <item>Z. Sociale problemen</item>
     </string-array>
 
-    <string-array name="icpc_a">
+    <string-array name="prehistory_evaluation">
         <item>A00 fam.anamnese algemeen, niet gespec.</item>
         <item>A01 pijn gegen./niet gespec.</item>
         <item>A02 koude rillingen</item>
         <item>A03 koorts</item>
         <item>A04 moeheid/ziektegevoel</item>
-        <item>A05 algehele achteruitgang</item>
+    </string-array>
+
+    <string-array name="recent_evaluation">
         <item>A06 flauwvallen/syncope</item>
         <item>A07 coma</item>
         <item>A08 zwelling (ex. oedeem K07)</item>
         <item>A09 transpiratieproblemen</item>
         <item>A10 bloeding (lokalisatie nao)</item>
-        <item>A12 allergie/allergische reactie neg</item>
-        <item>A13 bezorgdheid bijwerking geneesmiddel</item>
+    </string-array>
+
+    <string-array name="most_used_evaluation">
         <item>A14 koliek bij zuigeling</item>
         <item>A15 overmatig huilende zuigeling</item>
         <item>A16 prikkelbare/drukke zuigeling</item>
         <item>A17 and. alg. sympt/klacht. zuigeling neg</item>
-        <item>A20 euthanasie verzoek/gesprek over</item>
-        <item>A25 angst voor de dood</item>
-        <item>A26 angst voor kanker nao neg</item>
+    </string-array>
+
+    <string-array name="favorites_evaluation">
         <item>A27 angst voor andere ziekte nao neg</item>
         <item>A28 handicap/beperking nao</item>
         <item>A29 andere algemene symptomen/klachten</item>
         <item>A70 tuberculose gegen. (ex. R70)</item>
+    </string-array>
+
+    <string-array name="icpc_a">
         <item>A71 mazelen</item>
         <item>A72 waterpokken</item>
         <item>A73 malaria</item>
         <item>A74 rode hond</item>
+        <item>A20 euthanasie verzoek/gesprek over</item>
+        <item>A25 angst voor de dood</item>
+        <item>A26 angst voor kanker nao neg</item>
+        <item>A05 algehele achteruitgang</item>
+        <item>A12 allergie/allergische reactie neg</item>
+        <item>A13 bezorgdheid bijwerking geneesmiddel</item>
         <item>A75 mononucleosis infectiosa</item>
         <item>A76 andere virusziekten met exantheem</item>
         <item>A77 andere virusziekten nao</item>
@@ -411,5 +423,5 @@
     <string name="chronic_medication">Chronische medicatie</string>
     <string name="barcode_description">Scan de barcode van doosje medicatie in.</string>
     <string name="by">door</string>
-
+    <string name="third_payer">Derde betaler</string>
 </resources>
