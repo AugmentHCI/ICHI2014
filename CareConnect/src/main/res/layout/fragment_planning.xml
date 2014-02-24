@@ -36,6 +36,17 @@
                 android:contentDescription="@string/speech_btn_description"
                 android:src="@android:drawable/ic_btn_speak_now" />
 
+            <ImageButton
+                android:id="@+id/btnVaccination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Registreer een vaccinatie"
+                android:scaleType="fitCenter"
+                android:src="@drawable/injection" />
+
         </LinearLayout>
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -152,7 +163,7 @@
                 android:padding="@dimen/soap_padding">
 
                 <LinearLayout
-                    android:id="@+id/planning_prehistory_container"
+                    android:id="@+id/planning_treatment_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
@@ -165,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/prehistory"
+                android:text="@string/treatment"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
@@ -185,7 +196,7 @@
                 android:padding="@dimen/soap_padding">
 
                 <LinearLayout
-                    android:id="@+id/planning_colleagues_container"
+                    android:id="@+id/planning_referal_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
@@ -198,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/colleagues"
+                android:text="@string/referal"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 
@@ -218,7 +229,7 @@
                 android:padding="@dimen/soap_padding">
 
                 <LinearLayout
-                    android:id="@+id/planning_location_container"
+                    android:id="@+id/planning_parameter_container"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
@@ -231,7 +242,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_background_pattern"
                 android:padding="5dp"
-                android:text="@string/location"
+                android:text="@string/individual_parameter"
                 android:layout_marginLeft="30sp"
                 android:textColor="@android:color/black" />
 

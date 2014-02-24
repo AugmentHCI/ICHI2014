@@ -35,27 +35,27 @@ public class PlanningFragment extends SOAPParentFragment {
         initializeInputView();
 
         LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.planning_favorites_container);
-        for (String suggestion : getResources().getStringArray(R.array.favorites_subjective)) {
+        for (String suggestion : getResources().getStringArray(R.array.planning_favorites)) {
             addWord(favorites, suggestion);
         }
         LinearLayout mostUsed = (LinearLayout) rootView.findViewById(R.id.planning_most_used_container);
-        for (String suggestion : getResources().getStringArray(R.array.most_used_subjective)) {
+        for (String suggestion : getResources().getStringArray(R.array.planning_most_used)) {
             addWord(mostUsed, suggestion);
         }
         LinearLayout recent = (LinearLayout) rootView.findViewById(R.id.planning_recent_container);
-        for (String suggestion : getResources().getStringArray(R.array.recent_subjective)) {
+        for (String suggestion : getResources().getStringArray(R.array.planning_recent)) {
             addWord(recent, suggestion);
         }
-        LinearLayout prehis = (LinearLayout) rootView.findViewById(R.id.planning_prehistory_container);
-        for (String suggestion : getResources().getStringArray(R.array.prehistory_subjective)) {
+        LinearLayout prehis = (LinearLayout) rootView.findViewById(R.id.planning_treatment_container);
+        for (String suggestion : getResources().getStringArray(R.array.planning_treatment)) {
             addWord(prehis, suggestion);
         }
-        LinearLayout colleagues = (LinearLayout) rootView.findViewById(R.id.planning_colleagues_container);
-        for (String suggestion : getResources().getStringArray(R.array.colleagues_subjective)) {
+        LinearLayout colleagues = (LinearLayout) rootView.findViewById(R.id.planning_referal_container);
+        for (String suggestion : getResources().getStringArray(R.array.planning_referal)) {
             addWord(colleagues, suggestion);
         }
-        LinearLayout location = (LinearLayout) rootView.findViewById(R.id.planning_location_container);
-        for (String suggestion : getResources().getStringArray(R.array.favorites_subjective)) {
+        LinearLayout location = (LinearLayout) rootView.findViewById(R.id.planning_parameter_container);
+        for (String suggestion : getResources().getStringArray(R.array.planning_parameter)) {
             addWord(location, suggestion);
         }
 

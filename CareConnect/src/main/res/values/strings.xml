@@ -339,6 +339,68 @@
         <item>glimepiride</item>
     </string-array>
 
+    <string-array name="planning_favorites">
+        <item>Indien niet beter, bel terug na 1 week</item>
+        <item>Bloedprikken</item>
+        <item>rontgenfoto\'s</item>
+        <item>verwijzing naar specialist</item>
+        <item>behandeling met medicatiekuur</item>
+        <item>myectomie</item>
+    </string-array>
+
+    <string-array name="planning_most_used">
+        <item>bloedonderzoek</item>
+        <item>combinatietest</item>
+        <item>dorstproef</item>
+        <item>vlokkentest</item>
+        <item>advies betreffende voeding</item>
+        <item>advies dragen lenzen/bril</item>
+        <item>bepalen individueel risicoprofiel</item>
+    </string-array>
+
+    <string-array name="planning_recent">
+        <item>CAT scan bijnier rechts</item>
+        <item>Australie antigeen</item>
+        <item>ingreep neus keel</item>
+        <item>vlokkentest</item>
+        <item>arbeidsongeschikt</item>
+        <item>advies betreffende kindervoeding</item>
+    </string-array>
+
+    <string-array name="planning_treatment">
+        <item>N.M.R. Orbita</item>
+        <item>advies betreffende roken</item>
+        <item>cocktail mfl</item>
+        <item>bevalling met forceps</item>
+        <item>afschrapen cornea</item>
+        <item>advies glucosemonitoring</item>
+    </string-array>
+
+    <string-array name="planning_referal">
+        <item>anesthesie</item>
+        <item>cardiologie</item>
+        <item>dermatologie</item>
+        <item>geriatrie</item>
+        <item>pediatrie</item>
+        <item>radiologie</item>
+        <item>revalidatie</item>
+        <item>intensieve zorgen</item>
+        <item>neurologie</item>
+        <item>inwendige geneeskunde</item>
+    </string-array>
+
+    <string-array name="planning_parameter">
+        <item>hoofdomtrek</item>
+        <item>ademhalingssaturatie</item>
+        <item>bloeddruk</item>
+        <item>amfetamines</item>
+        <item>histone</item>
+        <item>peak-flow</item>
+        <item>stikstofwisselingen</item>
+        <item>gewicht</item>
+        <item>genetische testen</item>
+    </string-array>
+
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_master_drawer">MasterDrawerActivity</string>
     <string name="hello_world">Hello world!</string>
@@ -424,4 +486,7 @@
     <string name="barcode_description">Scan de barcode van doosje medicatie in.</string>
     <string name="by">door</string>
     <string name="third_payer">Derde betaler</string>
+    <string name="treatment">Behandeling</string>
+    <string name="referal">Verwijzing</string>
+    <string name="individual_parameter">Parameter individueel</string>
 </resources>
