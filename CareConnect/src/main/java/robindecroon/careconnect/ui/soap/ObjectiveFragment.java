@@ -4,11 +4,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import robindecroon.careconnect.AutoCompleteAdapter;
 import robindecroon.careconnect.R;
 import robindecroon.careconnect.libraries.RangeSeekBar;
 import robindecroon.careconnect.util.ColoredSeekBar;
@@ -66,6 +76,18 @@ public class ObjectiveFragment extends SOAPParentFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_objective, container, false);
+        inputField = (EditText) rootView.findViewById(R.id.objective_input);
+        speakButton = (ImageButton) rootView.findViewById(R.id.btnSpeakObjective);
+
+        Set<String> allObjectives = new HashSet<String>();
+        allObjectives.addAll(Arrays.asList(getResources().getStringArray(R.array.objective_subjective_based)));
+        allObjectives.addAll(Arrays.asList(getResources().getStringArray(R.array.objective_most_used)));
+        allObjectives.addAll(Arrays.asList(getResources().getStringArray(R.array.objective_favorites)));
+        List<String> list = new ArrayList<String>();
+        list.addAll(allObjectives);
+        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), list);
+        ((AutoCompleteTextView) inputField).setAdapter(adapter);
+        initializeInputView();
 
 
         LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.objective_subjective_based_container);

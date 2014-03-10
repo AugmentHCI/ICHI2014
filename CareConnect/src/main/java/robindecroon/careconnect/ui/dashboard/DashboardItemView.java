@@ -5,16 +5,15 @@ import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 import robindecroon.careconnect.R;
+import robindecroon.careconnect.util.ProfileDataGenerator;
 
 /**
  * Created by robindecroon on 03/01/14.
@@ -24,28 +23,32 @@ public class DashboardItemView extends LinearLayout {
     private Context mContext;
     private String mType;
     private View mView;
-    private GregorianCalendar mGregorianCalendar;
     private String[] mItems;
-    private SimpleDateFormat mSimpleDateFormat;
     private LinearLayout mContentLayout;
+    private ScrollView mScrollView;
 
     public DashboardItemView(Context context, String type) {
         super(context);
         this.mContext = context;
         this.mType = type;
-        this.mGregorianCalendar = new GregorianCalendar();
-        mItems = getResources().getStringArray(getResources().getIdentifier(mType, "array", mContext.getPackageName()));
-        int year = randBetween(2011, 2013);
-        mGregorianCalendar.set(mGregorianCalendar.YEAR, year);
-        int dayOfYear = randBetween(1, mGregorianCalendar.getActualMaximum(mGregorianCalendar.DAY_OF_YEAR));
-        mGregorianCalendar.set(mGregorianCalendar.DAY_OF_YEAR, dayOfYear);
-        mSimpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+        this.mItems = getResources().getStringArray(getResources().getIdentifier(mType, "array", mContext.getPackageName()));
 
         LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (layoutInflater != null) {
             mView = layoutInflater.inflate(R.layout.view_dashboard_item, this, true);
         }
         mContentLayout  = (LinearLayout) mView.findViewById(R.id.dashboard_item_layout);
+        mScrollView = (ScrollView) mView.findViewById(R.id.dashboard_scrollview);
+        mScrollView.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_MOVE) {
+                    mScrollView.requestDisallowInterceptTouchEvent(true);
+                }
+                return false;
+            }
+        });
         setTitle();
         initializeContentLayout();
     }
@@ -126,20 +129,8 @@ public class DashboardItemView extends LinearLayout {
 
     private TextView getNewDateView() {
         TextView date = new TextView(mContext);
-        date.setText(getNewTime());
+        date.setText(ProfileDataGenerator.getRandomDate());
         date.setTextColor(getResources().getColor(android.R.color.darker_gray));
         return date;
     }
-
-    private String getNewTime() {
-        Date date = mGregorianCalendar.getTime();
-        mGregorianCalendar.add(mGregorianCalendar.DAY_OF_YEAR, -5);
-        return mSimpleDateFormat.format(date);
-    }
-
-    public static int randBetween(int start, int end) {
-        return start + (int) Math.round(Math.random() * (end - start));
-    }
-
-
 }

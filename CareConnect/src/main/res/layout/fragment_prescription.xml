@@ -24,6 +24,7 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
+                android:completionThreshold="1"
                 android:background="@drawable/content_back"
                 android:hint="@string/inputfield_hint" />
 
@@ -49,6 +50,76 @@
                 android:src="@drawable/barcode" />
 
         </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/soap_height">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="@dimen/soap_padding">
+
+
+                <LinearLayout
+                    android:id="@+id/most_used_medication"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/most_used"
+                android:layout_marginLeft="30sp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/soap_height">
+
+            <!--  This is the main content -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/frame"
+                android:orientation="vertical"
+                android:padding="@dimen/soap_padding">
+
+
+                <LinearLayout
+                    android:id="@+id/recent_medication"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+
+            </RelativeLayout>
+
+            <!--  This is the title label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_background_pattern"
+                android:padding="5dp"
+                android:text="@string/recent"
+                android:layout_marginLeft="30sp"
+                android:textColor="@android:color/black" />
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"

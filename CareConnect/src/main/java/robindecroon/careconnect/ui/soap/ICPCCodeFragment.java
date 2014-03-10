@@ -39,7 +39,6 @@ public class ICPCCodeFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_icpc_chapter, container, false);
 
         GridView gridview = (GridView) rootView.findViewById(R.id.icpc_gridview);
-        String[] chapters = getResources().getStringArray(R.array.icpc_chapters);
 
         gridview.setAdapter(new ICPCCodeAdapter(mChapter));
 

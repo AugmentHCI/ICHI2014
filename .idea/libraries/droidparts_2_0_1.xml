@@ -4,6 +4,8 @@
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.droidparts/droidparts/2.0.1/b2afbb534e11f3285c6ab671e7ec4d155684030e/droidparts-2.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.droidparts/droidparts/2.0.1/93c1311741eca543e4fa41a1b8af2989eb6a28c6/droidparts-2.0.1-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

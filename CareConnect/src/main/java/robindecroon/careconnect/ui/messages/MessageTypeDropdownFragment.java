@@ -105,7 +105,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 mListPopupWindow.setOnDismissListener(MessageTypeDropdownFragment.this);
             }
         });
-        loadTrack(true);
+        loadTrack();
         return mRootView;
     }
 
@@ -132,14 +132,14 @@ public class MessageTypeDropdownFragment extends Fragment implements
      */
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         mViewType = (Integer) mAdapter.getItem(position);
-        loadTrack(true);
+        loadTrack();
 
         if (mListPopupWindow != null) {
             mListPopupWindow.dismiss();
         }
     }
 
-    private void loadTrack(boolean triggerCallback) {
+    private void loadTrack() {
         switch (mViewType) {
             case VIEW_TYPE_ALL:
                 mTitle.setText(getResources().getString(R.string.all_messages));
@@ -173,7 +173,7 @@ public class MessageTypeDropdownFragment extends Fragment implements
                 break;
         }
 
-        if (triggerCallback) {
+        if (true) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {

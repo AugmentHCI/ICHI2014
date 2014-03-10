@@ -4,10 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import robindecroon.careconnect.AutoCompleteAdapter;
 import robindecroon.careconnect.R;
 
 
@@ -32,6 +40,18 @@ public class PlanningFragment extends SOAPParentFragment {
         inputField = (EditText) rootView.findViewById(R.id.planning_input);
         speakButton = (ImageButton) rootView.findViewById(R.id.btnSpeak);
 
+
+        Set<String> allPlannings = new HashSet<String>();
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_favorites)));
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_most_used)));
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_recent)));
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_treatment)));
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_referal)));
+        allPlannings.addAll(Arrays.asList(getResources().getStringArray(R.array.planning_parameter)));
+        List<String> list = new ArrayList<String>();
+        list.addAll(allPlannings);
+        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), list);
+        ((AutoCompleteTextView) inputField).setAdapter(adapter);
         initializeInputView();
 
         LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.planning_favorites_container);

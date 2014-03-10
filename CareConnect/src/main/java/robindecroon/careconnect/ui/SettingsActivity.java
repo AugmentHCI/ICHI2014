@@ -109,8 +109,7 @@ public class SettingsActivity extends PreferenceActivity {
      * "simplified" settings UI should be shown.
      */
     private static boolean isSimplePreferences(Context context) {
-        return ALWAYS_SIMPLE_PREFS
-                || Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB
                 || !isXLargeTablet(context);
     }
 
@@ -214,10 +213,15 @@ public class SettingsActivity extends PreferenceActivity {
             bindPreferenceSummaryToValue(findPreference("example_text"));
             bindPreferenceSummaryToValue(findPreference("example_list"));
         }
+    }
 
-        protected boolean isValidFragment (String fragmentName) {
-            return true;
-        }
+    @Override
+    protected boolean isValidFragment(String fragmentName) {
+            return GeneralPreferenceFragment.class.getName().equals(fragmentName)
+                    || NotificationPreferenceFragment.class.getName().equals(fragmentName)
+                    || DataSyncPreferenceFragment.class.getName().equals(fragmentName)
+                    || DashboardPreferenceFragment.class.getName().equals(fragmentName)
+                    || SOAPPreferenceFragment.class.getName().equals(fragmentName);
     }
 
     /**
@@ -236,10 +240,6 @@ public class SettingsActivity extends PreferenceActivity {
             // updated to reflect the new value, per the Android Design
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"));
-        }
-
-        protected boolean isValidFragment (String fragmentName) {
-            return true;
         }
     }
 
@@ -260,10 +260,6 @@ public class SettingsActivity extends PreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("sync_frequency"));
         }
-
-        protected boolean isValidFragment (String fragmentName) {
-            return true;
-        }
     }
 
     /**
@@ -276,12 +272,8 @@ public class SettingsActivity extends PreferenceActivity {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_dashboard);
-
         }
 
-        protected boolean isValidFragment (String fragmentName) {
-            return true;
-        }
     }
 
     /**
@@ -296,13 +288,5 @@ public class SettingsActivity extends PreferenceActivity {
             addPreferencesFromResource(R.xml.pref_soap);
 
         }
-
-
-        protected boolean isValidFragment (String fragmentName) {
-            return true;
-        }
-
-
-
     }
 }

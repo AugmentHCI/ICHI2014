@@ -4,10 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import robindecroon.careconnect.AutoCompleteAdapter;
 import robindecroon.careconnect.R;
 
 
@@ -32,6 +40,17 @@ public class SubjectiveFragment extends SOAPParentFragment {
         inputField = (EditText) rootView.findViewById(R.id.subjective_input);
         speakButton = (ImageButton) rootView.findViewById(R.id.btnSpeak);
 
+        Set<String> allSubjective = new HashSet<String>();
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.favorites_subjective)));
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.most_used_subjective)));
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.recent_subjective)));
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.prehistory_subjective)));
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.colleagues_subjective)));
+        allSubjective.addAll(Arrays.asList(getResources().getStringArray(R.array.favorites_subjective)));
+        List<String> list = new ArrayList<String>();
+        list.addAll(allSubjective);
+        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), list);
+        ((AutoCompleteTextView) inputField).setAdapter(adapter);
         initializeInputView();
 
         LinearLayout favorites = (LinearLayout) rootView.findViewById(R.id.favorites_container);

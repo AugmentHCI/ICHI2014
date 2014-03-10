@@ -26,8 +26,8 @@ public class MessagesAdapter extends ArrayAdapter implements Filterable, ListAda
     private List<Message> messages;
     private Context mContext;
 
-    public MessagesAdapter(Context context, int resource, List<Message> objects) {
-        super(context, resource);
+    public MessagesAdapter(Context context, List<Message> objects) {
+        super(context, android.R.id.list);
         mContext = context;
         this.messages = objects;
         this.allMessages = objects;

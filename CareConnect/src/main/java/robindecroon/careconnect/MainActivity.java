@@ -26,8 +26,7 @@ import robindecroon.careconnect.ui.messages.MessagesListFragment;
 import robindecroon.careconnect.ui.profile.ProfileFragment;
 import robindecroon.careconnect.ui.soap.PrescriptionFragment;
 import robindecroon.careconnect.ui.soap.SOAPFragment;
-
-;
+import robindecroon.careconnect.util.ProfileDataGenerator;
 
 public class MainActivity extends FragmentActivity
         implements CareConnectNavigationDrawerFragment.NavigationDrawerCallbacks, MessagesListFragment.OnMessageListInteractionListener, MessageTypeDropdownFragment.Callbacks {
@@ -44,10 +43,28 @@ public class MainActivity extends FragmentActivity
 
     private List<Message> messages = DummyMessageFactory.getDummyMixedMessages();
 
+    private String contactFullName;
+    private String insz;
+    private String gender;
+    private String birthdate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            contactFullName = extras.getString(Constants.FULL_NAME);
+            insz = extras.getString(Constants.INSZ);
+            gender = extras.getString(Constants.GENDER);
+            birthdate = extras.getString(Constants.BIRTHDAY);
+        } else {
+            contactFullName = Constants.PATIENT_NAME;
+            gender = Constants.PATIENT_GENDER;
+            birthdate = ProfileDataGenerator.getRandomDate();
+            insz = ProfileDataGenerator.getRandomINSZ(birthdate);
+        }
 
         mCareConnectNavigationDrawerFragment = (CareConnectNavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -56,7 +73,7 @@ public class MainActivity extends FragmentActivity
         // Set up the drawer.
         mCareConnectNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                (DrawerLayout) findViewById(R.id.drawer_layout), contactFullName);
 
     }
 
@@ -65,7 +82,7 @@ public class MainActivity extends FragmentActivity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         if (position == 0) {
-            fragmentManager.beginTransaction().replace(R.id.container, ProfileFragment.newInstance()).commit();
+            fragmentManager.beginTransaction().replace(R.id.container, ProfileFragment.newInstance(contactFullName, insz, gender, birthdate)).commit();
         } else if (position == 1) {
             fragmentManager.beginTransaction().replace(R.id.container, DashboardFragment.newInstance()).commit();
         } else if (position == 2) {
@@ -80,19 +97,19 @@ public class MainActivity extends FragmentActivity
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1) + "   -   " + getResources().getString(R.string.full_name);
+                mTitle = getString(R.string.title_section1) + "   -   " + contactFullName;
                 break;
             case 2:
-                mTitle = getString(R.string.title_section2)+ "   -   " + getResources().getString(R.string.full_name);
+                mTitle = getString(R.string.title_section2)+ "   -   " + contactFullName;
                 break;
             case 3:
-                mTitle = getString(R.string.title_section3)+ "   -   " + getResources().getString(R.string.full_name);
+                mTitle = getString(R.string.title_section3)+ "   -   " + contactFullName;
                 break;
             case 4:
-                mTitle = getString(R.string.title_section4)+ "   -   " + getResources().getString(R.string.full_name);
+                mTitle = getString(R.string.title_section4)+ "   -   " + contactFullName;
                 break;
             case 5:
-                mTitle = getString(R.string.title_section5)+ "   -   " + getResources().getString(R.string.full_name);
+                mTitle = getString(R.string.title_section5)+ "   -   " + contactFullName;
                 break;
         }
     }
@@ -111,7 +128,7 @@ public class MainActivity extends FragmentActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.dashboard, menu);
+            getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
             return true;
         }

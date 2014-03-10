@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CareConnect.iml" filepath="$PROJECT_DIR$/CareConnect.iml" />
       <module fileurl="file://$PROJECT_DIR$/CareConnect/CareConnect-CareConnect.iml" filepath="$PROJECT_DIR$/CareConnect/CareConnect-CareConnect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/android-lockpattern/android-lockpattern.iml" filepath="$PROJECT_DIR$/libraries/android-lockpattern/android-lockpattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/dynamicgrid/dynamicgrid.iml" filepath="$PROJECT_DIR$/libraries/dynamicgrid/dynamicgrid.iml" />
     </modules>
   </component>

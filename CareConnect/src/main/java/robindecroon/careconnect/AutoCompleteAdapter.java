@@ -16,9 +16,9 @@ public class AutoCompleteAdapter extends ArrayAdapter<String> implements Filtera
     private ArrayList<String> mOriginalValues;
     private ArrayFilter mFilter;
 
-    public AutoCompleteAdapter(Context context, int resource, int textViewResourceId, List<String> objects) {
+    public AutoCompleteAdapter(Context context, List<String> objects) {
 
-        super(context, resource, textViewResourceId, objects);
+        super(context, android.R.layout.simple_dropdown_item_1line, android.R.id.text1, objects);
         fullList = (ArrayList<String>) objects;
         mOriginalValues = new ArrayList<String>(fullList);
 

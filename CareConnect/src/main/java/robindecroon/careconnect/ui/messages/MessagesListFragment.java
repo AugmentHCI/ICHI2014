@@ -54,7 +54,7 @@ public class MessagesListFragment extends Fragment implements AbsListView.OnItem
         if (getArguments() != null) {
             mFilter = getArguments().getInt(ARG_FILTER);
         }
-        mAdapter = new MessagesAdapter(getActivity(), android.R.id.list, DummyMessageFactory.getDummyMixedMessages());
+        mAdapter = new MessagesAdapter(getActivity(), DummyMessageFactory.getDummyMixedMessages());
         updateFilter(mFilter);
     }
 

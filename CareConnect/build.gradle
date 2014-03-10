@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
 apply plugin: 'android'
@@ -15,7 +15,7 @@ repositories {
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.1"
+    buildToolsVersion "19.0.2"
 
     defaultConfig {
         minSdkVersion 15
@@ -39,4 +39,5 @@ dependencies {
     compile 'org.droidparts:droidparts:2.0.1'
     compile 'commons-io:commons-io:2.4'
     compile project(":libraries:dynamicgrid")
+    compile project(":libraries:android-lockpattern")
 }

@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     tools:context="robindecroon.careconnect.ui.dashboard.DashboardFragment">
 
-    <org.askerov.dynamicgid.DynamicGridView
+    <GridView
         android:id="@+id/dashboard_grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numColumns="@integer/number_of_columns"></org.askerov.dynamicgid.DynamicGridView>
+        android:numColumns="@integer/number_of_columns"></GridView>
 
 </FrameLayout>

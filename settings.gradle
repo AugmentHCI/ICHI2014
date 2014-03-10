@@ -1,1 +1,1 @@
-include "libraries:dynamicgrid", ':CareConnect'
+include "libraries:dynamicgrid","libraries:android-lockpattern", ':CareConnect'

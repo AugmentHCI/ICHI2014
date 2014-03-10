@@ -5,18 +5,18 @@
         android:id="@+id/action_camera"
         android:title="@string/Camera"
         android:icon="@android:drawable/ic_menu_camera"
-        android:showAsAction="always" />
+        android:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_calendar"
         android:title="@string/Calendar"
         android:icon="@android:drawable/ic_menu_my_calendar"
-        android:showAsAction="always" />
+        android:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search"
         android:title="@string/Search"
         android:icon="@android:drawable/ic_menu_search"
         android:actionViewClass="android.widget.SearchView"
-        android:showAsAction="always" />
+        android:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"

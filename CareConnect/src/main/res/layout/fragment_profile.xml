@@ -11,6 +11,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:baselineAligned="false"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -39,11 +40,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/profile_image"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:padding="20dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/profile_pic" />
+                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -54,28 +55,28 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/profile_fullname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="40sp"
-                            android:text="@string/full_name" />
+                            android:textSize="40sp" />
 
                         <TextView
+                            android:id="@+id/profile_birtday"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/header_text_size"
-                            android:text="@string/birthdate_ex" />
+                            android:textSize="@dimen/header_text_size"/>
 
                         <TextView
+                            android:id="@+id/profile_insz"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/header_text_size"
-                            android:text="@string/insz" />
+                            android:textSize="@dimen/header_text_size" />
 
                         <TextView
+                            android:id="@+id/profile_gender"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/header_text_size"
-                            android:text="@string/male" />
+                            android:textSize="@dimen/header_text_size"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -117,6 +118,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:baselineAligned="false"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -161,7 +163,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:text="+32 89 12 13 14" />
+                            android:text="@string/random_phone_number" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -181,7 +183,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:text="+32 477 54 65 98" />
+                            android:text="@string/random_mobile_phone_number" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -201,7 +203,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="email"
-                            android:text="piet.piraat@msn.com" />
+                            android:text="@string/random_mail" />
 
                     </LinearLayout>
 
@@ -343,7 +345,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="CG1/CG2" />
+                            android:text="@string/cg1_cg2" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -351,7 +353,7 @@
                             android:layout_gravity="right"
                             android:gravity="right"
                             android:autoLink="phone"
-                            android:text="111/111" />
+                            android:text="@string/random_cg_values" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -383,14 +385,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Medisch huis" />
+                            android:text="@string/medical_home" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:text="Medisch, verpleegkundig" />
+                            android:text="@string/medical_nursering" />
 
                     </LinearLayout>
 
@@ -403,14 +405,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="GMD-houder" />
+                            android:text="@string/gmd_keeper" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:text="Dr. Gert Verhulst" />
+                            android:text="@string/dr_gert_verhulst" />
 
                     </LinearLayout>
 

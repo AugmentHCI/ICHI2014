@@ -12,10 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.Toast;
-
-import org.askerov.dynamicgid.DynamicGridView;
+import android.widget.GridView;
 
 import java.util.Arrays;
 
@@ -26,7 +23,8 @@ import robindecroon.careconnect.R;
 
 public class DashboardFragment extends Fragment {
 
-    private DynamicGridView mDashboardGrid;
+    private GridView mDashboardGrid;
+    private View rootView;
 
     public final static String MEDICATION = "medicatie";
     public final static String PROBLEMS = "problemen";
@@ -34,6 +32,7 @@ public class DashboardFragment extends Fragment {
     public final static String INTOLERANCES = "intoleranties";
     public final static String HISTORY = "antecedenten";
     public final static String LAST_LAB_RESULTS = "laatste_labo_resultaten";
+
 
 
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -59,7 +58,7 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        rootView = inflater.inflate(R.layout.fragment_dashboard, container, false);
         Display display = ((WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 
         // check display size to figure out what image resolution will be loaded
@@ -91,24 +90,9 @@ public class DashboardFragment extends Fragment {
         int dashboardElementWidth = width / nbColumns;
         int dashboardElementHeight = height / nbRows;
 
-        mDashboardGrid = (DynamicGridView) rootView.findViewById(R.id.dashboard_grid);
-        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{MEDICATION, PROBLEMS, ALLERGENS, INTOLERANCES, HISTORY, LAST_LAB_RESULTS}), nbColumns, dashboardElementWidth, dashboardElementHeight));
-        mDashboardGrid.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                mDashboardGrid.startEditMode();
-                return false;
-            }
-        });
+        mDashboardGrid = (GridView) rootView.findViewById(R.id.dashboard_grid);
+        mDashboardGrid.setAdapter(new DashboardAdapter(getActivity(), Arrays.asList(new String[]{MEDICATION, PROBLEMS, ALLERGENS, INTOLERANCES, HISTORY, LAST_LAB_RESULTS}), dashboardElementWidth, dashboardElementHeight));
 
-        mDashboardGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                mDashboardGrid.stopEditMode();
-                Toast.makeText(getActivity(), parent.getAdapter().getItem(position).toString(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
         return rootView;
     }
 

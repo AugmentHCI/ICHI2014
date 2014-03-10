@@ -66,7 +66,7 @@ public class EvaluationFragment extends SOAPParentFragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), android.R.layout.simple_dropdown_item_1line, android.R.id.text1, searchArrayList);
+        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), searchArrayList);
         ((AutoCompleteTextView) inputField).setAdapter(adapter);
         initializeInputView();
 

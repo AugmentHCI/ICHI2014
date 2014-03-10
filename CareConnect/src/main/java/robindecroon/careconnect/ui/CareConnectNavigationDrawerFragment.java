@@ -25,7 +25,6 @@ import android.widget.TextView;
 
 import robindecroon.careconnect.R;
 
-;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -62,6 +61,8 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
     private int mCurrentSelectedPosition = 1;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+
+    private String mFullname;
 
     public CareConnectNavigationDrawerFragment() {
     }
@@ -122,7 +123,6 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
                     case 4:
                         return getString(R.string.title_section5);
                 }
-                ;
                 return null;
             }
 
@@ -135,7 +135,10 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
             public View getView(int i, View view, ViewGroup viewGroup) {
                 if (i == 0) {
                     ImageView image = new ImageView(getActivity());
-                    image.setImageResource(R.drawable.profile_pic);
+                    String uri = "drawable/";
+                    uri += mFullname.replaceAll(" ", "").toLowerCase();
+                    int imageResource = getResources().getIdentifier(uri, null, getActivity().getPackageName());
+                    image.setImageResource(imageResource);
                     image.setAdjustViewBounds(true);
                     image.setMaxHeight(150);
                     image.setMinimumHeight(150);
@@ -166,7 +169,8 @@ public class CareConnectNavigationDrawerFragment extends Fragment {
      * @param fragmentId   The android:id of this fragment in its activity's layout.
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
-    public void setUp(int fragmentId, DrawerLayout drawerLayout) {
+    public void setUp(int fragmentId, DrawerLayout drawerLayout, String fullname) {
+        this.mFullname = fullname;
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
 

@@ -432,7 +432,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
      * @param canvas      The canvas to draw upon.
      */
     private void drawThumb(float screenCoord, boolean pressed, Canvas canvas) {
-        canvas.drawBitmap(pressed ? thumbPressedImage : thumbImage, screenCoord - thumbHalfWidth, (float) ((0.5f * getHeight()) - thumbHalfHeight), paint);
+        canvas.drawBitmap(pressed ? thumbPressedImage : thumbImage, screenCoord - thumbHalfWidth, (0.5f * getHeight() - thumbHalfHeight), paint);
     }
 
     /**
@@ -556,8 +556,6 @@ public class RangeSeekBar<T extends Number> extends ImageView {
         MIN, MAX
     }
 
-    ;
-
     /**
      * Utility enumaration used to convert between Numbers and doubles.
      *
@@ -594,17 +592,17 @@ public class RangeSeekBar<T extends Number> extends ImageView {
         public Number toNumber(double value) {
             switch (this) {
                 case LONG:
-                    return new Long((long) value);
+                    return Long.valueOf((long) value);
                 case DOUBLE:
                     return value;
                 case INTEGER:
-                    return new Integer((int) value);
+                    return Integer.valueOf((int) value);
                 case FLOAT:
                     return new Float(value);
                 case SHORT:
-                    return new Short((short) value);
+                    return Short.valueOf((short) value);
                 case BYTE:
-                    return new Byte((byte) value);
+                    return Byte.valueOf((byte) value);
                 case BIG_DECIMAL:
                     return new BigDecimal(value);
             }

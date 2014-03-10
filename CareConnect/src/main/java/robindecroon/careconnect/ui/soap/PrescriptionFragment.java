@@ -8,11 +8,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import robindecroon.careconnect.AutoCompleteAdapter;
 import robindecroon.careconnect.MainActivity;
 import robindecroon.careconnect.R;
 
@@ -59,8 +67,28 @@ public class PrescriptionFragment extends SOAPParentFragment {
 
         ((TextView) rootView.findViewById(R.id.taken_before_label)).setText(getResources().getString(R.string.taken_before) + " " + getResources().getString(R.string.by) + " " + getResources().getString(R.string.full_name));
 
+        Set<String> allMedication = new HashSet<String>();
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_most_used)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_recent)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.chronic_medication_array)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_soap)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_taken_before)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_family)));
+        allMedication.addAll(Arrays.asList(getResources().getStringArray(R.array.medication_location)));
+        List<String> list = new ArrayList<String>();
+        list.addAll(allMedication);
+        AutoCompleteAdapter adapter = new AutoCompleteAdapter(getActivity(), list);
+        ((AutoCompleteTextView) inputField).setAdapter(adapter);
         initializeInputView();
 
+        LinearLayout mostUsedBased = (LinearLayout) rootView.findViewById(R.id.most_used_medication);
+        for (String suggestion : getResources().getStringArray(R.array.medication_most_used)) {
+            addWord(mostUsedBased, suggestion);
+        }
+        LinearLayout recent = (LinearLayout) rootView.findViewById(R.id.recent_medication);
+        for (String suggestion : getResources().getStringArray(R.array.medication_recent)) {
+            addWord(recent, suggestion);
+        }
         LinearLayout chronicBased = (LinearLayout) rootView.findViewById(R.id.chronic_medication);
         for (String suggestion : getResources().getStringArray(R.array.chronic_medication_array)) {
             addWord(chronicBased, suggestion);
