@@ -86,6 +86,7 @@ public class ProfileFragment extends Fragment {
 
         initPatient(rootView);
 
+
         return rootView;
     }
 
